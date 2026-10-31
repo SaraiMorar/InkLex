@@ -4,6 +4,7 @@ import { createSeed } from '../src/domain/seed';
 import { saveContext } from '../src/domain/model';
 import { mergeBundledContent } from '../server/content';
 import { mergeSupplement } from '../server/supplement';
+import { mergeTextbookArticles } from '../server/textbook-articles';
 
 const db = async (page: Page) => (await (await page.request.get('/api/state')).json()).data;
 
@@ -14,6 +15,31 @@ test.beforeEach(async ({ request }) => {
 });
 const nav = (page: Page, name: string) => page.getByRole('navigation').getByRole('button', { name: new RegExp(name) }).click();
 const openFirstArticle = async (page: Page) => { await nav(page, '课文书架'); await page.getByRole('button', { name: /小石潭记/ }).click(); };
+
+test('five textbook volumes are readable on the bookshelf without creating vocabulary or study activity', async ({ page, request }) => {
+  const snapshot = await (await request.get('/api/state')).json();
+  const data = mergeTextbookArticles(snapshot.data);
+  expect((await request.put('/api/state', { data: { revision: snapshot.revision, data }, headers: { 'X-InkLex-Client': '1' } })).ok()).toBe(true);
+  await page.goto('/#/articles');
+  await expect(page.locator('.article-card')).toHaveCount(74);
+  await page.getByLabel('搜索课文').fill('选择性必修中册');
+  await expect(page.locator('.article-card')).toHaveCount(8);
+  await page.getByLabel('搜索课文').fill('沁园春');
+  await page.locator('.article-card').click();
+  await expect(page.locator('.reader-prose')).toContainText('橘子洲头。');
+  await expect(page.locator('.reader-prose')).toContainText('浪遏飞舟？');
+  await expect(page.locator('.reader-prose')).not.toContainText('又名水陆洲');
+  await expect(page.getByRole('button', { name: '开始本篇抽背', exact: true })).toBeDisabled();
+  await page.getByRole('button', { name: '返回课文书架', exact: true }).click();
+  await page.getByLabel('搜索课文').fill('陈情表');
+  await page.locator('.article-card').click();
+  await expect(page.locator('.reader-paper-heading')).toContainText('用户补全文');
+  await expect(page.locator('.reader-prose')).toContainText('谨拜表以闻。');
+  const saved = await db(page);
+  expect(saved.entries).toEqual(snapshot.data.entries); expect(saved.contexts).toEqual(snapshot.data.contexts);
+  expect(saved.reviews).toEqual(snapshot.data.reviews); expect(saved.readings).toEqual(snapshot.data.readings);
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1)).toBe(true);
+});
 
 test('full original text, independent inline explanations, no false reviews, responsive layout', async ({ page }, info) => {
   const errors: string[] = []; page.on('pageerror', e => errors.push(e.message));

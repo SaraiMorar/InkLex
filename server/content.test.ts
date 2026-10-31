@@ -13,7 +13,7 @@ const paths: string[] = [];
 const handles: FileDatabase[] = [];
 function directory() { const path = mkdtempSync(join(tmpdir(), 'inklex-content-test-')); paths.push(path); return path; }
 function open(path: string, importBundledContent = true) {
-  const handle = new FileDatabase(path, { importBundledContent, importSupplement: false }); handles.push(handle); return handle;
+  const handle = new FileDatabase(path, { importBundledContent, importSupplement: false, importTextbookArticles: false }); handles.push(handle); return handle;
 }
 afterEach(() => {
   for (const handle of handles.splice(0)) { try { handle.close(); } catch { /* already closed */ } }

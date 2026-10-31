@@ -37,7 +37,7 @@ export function ArticleCard({ article, index = 0 }: { article: Article; index?: 
   const ids = [...new Set(contexts.map(c => c.senseId))];
   const learned = ids.filter(id => data.cards[id]?.state > 0).length;
   return <button className="article-card" onClick={() => go(`articles/${article.id}`)}>
-    <div className="article-art"><Landscape variant={index} /><span className="art-caption">{article.era || '选文'} · {article.author || '佚名'}</span><span className="vertical-title" aria-hidden="true">{article.title}</span>{article.sample && <span className="sample-tag">示例</span>}</div>
+    <div className="article-art"><Landscape variant={index} /><span className="art-caption">{article.era || '选文'} · {article.author || '作者待补'}</span><span className="vertical-title" aria-hidden="true">{article.title}</span>{article.sample && <span className="sample-tag">示例</span>}</div>
     <div className="article-card-body"><div className="spread"><h3>{article.title}</h3><ArrowUpRight size={19} /></div><p>{article.summary || article.body.slice(0, 28)}</p><div className="article-card-footer"><span>{ids.length} 个重点义项</span><span>{learned ? `已学 ${learned} / ${ids.length}` : '待你翻阅'}</span></div><div className="progress-line"><i style={{ width: `${ids.length ? learned / ids.length * 100 : 0}%` }} /></div></div>
   </button>;
 }

@@ -6,6 +6,7 @@ import { validateDatabase, type Database } from '../src/domain/model.ts';
 import { createSeed } from '../src/domain/seed.ts';
 import { CONTENT_ID, mergeBundledContent } from './content.ts';
 import { SUPPLEMENT_ID, mergeSupplement } from './supplement.ts';
+import { TEXTBOOK_ARTICLES_ID, mergeTextbookArticles } from './textbook-articles.ts';
 
 export interface Snapshot { data: Database; revision: number; serverId: string; pristine?: boolean; warning?: string }
 export class RevisionConflict extends Error {
@@ -16,7 +17,7 @@ type Row = { payload: string; revision: number; server_id: string };
 export class FileDatabase {
   readonly path: string;
   private db: DatabaseSync;
-  constructor(directory: string, options: { importBundledContent?: boolean; importSupplement?: boolean } = {}) {
+  constructor(directory: string, options: { importBundledContent?: boolean; importSupplement?: boolean; importTextbookArticles?: boolean } = {}) {
     mkdirSync(directory, { recursive: true });
     this.path = resolve(directory, 'inklex.sqlite');
     this.db = new DatabaseSync(this.path);
@@ -32,6 +33,7 @@ export class FileDatabase {
       if (options.importBundledContent !== false) {
         this.installContent(CONTENT_ID, mergeBundledContent);
         if (options.importSupplement !== false) this.installContent(SUPPLEMENT_ID, mergeSupplement);
+        if (options.importTextbookArticles !== false) this.installContent(TEXTBOOK_ARTICLES_ID, mergeTextbookArticles);
       }
     } catch (error) { this.db.close(); throw error; }
   }

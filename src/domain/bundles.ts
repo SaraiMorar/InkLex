@@ -9,5 +9,6 @@ export function bundledContentFrom(data: Database): Database {
   const senseIds = new Set(contexts.map(context => context.senseId));
   const senses = data.senses.filter(sense => senseIds.has(sense.id));
   const entryIds = new Set(senses.map(sense => sense.entryId));
-  return { ...emptyDatabase(), entries: data.entries.filter(entry => entryIds.has(entry.id)), senses, contexts };
+  return { ...emptyDatabase(), articles: data.articles.filter(a => a.id.startsWith('textbook5:article:')),
+    entries: data.entries.filter(entry => entryIds.has(entry.id)), senses, contexts };
 }
