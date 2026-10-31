@@ -31,7 +31,7 @@ export function ContextEditor({ context, initialArticle, onClose }: { context?: 
   const [position, setPosition] = useState(context?.articleId ? context.articleStart ?? -1 : context?.start ?? -1);
   const [senseId, setSenseId] = useState(initialSense?.id ?? '');
   const [note, setNote] = useState(initialSense?.note ?? '');
-  const [verified, setVerified] = useState(true);
+  const [verified, setVerified] = useState(context?.verified ?? true);
   const [busy, setBusy] = useState(false);
   const article = data.articles.find(a => a.id === articleId);
   const material = article?.body ?? text;
@@ -62,6 +62,7 @@ export function ContextEditor({ context, initialArticle, onClose }: { context?: 
     {!article && <label>出处（选填）<input maxLength={160} value={source} onChange={e => setSource(e.target.value)} placeholder="例如：《出师表》" /></label>}
     {!senseId && !context && <label>新义项笔记（选填）<input maxLength={3000} value={note} onChange={e => setNote(e.target.value)} placeholder="可记录活用、通假或易混淆的意思" /></label>}
     {effectivePosition >= 0 && <div className="annotation-preview"><span className="eyebrow">标注预览</span><p>{material.slice(Math.max(0, effectivePosition - 14), effectivePosition)}<mark>{word}</mark><span className="inline-gloss">（{meaning || '释义'}）</span>{material.slice(effectivePosition + word.length, effectivePosition + word.length + 24)}</p></div>}
+    {context && initialSense?.note && <p className="sense-note">{initialSense.note}</p>}
     <div className="form-footer"><label className="check-label"><input type="checkbox" checked={verified} onChange={e => setVerified(e.target.checked)} /> 已核对释义与标注位置</label><button className="button primary" disabled={busy}><Save size={16} /> 保存字词</button></div>
   </form></Modal>;
 }

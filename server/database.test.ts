@@ -9,7 +9,7 @@ import { parseBackup } from '../src/domain/storage';
 const directories: string[] = [];
 const handles: FileDatabase[] = [];
 function directory() { const path = mkdtempSync(join(tmpdir(), 'inklex-sqlite-test-')); directories.push(path); return path; }
-function open(path: string) { const db = new FileDatabase(path); handles.push(db); return db; }
+function open(path: string) { const db = new FileDatabase(path, { importBundledContent: false }); handles.push(db); return db; }
 afterEach(() => { for (const db of handles.splice(0)) { try { db.close(); } catch { /* already closed */ } } for (const path of directories.splice(0)) rmSync(path, { recursive: true, force: true }); });
 
 describe('SQLite persistence and recovery', () => {

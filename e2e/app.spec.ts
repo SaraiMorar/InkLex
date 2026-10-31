@@ -2,6 +2,7 @@ import { expect, test, type Page } from '@playwright/test';
 import { readFile } from 'node:fs/promises';
 import { createSeed } from '../src/domain/seed';
 import { saveContext } from '../src/domain/model';
+import { mergeBundledContent } from '../server/content';
 
 const db = async (page: Page) => (await (await page.request.get('/api/state')).json()).data;
 
@@ -191,4 +192,45 @@ test('API rejects stale revisions, invalid data and cross-site writes', async ({
   expect((await request.put('/api/state', { data: { revision: snapshot.revision + 1, data: { ...edited, version: 99 } }, headers })).status()).toBe(400);
   expect((await request.put('/api/state', { data: { revision: snapshot.revision + 1, data: edited }, headers: { ...headers, Origin: 'https://unrelated.example' } })).status()).toBe(403);
   expect((await (await request.get('/api/state')).json()).data.settings.dailyNew).toBe(7);
+});
+
+test('the full imported library can be searched, shows the correct target and joins spaced review', async ({ page, request }, info) => {
+  const snapshot = await (await request.get('/api/state')).json();
+  const data = mergeBundledContent(snapshot.data);
+  expect((await request.put('/api/state', { data: { revision: snapshot.revision, data }, headers: { 'X-InkLex-Client': '1' } })).ok()).toBe(true);
+  await page.goto('/#/words');
+  await page.getByLabel('搜索字词或释义').fill('高三300实词');
+  await expect(page.locator('.word-card')).toHaveCount(300);
+  await page.getByLabel('搜索字词或释义').fill('超乘者');
+  await expect(page.locator('.word-card')).toHaveCount(2); // Both 超 and 乘 use this sentence.
+  await page.locator('.word-card').filter({ has: page.locator('.word-display', { hasText: /^乘$/ }) }).click();
+  const example = page.locator('.context-example').filter({ hasText: '超乘者三百乘。' });
+  await expect(example.locator('.example-prose')).toHaveJSProperty('innerHTML', '超乘者三百<mark>乘</mark>。');
+  await example.locator('xpath=..').getByRole('button', { name: '加入计划', exact: true }).click();
+  await expect.poll(async () => Object.keys((await db(page)).cards).length).toBe(1);
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1)).toBe(true);
+  await page.screenshot({ path: `test-results/${info.project.name}-imported-word.png`, fullPage: true });
+  await page.goto('/#/review');
+  await page.getByRole('button', { name: '开始今日复习', exact: true }).click();
+  await page.getByRole('button', { name: '查看释义', exact: true }).click();
+  await page.getByRole('button', { name: /忘记了/ }).click();
+  await expect.poll(async () => (await db(page)).reviews.length).toBe(1);
+  await page.reload();
+  const stored = await db(page); const event = stored.reviews[0];
+  expect(event.contextId).toBe('gaosan300:context:14:19');
+  expect(Date.parse(stored.cards[event.senseId].dueAt) - Date.parse(event.time)).toBe(60000);
+});
+
+test('editing a flagged source does not silently approve it for study', async ({ page, request }) => {
+  const snapshot = await (await request.get('/api/state')).json();
+  const data = mergeBundledContent(snapshot.data);
+  expect((await request.put('/api/state', { data: { revision: snapshot.revision, data }, headers: { 'X-InkLex-Client': '1' } })).ok()).toBe(true);
+  await page.goto('/#/manage?context=gaosan300:context:59:8');
+  await expect(page.getByRole('dialog')).toBeVisible();
+  await expect(page.getByLabel('已核对释义与标注位置')).not.toBeChecked();
+  await expect(page.getByRole('dialog').locator('.sense-note')).toContainText('原资料将目标字');
+  await page.getByRole('button', { name: '保存字词', exact: true }).click();
+  await expect(page.getByRole('dialog')).toHaveCount(0);
+  const saved = await db(page);
+  expect(saved.contexts.find((c: {id: string}) => c.id === 'gaosan300:context:59:8').verified).toBe(false);
 });

@@ -1,5 +1,5 @@
-import { type Database, validateDatabase } from './model';
-import { createSeed } from './seed';
+import { type Database, validateDatabase } from './model.ts';
+import { createSeed } from './seed.ts';
 
 export const STORAGE_KEY = 'inklex.database.v1';
 export function readDatabase(storage: Pick<Storage, 'getItem'>): Database {

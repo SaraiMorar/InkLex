@@ -1,7 +1,8 @@
 import { type Database, validateDatabase } from './model';
 import { mergeBackup, parseBackup, STORAGE_KEY } from './storage';
+import { bundledContentFrom } from './bundles';
 
-export interface Snapshot { data: Database; revision: number; serverId: string; warning?: string }
+export interface Snapshot { data: Database; revision: number; serverId: string; pristine?: boolean; warning?: string }
 export class ApiError extends Error {
   constructor(readonly status: number, message: string) { super(message); }
 }
@@ -15,7 +16,7 @@ async function request(method: 'GET' | 'PUT', body?: unknown): Promise<Snapshot>
   try { result = await response.json(); } catch { throw new ApiError(503, '学习服务返回了无效响应，请确认运行的是新版 InkLex。'); }
   if (!response.ok) throw new ApiError(response.status, result.error || '保存未完成，请重试。');
   if (!Number.isSafeInteger(result.revision) || typeof result.serverId !== 'string') throw new ApiError(503, '学习服务的数据版本不正确。');
-  return { data: validateDatabase(result.data), revision: result.revision, serverId: result.serverId, warning: result.warning };
+  return { data: validateDatabase(result.data), revision: result.revision, serverId: result.serverId, pristine: result.pristine === true, warning: result.warning };
 }
 export const readServer = () => request('GET');
 export const writeServer = (data: Database, revision: number) => request('PUT', { data, revision });
@@ -35,6 +36,10 @@ export function legacyFingerprint(raw: string) {
   for (let i = 0; i < raw.length; i++) hash = Math.imul(hash ^ raw.charCodeAt(i), 16777619);
   return `${raw.length}-${hash >>> 0}`;
 }
+export function mergeLegacySnapshot(current: Snapshot, legacy: Database): Database {
+  if (current.pristine) return mergeBackup(legacy, bundledContentFrom(current.data));
+  return current.revision === 0 ? legacy : mergeBackup(current.data, legacy);
+}
 export async function migrateLegacy(snapshot: Snapshot): Promise<Snapshot> {
   let raw: string | null;
   try { raw = localStorage.getItem(STORAGE_KEY); } catch { return snapshot; }
@@ -46,7 +51,7 @@ export async function migrateLegacy(snapshot: Snapshot): Promise<Snapshot> {
   let saved = snapshot;
   for (let attempt = 0; attempt < 4; attempt++) {
     const current = attempt === 0 ? snapshot : await readServer();
-    const next = current.revision === 0 ? legacy : mergeBackup(current.data, legacy);
+    const next = mergeLegacySnapshot(current, legacy);
     try {
       saved = JSON.stringify(current.data) === JSON.stringify(next) ? current : await writeServer(next, current.revision);
       break;
