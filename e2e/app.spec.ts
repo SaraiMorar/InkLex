@@ -14,14 +14,83 @@ test.beforeEach(async ({ request }) => {
   expect(response.ok()).toBe(true);
 });
 const nav = (page: Page, name: string) => page.getByRole('navigation').getByRole('button', { name: new RegExp(name) }).click();
-const openFirstArticle = async (page: Page) => { await nav(page, '课文书架'); await page.getByRole('button', { name: /小石潭记/ }).click(); };
+const openFirstArticle = async (page: Page) => { await nav(page, '课外古诗文'); await page.getByRole('button', { name: /小石潭记/ }).click(); };
+
+test('separate curricular and extracurricular shelves preserve original texts and allow moving new articles', async ({ page, request }) => {
+  const snapshot = await (await request.get('/api/state')).json(), data = mergeTextbookArticles(snapshot.data);
+  expect((await request.put('/api/state', { data: { revision: snapshot.revision, data }, headers: { 'X-InkLex-Client': '1' } })).ok()).toBe(true);
+  await page.goto('/#/articles');
+  await expect(page.locator('.article-card')).toHaveCount(71);
+  await expect(page.locator('.article-card').filter({ hasText: '小石潭记' })).toHaveCount(0);
+  await nav(page, '课外古诗文');
+  await expect(page.locator('.article-card')).toHaveCount(3);
+  await page.getByRole('button', { name: /小石潭记/ }).click();
+  await expect(page.getByRole('navigation').getByRole('button', { name: /课外古诗文/ })).toHaveAttribute('aria-current', 'page');
+  await expect(page.locator('.reader-prose')).toContainText('曰恕己，曰奉壹。');
+  await expect(page.locator('.word-token')).toHaveCount(13);
+  await page.getByRole('button', { name: '返回课外古诗文', exact: true }).click();
+  await page.getByRole('button', { name: '添加课文', exact: true }).click();
+  await expect(page.getByLabel('所属板块')).toHaveValue('extracurricular');
+  await page.getByLabel('篇名', { exact: true }).fill('课外分组测试');
+  await page.getByLabel('完整原文', { exact: true }).fill('学而时习之。');
+  await page.getByRole('button', { name: '保存课文', exact: true }).click();
+  await page.getByRole('button', { name: '编辑课文', exact: true }).click();
+  await page.getByLabel('所属板块').selectOption('curricular');
+  await page.getByRole('button', { name: '保存课文', exact: true }).click();
+  await expect(page.getByRole('dialog')).toHaveCount(0);
+  await expect(page.getByRole('button', { name: '返回课文书架', exact: true })).toBeVisible();
+  await page.reload();
+  await page.getByRole('button', { name: '返回课文书架', exact: true }).click();
+  await expect(page.locator('.article-card')).toHaveCount(72);
+  const after = await db(page);
+  expect(after.contexts).toEqual(data.contexts); expect(after.cards).toEqual(data.cards);
+  expect(after.reviews).toEqual(data.reviews); expect(after.readings).toEqual(data.readings);
+});
+
+test('dark mode follows system changes, persists manual choice, and covers reading, editing and recall', async ({ page }, info) => {
+  await page.emulateMedia({ colorScheme: 'dark' });
+  await page.goto('/');
+  const root = page.locator('html'), theme = page.getByLabel('外观模式');
+  await expect(root).toHaveAttribute('data-theme', 'dark');
+  await theme.selectOption('light');
+  await page.reload();
+  await expect(root).toHaveAttribute('data-theme', 'light');
+  await theme.selectOption('system');
+  await expect(root).toHaveAttribute('data-theme', 'dark');
+  await page.emulateMedia({ colorScheme: 'light' });
+  await expect(root).toHaveAttribute('data-theme', 'light');
+  await theme.selectOption('dark'); await page.reload();
+  await expect(root).toHaveAttribute('data-theme', 'dark');
+  await nav(page, '课外古诗文');
+  await page.screenshot({ path: `test-results/${info.project.name}-dark-bookshelf.png`, fullPage: true });
+  await page.getByRole('button', { name: /小石潭记/ }).click();
+  await page.getByRole('button', { name: '查看「篁竹」的释义', exact: true }).click();
+  const contrast = await page.locator('.reader-prose').evaluate(el => {
+    const rgb = (v: string) => v.match(/[\d.]+/g)!.slice(0, 3).map(Number).map(n => { n /= 255; return n <= .04045 ? n / 12.92 : ((n + .055) / 1.055) ** 2.4; });
+    const luminance = (v: string) => rgb(v).reduce((sum, n, i) => sum + n * [.2126, .7152, .0722][i], 0);
+    const text = luminance(getComputedStyle(el).color), paper = luminance(getComputedStyle(el.closest('.reading-paper')!).backgroundColor);
+    return (Math.max(text, paper) + .05) / (Math.min(text, paper) + .05);
+  });
+  expect(contrast).toBeGreaterThanOrEqual(4.5);
+  await page.screenshot({ path: `test-results/${info.project.name}-dark-reader.png`, fullPage: true });
+  await page.getByRole('button', { name: '编辑课文', exact: true }).click();
+  expect(await page.getByRole('dialog').evaluate(el => getComputedStyle(el).backgroundColor)).toBe('rgb(32, 42, 35)');
+  await page.screenshot({ path: `test-results/${info.project.name}-dark-editor.png`, fullPage: true });
+  await page.getByRole('button', { name: '关闭弹窗', exact: true }).click();
+  await page.getByRole('button', { name: '开始本篇抽背', exact: true }).click();
+  await page.getByRole('button', { name: '开始今日复习', exact: true }).click();
+  await page.getByRole('button', { name: '查看释义', exact: true }).click();
+  await page.screenshot({ path: `test-results/${info.project.name}-dark-recall.png`, fullPage: true });
+  await expect(root).toHaveAttribute('data-theme', 'dark');
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1)).toBe(true);
+});
 
 test('five textbook volumes are readable on the bookshelf without creating vocabulary or study activity', async ({ page, request }) => {
   const snapshot = await (await request.get('/api/state')).json();
   const data = mergeTextbookArticles(snapshot.data);
   expect((await request.put('/api/state', { data: { revision: snapshot.revision, data }, headers: { 'X-InkLex-Client': '1' } })).ok()).toBe(true);
   await page.goto('/#/articles');
-  await expect(page.locator('.article-card')).toHaveCount(74);
+  await expect(page.locator('.article-card')).toHaveCount(71);
   await page.getByLabel('搜索课文').fill('选择性必修中册');
   await expect(page.locator('.article-card')).toHaveCount(8);
   await page.getByLabel('搜索课文').fill('沁园春');

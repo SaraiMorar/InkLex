@@ -6,6 +6,7 @@ const text = z.string().min(1).max(100000);
 export const articleSchema = z.object({
   id, title: z.string().min(1).max(120), author: z.string().max(80), era: z.string().max(40),
   body: text, summary: z.string().max(300), sample: z.boolean(),
+  collection: z.enum(['curricular', 'extracurricular']).optional(),
 });
 export const entrySchema = z.object({ id, word: z.string().min(1).max(40) });
 export const senseSchema = z.object({ id, entryId: id, meaning: z.string().min(1).max(1000), note: z.string().max(3000) });
@@ -40,6 +41,12 @@ export const databaseSchema = z.object({
 });
 
 export type Article = z.infer<typeof articleSchema>;
+export type ArticleCollection = 'curricular' | 'extracurricular';
+// Old backups have no collection field. Keep the three original texts in their
+// requested shelf without changing their IDs or any linked study records.
+export function articleCollection(article: Article): ArticleCollection {
+  return article.collection ?? (['sample-xiaoshitan', 'sample-loushi', 'sample-ailian'].includes(article.id) ? 'extracurricular' : 'curricular');
+}
 export type Entry = z.infer<typeof entrySchema>;
 export type Sense = z.infer<typeof senseSchema>;
 export type Context = z.infer<typeof contextSchema>;

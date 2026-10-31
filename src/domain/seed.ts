@@ -1,13 +1,13 @@
 import { emptyDatabase, saveContext, sentenceAt, type Article } from './model.ts';
 
 const articles: Article[] = [
-  { id: 'sample-xiaoshitan', title: '小石潭记', author: '柳宗元', era: '唐', sample: true,
+  { id: 'sample-xiaoshitan', title: '小石潭记', author: '柳宗元', era: '唐', sample: true, collection: 'extracurricular',
     summary: '一潭清水，一段幽静的山水记忆。',
     body: '从小丘西行百二十步，隔篁竹，闻水声，如鸣珮环，心乐之。伐竹取道，下见小潭，水尤清冽。全石以为底，近岸，卷石底以出，为坻，为屿，为嵁，为岩。青树翠蔓，蒙络摇缀，参差披拂。\n\n潭中鱼可百许头，皆若空游无所依。日光下澈，影布石上，佁然不动；俶尔远逝，往来翕忽，似与游者相乐。\n\n潭西南而望，斗折蛇行，明灭可见。其岸势犬牙差互，不可知其源。\n\n坐潭上，四面竹树环合，寂寥无人，凄神寒骨，悄怆幽邃。以其境过清，不可久居，乃记之而去。\n\n同游者：吴武陵，龚古，余弟宗玄。隶而从者，崔氏二小生，曰恕己，曰奉壹。' },
-  { id: 'sample-loushi', title: '陋室铭', author: '刘禹锡', era: '唐', sample: true,
+  { id: 'sample-loushi', title: '陋室铭', author: '刘禹锡', era: '唐', sample: true, collection: 'extracurricular',
     summary: '斯是陋室，惟吾德馨。',
     body: '山不在高，有仙则名。水不在深，有龙则灵。斯是陋室，惟吾德馨。\n\n苔痕上阶绿，草色入帘青。谈笑有鸿儒，往来无白丁。可以调素琴，阅金经。无丝竹之乱耳，无案牍之劳形。\n\n南阳诸葛庐，西蜀子云亭。孔子云：“何陋之有？”' },
-  { id: 'sample-ailian', title: '爱莲说', author: '周敦颐', era: '宋', sample: true,
+  { id: 'sample-ailian', title: '爱莲说', author: '周敦颐', era: '宋', sample: true, collection: 'extracurricular',
     summary: '出淤泥而不染，濯清涟而不妖。',
     body: '水陆草木之花，可爱者甚蕃。晋陶渊明独爱菊。自李唐来，世人甚爱牡丹。予独爱莲之出淤泥而不染，濯清涟而不妖，中通外直，不蔓不枝，香远益清，亭亭净植，可远观而不可亵玩焉。\n\n予谓菊，花之隐逸者也；牡丹，花之富贵者也；莲，花之君子者也。噫！菊之爱，陶后鲜有闻。莲之爱，同予者何人？牡丹之爱，宜乎众矣。' },
 ];

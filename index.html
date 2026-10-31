@@ -4,6 +4,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#294b3d" />
+    <script>
+      // Apply before first paint, including the loading and connection-error screens.
+      (() => {
+        let mode = 'system';
+        try { mode = localStorage.getItem('inklex.theme') || 'system'; } catch {}
+        const dark = mode === 'dark' || (mode !== 'light' && matchMedia('(prefers-color-scheme: dark)').matches);
+        document.documentElement.dataset.theme = dark ? 'dark' : 'light';
+        document.querySelector('meta[name="theme-color"]').content = dark ? '#151d19' : '#f7f8f4';
+      })();
+    </script>
     <meta name="description" content="在原文中理解，在复习中记住。InkLex 文言实词语境学习。" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>InkLex · 温故知新</title>
