@@ -5,6 +5,7 @@ import { randomUUID } from 'node:crypto';
 import { validateDatabase, type Database } from '../src/domain/model.ts';
 import { createSeed } from '../src/domain/seed.ts';
 import { CONTENT_ID, mergeBundledContent } from './content.ts';
+import { SUPPLEMENT_ID, mergeSupplement } from './supplement.ts';
 
 export interface Snapshot { data: Database; revision: number; serverId: string; pristine?: boolean; warning?: string }
 export class RevisionConflict extends Error {
@@ -15,7 +16,7 @@ type Row = { payload: string; revision: number; server_id: string };
 export class FileDatabase {
   readonly path: string;
   private db: DatabaseSync;
-  constructor(directory: string, options: { importBundledContent?: boolean } = {}) {
+  constructor(directory: string, options: { importBundledContent?: boolean; importSupplement?: boolean } = {}) {
     mkdirSync(directory, { recursive: true });
     this.path = resolve(directory, 'inklex.sqlite');
     this.db = new DatabaseSync(this.path);
@@ -28,28 +29,32 @@ export class FileDatabase {
           .run(JSON.stringify(createSeed()), randomUUID());
       }
       this.read();
-      if (options.importBundledContent !== false) this.installContent();
+      if (options.importBundledContent !== false) {
+        this.installContent(CONTENT_ID, mergeBundledContent);
+        if (options.importSupplement !== false) this.installContent(SUPPLEMENT_ID, mergeSupplement);
+      }
     } catch (error) { this.db.close(); throw error; }
   }
   read(): Snapshot {
     const row = this.db.prepare('SELECT payload, revision, server_id FROM workspace WHERE id = 1').get() as Row;
-    const imported = this.db.prepare('SELECT base_revision FROM content_imports WHERE id = ?').get(CONTENT_ID) as { base_revision: number } | undefined;
+    const imports = this.db.prepare('SELECT base_revision FROM content_imports ORDER BY base_revision').all() as { base_revision: number }[];
+    const pristine = row.revision === imports.length && imports.every((item, index) => item.base_revision === index);
     return { data: validateDatabase(JSON.parse(row.payload)), revision: row.revision, serverId: row.server_id,
-      pristine: row.revision === 0 || (imported?.base_revision === 0 && row.revision === 1) };
+      pristine: pristine };
   }
-  private installContent() {
+  private installContent(contentId: string, merge: (data: Database) => Database) {
     this.db.exec('BEGIN IMMEDIATE');
     try {
-      if (!this.db.prepare('SELECT id FROM content_imports WHERE id = ?').get(CONTENT_ID)) {
+      if (!this.db.prepare('SELECT id FROM content_imports WHERE id = ?').get(contentId)) {
         const current = this.read();
-        const next = mergeBundledContent(current.data);
+        const next = merge(current.data);
         const directory = join(dirname(this.path), 'backups');
         mkdirSync(directory, { recursive: true });
         // Never overwrite a prior snapshot. Failure leaves both payload and import marker untouched.
-        writeFileSync(join(directory, `before-${CONTENT_ID}-${randomUUID()}.json`), JSON.stringify(current.data, null, 2),
+        writeFileSync(join(directory, `before-${contentId}-${randomUUID()}.json`), JSON.stringify(current.data, null, 2),
           { encoding: 'utf8', mode: 0o600, flag: 'wx', flush: true });
         this.db.prepare('UPDATE workspace SET payload = ?, revision = revision + 1 WHERE id = 1').run(JSON.stringify(next));
-        this.db.prepare('INSERT INTO content_imports(id, base_revision) VALUES(?, ?)').run(CONTENT_ID, current.revision);
+        this.db.prepare('INSERT INTO content_imports(id, base_revision) VALUES(?, ?)').run(contentId, current.revision);
       }
       this.db.exec('COMMIT');
     } catch (error) { this.db.exec('ROLLBACK'); throw error; }

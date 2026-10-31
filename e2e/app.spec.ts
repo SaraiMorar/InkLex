@@ -3,6 +3,7 @@ import { readFile } from 'node:fs/promises';
 import { createSeed } from '../src/domain/seed';
 import { saveContext } from '../src/domain/model';
 import { mergeBundledContent } from '../server/content';
+import { mergeSupplement } from '../server/supplement';
 
 const db = async (page: Page) => (await (await page.request.get('/api/state')).json()).data;
 
@@ -233,4 +234,23 @@ test('editing a flagged source does not silently approve it for study', async ({
   await expect(page.getByRole('dialog')).toHaveCount(0);
   const saved = await db(page);
   expect(saved.contexts.find((c: {id: string}) => c.id === 'gaosan300:context:59:8').verified).toBe(false);
+});
+
+test('supplement particles and split examples are searchable and can join review', async ({ page, request }) => {
+  const snapshot = await (await request.get('/api/state')).json();
+  const data = mergeSupplement(mergeBundledContent(snapshot.data));
+  expect((await request.put('/api/state', { data: { revision: snapshot.revision, data }, headers: { 'X-InkLex-Client': '1' } })).ok()).toBe(true);
+  await page.goto('/#/words');
+  await page.getByLabel('搜索字词或释义').fill('18虚词');
+  await expect(page.locator('.word-card').filter({ has: page.locator('.word-display', { hasText: /^所以$/ }) })).toBeVisible();
+  await page.getByLabel('搜索字词或释义').fill('150实词:1376.2');
+  await expect(page.locator('.word-card')).toHaveCount(1);
+  await page.locator('.word-card').click();
+  const example = page.locator('.context-example').filter({ hasText: '150实词:1376.2' });
+  await expect(example.locator('.example-prose')).toHaveJSProperty('innerHTML', '故<mark>幸</mark>来告良');
+  await expect(example).toContainText('本处释义：幸而');
+  await example.locator('xpath=..').getByRole('button', { name: '加入计划', exact: true }).click();
+  await expect.poll(async () => Object.keys((await db(page)).cards).length).toBe(1);
+  expect((await db(page)).reviews).toHaveLength(0);
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1)).toBe(true);
 });
