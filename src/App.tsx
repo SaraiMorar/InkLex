@@ -29,7 +29,7 @@ export function App() {
     <div className="main-shell"><header className="topbar"><div className="breadcrumb"><Feather size={16} /><span>我的书斋</span><i>/</i><strong>{nav.find(n => n.id === section)?.name || '今日学习'}</strong></div><div className="topbar-right"><span className="saved"><i className={storageError ? 'error-dot' : ''} />{storageError ? '连接异常' : saving ? '正在保存' : '已保存到服务'}</span><button className="icon-button" aria-label="搜索字词" onClick={() => go('words')}><Search size={18} /></button><span className="topbar-date">{now.toLocaleDateString('zh-CN', { month: 'long', day: 'numeric', weekday: 'short' })}</span></div></header>
       <main className="main-content" key={path + params.toString()}>
         {section === 'today' && <Today />}
-        {section === 'articles' && (article ? <Reader articleId={article} /> : <Articles />)}
+        {section === 'articles' && (article ? <Reader articleId={article} params={params} /> : <Articles />)}
         {section === 'words' && <Words />}
         {section === 'review' && <ReviewPage initialArticle={params.get('article')} />}
         {section === 'manage' && <Manage params={params} />}

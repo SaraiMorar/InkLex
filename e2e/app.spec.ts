@@ -73,11 +73,13 @@ test('create an article and mark the second occurrence accurately', async ({ pag
   await page.getByLabel('完整原文', { exact: true }).fill('顾而顾。\n\n又见故人。');
   await page.getByRole('button', { name: '保存课文' }).click();
   await page.getByRole('button', { name: '添加标注', exact: true }).click();
-  await page.getByLabel('目标字词', { exact: true }).fill('顾');
-  await page.getByLabel('选择字词出现的位置').selectOption('2');
+  await page.getByRole('button', { name: '标注第 3 字「顾」', exact: true }).click();
+  await expect(page.getByLabel('目标字词', { exact: true })).toHaveValue('顾');
+  await expect(page.getByLabel('选择字词出现的位置')).toHaveValue('2');
   await page.getByLabel('本处释义', { exact: true }).fill('回头看，这是一条用于检查手机自动换行的较长释义');
   await page.getByRole('button', { name: '保存字词', exact: true }).click();
   await expect(page.getByRole('dialog')).toHaveCount(0);
+  await expect(page).toHaveURL(/#\/articles\//);
   await nav(page, '课文书架'); await page.getByRole('button', { name: /定位测试/ }).click();
   await page.getByRole('button', { name: '查看「顾」的释义' }).click();
   await expect(page.locator('.reader-prose')).toContainText('顾而顾（回头看');
@@ -86,6 +88,62 @@ test('create an article and mark the second occurrence accurately', async ({ pag
   const context = data.contexts.find((c: {articleId: string}) => c.articleId === article.id);
   expect(context.articleStart).toBe(2);
   await page.reload(); await expect(page.getByRole('button', { name: '查看「顾」的释义' })).toBeVisible();
+});
+
+test('annotations stay on the bookshelf and distinguish repeated words and phrases without recording study', async ({ page, request }) => {
+  const snapshot = await (await request.get('/api/state')).json();
+  const data = createSeed();
+  data.articles.push({ id: 'repeated-words', title: '标注位置测试', body: '顾而顾。\n顾念顾念。', author: '', era: '', summary: '', sample: false });
+  expect((await request.put('/api/state', { data: { revision: snapshot.revision, data }, headers: { 'X-InkLex-Client': '1' } })).ok()).toBe(true);
+  await page.goto('/#/articles/repeated-words');
+  await page.getByRole('button', { name: '编辑标注', exact: true }).click();
+  for (const [position, meaning] of [[1, '回头看'], [3, '顾念']] as const) {
+    await page.getByRole('button', { name: `标注第 ${position} 字「顾」`, exact: true }).click();
+    await page.getByLabel('本处释义', { exact: true }).fill(meaning);
+    await page.getByRole('button', { name: '保存字词', exact: true }).click();
+    await expect(page.getByRole('dialog')).toHaveCount(0);
+  }
+  await page.getByRole('button', { name: '标注第 3 字「顾」', exact: true }).click();
+  await expect(page.getByLabel('本处释义', { exact: true })).toHaveValue('顾念');
+  await page.getByLabel('本处释义', { exact: true }).fill('看，视');
+  await page.getByRole('button', { name: '保存字词', exact: true }).click();
+  await expect(page.getByRole('dialog')).toHaveCount(0);
+  await page.getByLabel('选择词组（依次点击起字、止字）').check();
+  await page.getByRole('button', { name: '标注第 8 字「顾」', exact: true }).click();
+  await page.getByRole('button', { name: '标注第 9 字「念」', exact: true }).click();
+  await expect(page.getByLabel('目标字词', { exact: true })).toHaveValue('顾念');
+  await expect(page.getByLabel('选择字词出现的位置')).toHaveValue('7');
+  await page.getByLabel('本处释义', { exact: true }).fill('顾及，惦念');
+  await page.getByRole('button', { name: '保存字词', exact: true }).click();
+  await expect(page.getByRole('dialog')).toHaveCount(0);
+  await page.getByRole('button', { name: '完成标注', exact: true }).click();
+  const saved = await db(page), contexts = saved.contexts.filter((c: { articleId: string }) => c.articleId === 'repeated-words');
+  expect(contexts.map((c: {articleStart: number; gloss: string}) => [c.articleStart, c.gloss])).toEqual([[0, '回头看'], [2, '看，视'], [7, '顾及，惦念']]);
+  expect(saved.reviews).toHaveLength(0); expect(saved.readings).toHaveLength(0); expect(Object.keys(saved.cards)).toHaveLength(0);
+  await page.reload();
+  await expect(page.locator('.reader-prose .word-token')).toHaveCount(3);
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1)).toBe(true);
+});
+
+test('changed text requires explicit relocation rather than silently using the first occurrence', async ({ page }) => {
+  await page.goto('/#/articles/sample-xiaoshitan');
+  await page.getByRole('button', { name: '编辑课文', exact: true }).click();
+  await page.getByLabel('完整原文', { exact: true }).fill('篁竹在前，篁竹在后。');
+  await page.getByRole('button', { name: '保存课文', exact: true }).click();
+  await page.getByRole('button', { name: '在本篇核对', exact: true }).click();
+  await page.locator('.manage-row').filter({ has: page.locator('.word-mini', { hasText: /^篁竹$/ }) }).getByRole('button', { name: '重新定位与核对' }).click();
+  await expect(page.getByLabel('选择字词出现的位置')).toHaveValue('-1');
+  await page.getByRole('button', { name: '保存字词', exact: true }).click();
+  await expect(page.getByRole('status')).toContainText('明确选择');
+  await expect(page.getByRole('dialog')).toBeVisible();
+  await page.getByLabel('选择字词出现的位置').selectOption('5');
+  await page.getByLabel('已核对释义与标注位置').check();
+  await page.getByRole('button', { name: '保存字词', exact: true }).click();
+  await expect(page.getByRole('dialog')).toHaveCount(0);
+  await page.getByRole('button', { name: '完成标注', exact: true }).click();
+  await expect(page.locator('.reader-prose')).toHaveJSProperty('textContent', '篁竹在前，篁竹在后。');
+  const context = (await db(page)).contexts.find((c: {articleId: string; articleStart: number; verified: boolean}) => c.articleId === 'sample-xiaoshitan' && c.articleStart === 5 && c.verified);
+  expect(context).toBeTruthy();
 });
 
 test('backup import is validated, idempotent, and can restore progress', async ({ page }) => {
