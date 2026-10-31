@@ -14,28 +14,32 @@ test.beforeEach(async ({ request }) => {
   expect(response.ok()).toBe(true);
 });
 const nav = (page: Page, name: string) => page.getByRole('navigation').getByRole('button', { name: new RegExp(name) }).click();
-const openFirstArticle = async (page: Page) => { await nav(page, '课外古诗文'); await page.getByRole('button', { name: /小石潭记/ }).click(); };
+const openFirstArticle = async (page: Page) => { await nav(page, '课文书架'); await page.getByRole('button', { name: /^课外\s*\d+ 篇$/ }).click(); await page.getByRole('button', { name: /小石潭记/ }).click(); };
 
-test('separate curricular and extracurricular shelves preserve original texts and allow moving new articles', async ({ page, request }) => {
+test('bookshelf categories preserve original texts and allow moving new articles', async ({ page, request }) => {
   const snapshot = await (await request.get('/api/state')).json(), data = mergeTextbookArticles(snapshot.data);
   expect((await request.put('/api/state', { data: { revision: snapshot.revision, data }, headers: { 'X-InkLex-Client': '1' } })).ok()).toBe(true);
   await page.goto('/#/articles');
   await expect(page.locator('.article-card')).toHaveCount(71);
   await expect(page.locator('.article-card').filter({ hasText: '小石潭记' })).toHaveCount(0);
-  await nav(page, '课外古诗文');
+  await nav(page, '课文书架'); await page.getByRole('button', { name: /^课外\s*\d+ 篇$/ }).click();
   await expect(page.locator('.article-card')).toHaveCount(3);
+  await page.reload();
+  await expect(page.getByRole('button', { name: /^课外\s*\d+ 篇$/ })).toHaveAttribute('aria-pressed', 'true');
+  await expect(page.getByRole('navigation').getByRole('button')).toHaveCount(5);
   await page.getByRole('button', { name: /小石潭记/ }).click();
-  await expect(page.getByRole('navigation').getByRole('button', { name: /课外古诗文/ })).toHaveAttribute('aria-current', 'page');
+  await expect(page.getByRole('navigation').getByRole('button', { name: /课文书架/ })).toHaveAttribute('aria-current', 'page');
   await expect(page.locator('.reader-prose')).toContainText('曰恕己，曰奉壹。');
   await expect(page.locator('.word-token')).toHaveCount(13);
-  await page.getByRole('button', { name: '返回课外古诗文', exact: true }).click();
+  await page.getByRole('button', { name: '返回课文书架', exact: true }).click();
+  await expect(page.getByRole('button', { name: /^课外\s*\d+ 篇$/ })).toHaveAttribute('aria-pressed', 'true');
   await page.getByRole('button', { name: '添加课文', exact: true }).click();
-  await expect(page.getByLabel('所属板块')).toHaveValue('extracurricular');
+  await expect(page.getByRole('dialog').getByLabel('课文分类')).toHaveValue('extracurricular');
   await page.getByLabel('篇名', { exact: true }).fill('课外分组测试');
   await page.getByLabel('完整原文', { exact: true }).fill('学而时习之。');
   await page.getByRole('button', { name: '保存课文', exact: true }).click();
   await page.getByRole('button', { name: '编辑课文', exact: true }).click();
-  await page.getByLabel('所属板块').selectOption('curricular');
+  await page.getByRole('dialog').getByLabel('课文分类').selectOption('curricular');
   await page.getByRole('button', { name: '保存课文', exact: true }).click();
   await expect(page.getByRole('dialog')).toHaveCount(0);
   await expect(page.getByRole('button', { name: '返回课文书架', exact: true })).toBeVisible();
@@ -61,7 +65,7 @@ test('dark mode follows system changes, persists manual choice, and covers readi
   await expect(root).toHaveAttribute('data-theme', 'light');
   await theme.selectOption('dark'); await page.reload();
   await expect(root).toHaveAttribute('data-theme', 'dark');
-  await nav(page, '课外古诗文');
+  await nav(page, '课文书架'); await page.getByRole('button', { name: /^课外\s*\d+ 篇$/ }).click();
   await page.screenshot({ path: `test-results/${info.project.name}-dark-bookshelf.png`, fullPage: true });
   await page.getByRole('button', { name: /小石潭记/ }).click();
   await page.getByRole('button', { name: '查看「篁竹」的释义', exact: true }).click();
