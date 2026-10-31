@@ -2,6 +2,7 @@ import { expect, test, type Page } from '@playwright/test';
 import { readFile } from 'node:fs/promises';
 import { createSeed } from '../src/domain/seed';
 import { saveContext } from '../src/domain/model';
+import { enroll } from '../src/domain/scheduler';
 import { mergeBundledContent } from '../server/content';
 import { mergeSupplement } from '../server/supplement';
 import { mergeTextbookArticles } from '../server/textbook-articles';
@@ -153,6 +154,45 @@ test('formal recall only schedules after rating and survives reload and time pas
   await expect(page.locator('.stat-card').filter({ hasText: '到期待复习' }).locator('.stat-number')).toContainText('1');
   await page.reload(); data = await db(page); expect(data.reviews).toHaveLength(1);
   await expect(page.locator('.stat-card').filter({ hasText: '今日已复习' }).locator('.stat-number')).toContainText('1');
+});
+
+test('review search and collection tags constrain both scheduled and practice questions', async ({ page, request }) => {
+  const snapshot = await (await request.get('/api/state')).json();
+  snapshot.data.articles.find((a: { id: string }) => a.id === 'sample-xiaoshitan').collection = 'curricular';
+  const data = await enroll(snapshot.data, snapshot.data.senses.map((s: { id: string }) => s.id));
+  expect((await request.put('/api/state', { data: { revision: snapshot.revision, data }, headers: { 'X-InkLex-Client': '1' } })).ok()).toBe(true);
+  await page.goto('/#/review');
+  const tags = page.getByRole('group', { name: '复习篇目标签' });
+  const search = page.getByRole('textbox', { name: '搜索复习篇目' });
+  const options = page.locator('.scope-options');
+  await tags.getByRole('button', { name: '课内', exact: true }).click();
+  await expect(options.getByRole('button', { name: /小石潭记/ })).toBeVisible();
+  await expect(options.getByRole('button', { name: /陋室铭/ })).toHaveCount(0);
+  await search.fill('柳宗元');
+  await page.getByRole('button', { name: '开始今日复习', exact: true }).click();
+  await expect(page.locator('.question-source')).toContainText('小石潭记');
+  await page.getByRole('button', { name: '退出本轮', exact: true }).click();
+  await search.fill('没有这篇文章');
+  await expect(page.getByRole('button', { name: '开始今日复习', exact: true })).toBeDisabled();
+  await page.getByRole('button', { name: /自选抽背 按范围练习/ }).click();
+  await expect(page.getByRole('button', { name: '开始随机抽背' })).toBeDisabled();
+  await page.getByRole('button', { name: '清空搜索', exact: true }).click();
+  await options.getByRole('button', { name: /小石潭记/ }).click();
+  await tags.getByRole('button', { name: '课外', exact: true }).click();
+  await expect(page.locator('.scope-summary')).toContainText('筛选出的 2 篇');
+  await search.fill('陋室');
+  await expect(options.getByRole('button', { name: /爱莲说/ })).toHaveCount(0);
+  await page.getByRole('button', { name: '开始随机抽背' }).click();
+  await expect(page.locator('.question-source')).toContainText('陋室铭');
+  await page.getByRole('button', { name: '退出本轮', exact: true }).click();
+  await expect(search).toHaveValue('陋室');
+  await page.getByRole('button', { name: '清空搜索', exact: true }).click();
+  await tags.getByRole('button', { name: '全部', exact: true }).click();
+  await expect(page.locator('.scope-summary')).toContainText('全部资料（含独立例句）');
+  await expect(options.getByRole('button')).toHaveCount(4);
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1)).toBe(true);
+  const after = await db(page);
+  expect(after.reviews).toEqual(data.reviews); expect(after.cards).toEqual(data.cards);
 });
 
 test('random practice records answers without altering official schedules', async ({ page }) => {

@@ -1,8 +1,8 @@
 import { useEffect, useRef, useState } from 'react';
-import { ArrowLeft, ArrowRight, Check, CircleHelp, Clock3, RotateCcw, Shuffle, Sparkles, X } from 'lucide-react';
+import { ArrowLeft, ArrowRight, Check, CircleHelp, Clock3, RotateCcw, Search, Shuffle, Sparkles, X } from 'lucide-react';
 import { Empty, go, Heading } from '../components';
 import { useStore } from '../store';
-import { contextsFor, getWord, type Grade } from '../domain/model';
+import { articleCollection, contextsFor, getWord, type ArticleCollection, type Grade } from '../domain/model';
 import { chooseContext, dailyStats, gradeContext, intervalLabel, previewGrades, studyQueue } from '../domain/scheduler';
 
 const ratings: { grade: Grade; title: string; subtitle: string; className: string }[] = [
@@ -21,6 +21,8 @@ export function ReviewPage({ initialArticle }: { initialArticle: string | null }
   const { data, now, update, notify } = useStore();
   const [mode, setMode] = useState<'scheduled' | 'practice'>('scheduled');
   const [articleIds, setArticleIds] = useState<string[]>(initialArticle ? [initialArticle] : []);
+  const [search, setSearch] = useState('');
+  const [collection, setCollection] = useState<'all' | ArticleCollection>('all');
   const [filter, setFilter] = useState('all');
   const [limit, setLimit] = useState(10);
   const [questions, setQuestions] = useState<Question[] | null>(null);
@@ -31,8 +33,12 @@ export function ReviewPage({ initialArticle }: { initialArticle: string | null }
   const [preview, setPreview] = useState<Record<number, string>>({});
   const [completed, setCompleted] = useState<Grade[]>([]);
   const stats = dailyStats(data, now);
-  const dueIds = studyQueue(data, now, articleIds);
-  const pool = data.senses.filter(s => contextsFor(data, s.id, articleIds).length && (filter === 'all' || (filter === 'learned' ? data.cards[s.id]?.state > 0 : data.reviews.some(r => r.senseId === s.id && r.grade === 1)))).map(s => s.id);
+  const matchedArticles = data.articles.filter(a => (collection === 'all' || articleCollection(a) === collection) && `${a.title} ${a.author} ${a.summary}`.toLocaleLowerCase().includes(search.trim().toLocaleLowerCase()));
+  const narrowed = collection !== 'all' || search.trim().length > 0;
+  const scopeIds = articleIds.length ? articleIds : narrowed ? matchedArticles.map(a => a.id) : [];
+  const emptyScope = narrowed && !scopeIds.length;
+  const dueIds = emptyScope ? [] : studyQueue(data, now, scopeIds);
+  const pool = emptyScope ? [] : data.senses.filter(s => contextsFor(data, s.id, scopeIds).length && (filter === 'all' || (filter === 'learned' ? data.cards[s.id]?.state > 0 : data.reviews.some(r => r.senseId === s.id && r.grade === 1)))).map(s => s.id);
   const question = questions?.[index];
   const context = data.contexts.find(c => c.id === question?.contextId);
   const word = question ? getWord(data, question.senseId) : '';
@@ -47,7 +53,7 @@ export function ReviewPage({ initialArticle }: { initialArticle: string | null }
   const start = () => {
     const ids = mode === 'scheduled' ? dueIds : shuffle(pool).slice(0, limit);
     const selected = ids.flatMap(id => {
-      const c = mode === 'scheduled' ? chooseContext(data, id, articleIds) : shuffle(contextsFor(data, id, articleIds))[0];
+      const c = mode === 'scheduled' ? chooseContext(data, id, scopeIds) : shuffle(contextsFor(data, id, scopeIds))[0];
       return c ? [{ senseId: id, contextId: c.id }] : [];
     });
     if (!selected.length) { notify(mode === 'scheduled' ? '当前范围没有可开始的任务，可以选择其他范围或调整每日新增量。' : '这个范围暂时没有已核对的例句。'); return; }
@@ -89,7 +95,11 @@ export function ReviewPage({ initialArticle }: { initialArticle: string | null }
 
   return <><Heading eyebrow="RECALL, THEN REMEMBER" title="让记忆，再清晰一点。" subtitle="先回忆，再核对。每一次认真想起，都是在巩固。" />
     <div className="review-setup-layout"><section className="paper-card review-setup"><div className="mode-switch"><button className={mode === 'scheduled' ? 'selected' : ''} onClick={() => setMode('scheduled')}><Clock3 size={18} /> 今日复习<span>按记忆安排</span></button><button className={mode === 'practice' ? 'selected' : ''} onClick={() => setMode('practice')}><Shuffle size={18} /> 自选抽背<span>按范围练习</span></button></div>
-      <div className="form-section"><h3>这次，想复习哪些内容？</h3><p className="muted small">{mode === 'scheduled' ? '在所选范围中，优先复习到期义项，再学习新义项。' : '选定范围后随机出题，每个义项在一轮中出现一次。'}</p><div className="scope-options"><button className={`scope-chip ${!articleIds.length ? 'selected' : ''}`} onClick={() => setArticleIds([])}>全部资料</button>{data.articles.map(a => <button key={a.id} className={`scope-chip ${articleIds.includes(a.id) ? 'selected' : ''}`} onClick={() => setArticleIds(ids => ids.includes(a.id) ? ids.filter(id => id !== a.id) : [...ids, a.id])}>{a.title}{articleIds.includes(a.id) && <Check size={13} />}</button>)}</div></div>
+      <div className="form-section"><h3>这次，想复习哪些内容？</h3><p className="muted small">{mode === 'scheduled' ? '在所选范围中，优先复习到期义项，再学习新义项。' : '选定范围后随机出题，每个义项在一轮中出现一次。'}</p><div className="review-scope-search"><label className="search-field"><Search size={17} /><input aria-label="搜索复习篇目" placeholder="搜索篇名、作者或册次…" value={search} onChange={e => { setSearch(e.target.value); setArticleIds([]); }} /></label>{search && <button className="text-button" onClick={() => { setSearch(''); setArticleIds([]); }}>清空搜索</button>}</div>
+        <div className="scope-tags" role="group" aria-label="复习篇目标签">{([['all', '全部'], ['curricular', '课内'], ['extracurricular', '课外']] as const).map(([key, label]) => <button key={key} className={`scope-chip ${collection === key ? 'selected' : ''}`} aria-pressed={collection === key} onClick={() => { if (collection !== key) { setCollection(key); setArticleIds([]); } }}>{label}</button>)}</div>
+        <p className="muted small scope-summary" aria-live="polite">{articleIds.length ? `已选 ${articleIds.length} 篇` : narrowed ? `当前范围：筛选出的 ${matchedArticles.length} 篇` : '当前范围：全部资料（含独立例句）'} · 可点选篇目缩小范围</p>
+        <div className="scope-options"><button className={`scope-chip ${!articleIds.length ? 'selected' : ''}`} aria-pressed={!articleIds.length} disabled={emptyScope} onClick={() => setArticleIds([])}>{narrowed ? '全部筛选结果' : '全部资料'}</button>{matchedArticles.map(a => <button key={a.id} className={`scope-chip ${articleIds.includes(a.id) ? 'selected' : ''}`} aria-pressed={articleIds.includes(a.id)} onClick={() => setArticleIds(ids => ids.includes(a.id) ? ids.filter(id => id !== a.id) : [...ids, a.id])}>{a.title}<span className="scope-article-tag">{articleCollection(a) === 'curricular' ? '课内' : '课外'}</span>{articleIds.includes(a.id) && <Check size={13} />}</button>)}</div>
+        {!matchedArticles.length && <p className="muted small">没有匹配的篇目，试试其他关键词或标签。</p>}</div>
       {mode === 'practice' && <div className="form-row"><label>字词范围<select value={filter} onChange={e => setFilter(e.target.value)}><option value="all">全部已核对义项</option><option value="learned">已经学过</option><option value="difficult">曾经忘记</option></select></label><label>本轮题量<select value={limit} onChange={e => setLimit(Number(e.target.value))}>{[5, 10, 20, 50].map(n => <option key={n} value={n}>{n} 题</option>)}</select></label></div>}
       <div className="session-preview"><div><span className="eyebrow">本轮可学习</span><p><strong>{mode === 'scheduled' ? dueIds.length : Math.min(pool.length, limit)}</strong> 个义项</p></div><Sparkles size={30} strokeWidth={1.1} /></div>
       <button className="button primary full big" disabled={mode === 'scheduled' ? !dueIds.length : !pool.length} onClick={start}>{mode === 'scheduled' ? '开始今日复习' : '开始随机抽背'}<ArrowRight size={18} /></button>
