@@ -1,29 +1,44 @@
-import { useState } from 'react';
-import { ArrowRight, Check, Edit3, Plus, Search } from 'lucide-react';
+import { useEffect, useMemo, useState } from 'react';
+import { ArrowRight, Check, Edit3, LayoutGrid, List, Plus, Search } from 'lucide-react';
 import { Empty, go, Heading, MemoryChart, Modal } from '../components';
 import { useStore } from '../store';
 import { contextsFor, getWord } from '../domain/model';
 import { enroll, intervalLabel } from '../domain/scheduler';
+import { sortWordRows, wordRows, wordSorts, type WordSort } from '../domain/word-list';
+
+type Display = { sort: WordSort; view: 'cards' | 'list' };
+const displayKey = 'inklex.words.display';
+function readDisplay(): Display {
+  try {
+    const value = JSON.parse(localStorage.getItem(displayKey) || '{}');
+    return { sort: wordSorts.some(([id]) => id === value?.sort) ? value.sort : 'default', view: value?.view === 'list' ? 'list' : 'cards' };
+  } catch { return { sort: 'default', view: 'cards' }; }
+}
 
 export function Words() {
   const { data, now, update, notify } = useStore();
   const [search, setSearch] = useState('');
   const [filter, setFilter] = useState('all');
   const [active, setActive] = useState<string | null>(null);
-  const entries = data.entries.filter(entry => {
-    const senses = data.senses.filter(s => s.entryId === entry.id);
-    const matches = entry.word.includes(search.trim()) || senses.some(s => s.meaning.includes(search.trim()) || data.contexts.some(c => c.senseId === s.id && (c.text.includes(search.trim()) || c.source.includes(search.trim()))));
-    return matches && (filter === 'all' || senses.some(s => filter === 'planned' ? data.cards[s.id] : filter === 'difficult' ? data.reviews.some(r => r.senseId === s.id && r.grade === 1) : data.contexts.some(c => c.senseId === s.id && !c.verified)));
-  });
+  const [display, setDisplay] = useState(readDisplay);
+  useEffect(() => {
+    try { localStorage.setItem(displayKey, JSON.stringify(display)); } catch { /* Display changes still work without browser storage. */ }
+  }, [display]);
+  const rows = useMemo(() => wordRows(data), [data]);
+  const entries = useMemo(() => {
+    const query = search.trim();
+    return sortWordRows(rows.filter(row => {
+      const matches = row.entry.word.includes(query) || row.senses.some(s => s.meaning.includes(query)) || row.contexts.some(c => c.text.includes(query) || c.source.includes(query));
+      return matches && (filter === 'all' || (filter === 'planned' ? row.planned : filter === 'difficult' ? row.forgotten > 0 : row.contexts.some(c => !c.verified)));
+    }), display.sort);
+  }, [rows, search, filter, display.sort]);
   const entry = data.entries.find(e => e.id === active);
   const add = async (senseId: string) => { if (await update(current => enroll(current, [senseId]))) notify('已加入学习计划。'); };
   return <><Heading eyebrow="WORDS WITH A STORY" title="一字多义，各有来处。" subtitle="把散落在课文里的字，汇成自己的文言字词库。" action={<button className="button primary" onClick={() => go('manage?new=context')}><Plus size={16} /> 添加字词</button>} />
     <div className="toolbar"><div className="tabs">{[['all', '全部字词'], ['planned', '计划内'], ['difficult', '曾忘记'], ['pending', '待核对']].map(([id, name]) => <button key={id} className={filter === id ? 'selected' : ''} onClick={() => setFilter(id)}>{name}</button>)}</div><label className="search-field"><Search size={17} /><input aria-label="搜索字词或释义" placeholder="搜索字词、释义或例句…" value={search} onChange={e => setSearch(e.target.value)} /></label></div>
-    <div className="shelf-label"><span>{entries.length} 个字词</span><span>按义项学习，让一词多义清清楚楚</span></div><div className="word-grid">{entries.map(entry => {
-      const senses = data.senses.filter(s => s.entryId === entry.id);
-      const contexts = data.contexts.filter(c => senses.some(s => s.id === c.senseId));
-      const sources = [...new Set(contexts.map(c => c.source).filter(Boolean))];
-      return <button className="word-card" key={entry.id} onClick={() => setActive(entry.id)}><div className="spread"><span className="word-display">{entry.word}</span><span className="badge">{senses.length} 个义项</span></div><div className="meaning-list">{senses.slice(0, 2).map((s, i) => <p key={s.id}><small>{String(i + 1).padStart(2, '0')}</small>{s.meaning}</p>)}</div><div className="word-card-footer"><span>{sources.slice(0, 2).join(' · ') || '自录例句'}</span><ArrowRight size={15} /></div></button>;
+    <div className="word-display-controls"><label className="word-sort">排序<select aria-label="字词排序" value={display.sort} onChange={e => setDisplay(d => ({ ...d, sort: e.target.value as WordSort }))}>{wordSorts.map(([id, label]) => <option key={id} value={id}>{label}</option>)}</select></label><div className="word-view-toggle" role="group" aria-label="字词展示方式"><button className={`scope-chip ${display.view === 'cards' ? 'selected' : ''}`} aria-pressed={display.view === 'cards'} onClick={() => setDisplay(d => ({ ...d, view: 'cards' }))}><LayoutGrid size={15} />卡片</button><button className={`scope-chip ${display.view === 'list' ? 'selected' : ''}`} aria-pressed={display.view === 'list'} onClick={() => setDisplay(d => ({ ...d, view: 'list' }))}><List size={15} />列表</button></div></div>
+    <div className="shelf-label"><span>{entries.length} 个字词</span><span>按义项学习，让一词多义清清楚楚</span></div><div className={`word-grid ${display.view === 'list' ? 'is-list' : ''}`}>{entries.map(({ entry, senses, contexts, sources, forgotten, due }) => {
+      return <button className="word-card" key={entry.id} onClick={() => setActive(entry.id)}><div className="spread word-card-heading"><span className="word-display">{entry.word}</span><span className="badge">{senses.length} 个义项</span></div><div className="meaning-list">{senses.slice(0, 2).map((s, i) => <p key={s.id}><small>{String(i + 1).padStart(2, '0')}</small>{s.meaning}</p>)}</div><div className="word-card-footer"><div className="word-source-info"><span title={sources.join(' · ')}>{sources.slice(0, 2).join(' · ') || '自录例句'}</span><small>{display.sort === 'due' ? Number.isFinite(due) ? `下次复习：${new Date(due).toLocaleString('zh-CN', { month: 'numeric', day: 'numeric', hour: '2-digit', minute: '2-digit' })}` : '尚无复习时间' : display.sort === 'forgotten' ? `忘记 ${forgotten} 次` : `${contexts.length} 条例句`}</small></div><ArrowRight size={15} /></div></button>;
     })}</div>{!entries.length && <Empty title="还没找到这个字词" description="可以换一个关键词，或把新的例句收入字词库。" />}
     {entry && <Modal title={`「${entry.word}」的字里行间`} onClose={() => setActive(null)} wide><div className="word-detail-intro"><span className="word-display">{entry.word}</span><p>同一个字，沿着不同语境展开。<br /><span className="muted">每个义项分别记录学习进度。</span></p></div>{data.senses.filter(s => s.entryId === entry.id).map((s, i) => {
       const card = data.cards[s.id];

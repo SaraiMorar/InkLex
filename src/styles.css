@@ -465,3 +465,24 @@ input[type="range"] { width: 100%; margin: 15px 0 5px; }
 .scope-summary { margin-top: 14px; }
 .scope-article-tag { font-size: 10px; color: var(--muted); white-space: nowrap; }
 .review-setup .scope-options { max-height: 280px; overflow-y: auto; padding: 3px; }
+
+.word-display-controls { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; margin: 18px 0; }
+.word-sort { display: flex; align-items: center; gap: 10px; margin: 0; color: var(--muted); font-size: 12px; }
+.word-sort select { width: auto; margin: 0; padding: 8px 10px; }
+.word-view-toggle { display: flex; gap: 6px; }
+.word-source-info { min-width: 0; display: flex; flex-direction: column; gap: 5px; }
+.word-source-info small { font-size: 10px; }
+.word-card-footer > svg { flex-shrink: 0; }
+.word-grid.is-list { grid-template-columns: minmax(0, 1fr); gap: 9px; }
+.word-grid.is-list .word-card { display: grid; grid-template-columns: minmax(100px, 160px) minmax(0, 1fr) minmax(120px, 25%); align-items: center; gap: 24px; padding: 16px 20px; }
+.word-grid.is-list .word-card-heading { flex-wrap: wrap; justify-content: flex-start; gap: 8px 12px; }
+.word-grid.is-list .word-display { font-size: 28px; }
+.word-grid.is-list .meaning-list { margin: 0; min-height: 0; min-width: 0; }
+.word-grid.is-list .meaning-list p { margin: 4px 0; overflow-wrap: anywhere; }
+.word-grid.is-list .word-card-footer { border-top: 0; padding: 0; min-width: 0; align-items: center; }
+@media (max-width: 760px) {
+  .word-grid.is-list .word-card { grid-template-columns: minmax(70px, 25%) minmax(0, 1fr); gap: 10px 16px; padding: 14px; }
+  .word-grid.is-list .word-card-heading { flex-direction: column; align-items: flex-start; gap: 4px; }
+  .word-grid.is-list .word-card .badge { margin-top: 0; }
+  .word-grid.is-list .word-card-footer { grid-column: 1 / -1; border-top: 1px solid var(--line); padding-top: 9px; }
+}

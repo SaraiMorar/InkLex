@@ -134,6 +134,56 @@ test('full original text, independent inline explanations, no false reviews, res
   expect(errors).toEqual([]);
 });
 
+test('word sorting and list view preserve search, details and display preferences', async ({ page }, info) => {
+  const before = await db(page);
+  await page.goto('/#/words');
+  const words = page.locator('.word-grid .word-display');
+  const initial = before.entries.map((e: { word: string }) => e.word);
+  await expect(words).toHaveText(initial);
+  const sort = page.getByLabel('字词排序');
+  await sort.selectOption('pinyin');
+  const alphabetic = [...initial].sort(new Intl.Collator('zh-CN-u-co-pinyin').compare);
+  await expect(words).toHaveText(alphabetic);
+  await sort.selectOption('pinyin-desc');
+  await expect(words).toHaveText([...alphabetic].reverse());
+  for (const order of ['senses', 'contexts']) {
+    await sort.selectOption(order);
+    const expected = [...before.entries].sort((a, b) => {
+      const count = (entry: { id: string }) => {
+        const senses = before.senses.filter((s: { entryId: string }) => s.entryId === entry.id);
+        return order === 'senses' ? senses.length : before.contexts.filter((c: { senseId: string }) => senses.some((s: { id: string }) => s.id === c.senseId)).length;
+      };
+      return count(b) - count(a) || new Intl.Collator('zh-CN-u-co-pinyin').compare(a.word, b.word);
+    });
+    await expect(words).toHaveText(expected.map(e => e.word));
+  }
+  await page.getByRole('button', { name: '列表', exact: true }).click();
+  await expect(page.locator('.word-grid')).toHaveClass(/is-list/);
+  await sort.selectOption('pinyin');
+  await page.reload();
+  await expect(sort).toHaveValue('pinyin');
+  await expect(page.getByRole('button', { name: '列表', exact: true })).toHaveAttribute('aria-pressed', 'true');
+  await expect(words).toHaveText(alphabetic);
+  const search = page.getByLabel('搜索字词或释义');
+  await search.fill('篁竹');
+  await expect(words).toHaveText(['篁竹', '乐']);
+  await page.locator('.word-card').filter({ has: page.getByText('篁竹', { exact: true }) }).click();
+  await expect(page.getByRole('dialog')).toContainText('竹林');
+  await page.getByRole('button', { name: '关闭弹窗', exact: true }).click();
+  await search.fill('');
+  await page.getByRole('button', { name: '计划内', exact: true }).click();
+  await expect(words).toHaveCount(0);
+  await page.getByRole('button', { name: '全部字词', exact: true }).click();
+  await page.getByLabel('外观模式').selectOption('dark');
+  await page.screenshot({ path: `test-results/${info.project.name}-word-list.png`, animations: 'disabled' });
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1)).toBe(true);
+  await page.getByRole('button', { name: '卡片', exact: true }).click();
+  await expect(page.locator('.word-grid')).not.toHaveClass(/is-list/);
+  await sort.selectOption('default');
+  await expect(words).toHaveText(initial);
+  expect(await db(page)).toEqual(before);
+});
+
 test('formal recall only schedules after rating and survives reload and time passage', async ({ page }) => {
   await page.clock.install({ time: new Date('2026-10-30T02:00:00Z') });
   await page.goto('/'); await openFirstArticle(page);
