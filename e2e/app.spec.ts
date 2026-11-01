@@ -7,6 +7,7 @@ import { mergeBundledContent } from '../server/content';
 import { mergeSupplement } from '../server/supplement';
 import { mergeTextbookArticles } from '../server/textbook-articles';
 import { mergeTextbookGlosses } from '../server/textbook-glosses';
+import { mergeBiography2026 } from '../server/biography-2026';
 
 const db = async (page: Page) => (await (await page.request.get('/api/state')).json()).data;
 
@@ -135,6 +136,36 @@ test('all textbook glosses open inline and share their linked sense with the voc
   await expect(page.getByRole('dialog')).toContainText('选择性必修下册·陈情表');
   await expect(page.getByRole('dialog')).toContainText('艰难祸患，指命运不好');
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1)).toBe(true);
+});
+
+test('mock-exam texts show linked glosses and sentence translations while textbook texts reserve translation fields', async ({ page, request }) => {
+  const snapshot = await (await request.get('/api/state')).json();
+  const data = mergeBiography2026(mergeTextbookArticles(snapshot.data));
+  expect((await request.put('/api/state', { data: { revision: snapshot.revision, data }, headers: { 'X-InkLex-Client': '1' } })).ok()).toBe(true);
+  await page.goto('/#/articles?collection=extracurricular');
+  await expect(page.getByRole('button', { name: /^课外\s*19 篇$/ })).toHaveAttribute('aria-pressed', 'true');
+  await page.getByLabel('搜索课文').fill('孙承宗');
+  await page.locator('.article-card').click();
+  await expect(page.locator('.sentence-translation')).toHaveCount(32);
+  await expect(page.locator('.sentence-translation').first()).toHaveText('①孙承宗，字稚绳，是高阳人。');
+  await page.getByRole('button', { name: '查看「戟张」的释义', exact: true }).click();
+  await expect(page.locator('.inline-gloss')).toHaveText('（张开如戟）');
+  await page.getByRole('button', { name: '隐藏译文', exact: true }).click();
+  await expect(page.locator('.sentence-translation')).toHaveCount(0);
+  await page.getByRole('button', { name: '显示译文', exact: true }).click();
+  await nav(page, '我的字词库');
+  await page.getByLabel('搜索字词或释义').fill('戟张');
+  await expect(page.locator('.word-card').filter({ hasText: '戟张' })).toHaveCount(1);
+  await nav(page, '课文书架');
+  await page.getByRole('button', { name: /^课内\s*71 篇$/ }).click();
+  await page.getByLabel('搜索课文').fill('沁园春');
+  await page.locator('.article-card').click();
+  await expect(page.getByText('逐句译文待补', { exact: true })).toBeVisible();
+  await page.getByRole('button', { name: '录入译文', exact: true }).click();
+  await expect(page.getByRole('dialog')).toContainText('按原文句号逐句对应');
+  await page.getByRole('dialog').locator('textarea').first().fill('独立寒秋，湘江向北流去。');
+  await page.getByRole('button', { name: '保存逐句译文', exact: true }).click();
+  await expect(page.locator('.sentence-translation')).toHaveText(['独立寒秋，湘江向北流去。']);
 });
 
 test('full original text, independent inline explanations, no false reviews, responsive layout', async ({ page }, info) => {

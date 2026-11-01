@@ -1,8 +1,8 @@
 import { useState } from 'react';
-import { ArrowLeft, ArrowRight, BookOpen, Check, ChevronDown, Edit3, EyeOff, ListPlus, Minus, Plus, Search } from 'lucide-react';
-import { ArticleCard, Empty, go, Heading } from '../components';
+import { ArrowLeft, ArrowRight, BookOpen, Check, ChevronDown, Edit3, EyeOff, Languages, ListPlus, Minus, Plus, Save, Search } from 'lucide-react';
+import { ArticleCard, Empty, go, Heading, Modal } from '../components';
 import { useStore } from '../store';
-import { articleCollection, getWord, uid, type ArticleCollection, type Context } from '../domain/model';
+import { articleCollection, articleSentences, getWord, saveArticle, uid, type Article, type ArticleCollection, type Context } from '../domain/model';
 import { enroll } from '../domain/scheduler';
 import { ArticleEditor, ContextEditor } from './Manage';
 
@@ -27,6 +27,8 @@ export function Reader({ articleId, params }: { articleId: string; params: URLSe
   const [busy, setBusy] = useState(false);
   const [annotating, setAnnotating] = useState(params.has('annotate') || params.has('context'));
   const [editingArticle, setEditingArticle] = useState(params.has('edit'));
+  const [editingTranslation, setEditingTranslation] = useState(false);
+  const [showTranslation, setShowTranslation] = useState(true);
   const [editingContext, setEditingContext] = useState<string | null>(params.get('context'));
   const [selection, setSelection] = useState<{ word: string; start: number } | null>(null);
   const [group, setGroup] = useState(false);
@@ -77,14 +79,47 @@ export function Reader({ articleId, params }: { articleId: string; params: URLSe
     cursor = context.articleStart! + word.length;
     return <span key={context.id}>{before}<button id={`word-${context.id}`} className={`word-token ${opened.has(context.id) ? 'is-open' : ''}`} aria-label={`查看「${word}」的释义`} aria-expanded={opened.has(context.id)} onClick={() => toggle(context)}>{word}</button>{opened.has(context.id) && <span className="inline-gloss">（{context.gloss}）</span>}</span>;
   });
+  const renderRange = (start: number, end: number) => {
+    let rangeCursor = start;
+    const nodes = contexts.filter(context => context.articleStart! >= start && context.articleStart! < end).map(context => {
+      const before = article.body.slice(rangeCursor, context.articleStart!);
+      const word = getWord(data, context.senseId);
+      rangeCursor = context.articleStart! + word.length;
+      return <span key={context.id}>{before}<button id={`word-${context.id}`} className={`word-token ${opened.has(context.id) ? 'is-open' : ''}`} aria-label={`查看「${word}」的释义`} aria-expanded={opened.has(context.id)} onClick={() => toggle(context)}>{word}</button>{opened.has(context.id) && <span className="inline-gloss">（{context.gloss}）</span>}</span>;
+    });
+    return <>{nodes}{article.body.slice(rangeCursor, end)}</>;
+  };
+  const translations = [...(article.translations ?? [])].sort((a, b) => a.articleStart - b.articleStart);
+  let translatedCursor = 0;
+  const translatedProse = translations.map(row => {
+    const before = article.body.slice(translatedCursor, row.articleStart);
+    translatedCursor = row.articleStart + row.source.length;
+    return <span key={row.id}>{before && <span>{renderRange(row.articleStart - before.length, row.articleStart)}</span>}<span className="translated-sentence"><span>{renderRange(row.articleStart, translatedCursor)}</span><span className="sentence-translation">{row.translation}</span></span></span>;
+  });
   return <><div className="reader-top"><button className="text-button" onClick={() => go(shelf)}><ArrowLeft size={16} /> 返回课文书架</button><div className="button-row"><button className="button small-button" onClick={() => { setAnnotating(v => !v); setAnchor(null); }}>{annotating ? '完成标注' : '编辑标注'}</button><button className="text-button" onClick={() => setEditingArticle(true)}><Edit3 size={14} /> 编辑课文</button></div></div>
-    <div className="reader-layout"><section className="reading-paper"><div className="reader-paper-heading"><span className="eyebrow">{article.era || '古诗文'} · {article.author || '作者待补'}</span><h1>{article.title}</h1>{article.summary && <p className="small muted">{article.summary}</p>}<div className="paper-divider"><span /><BookOpen size={17} /><span /></div><p>{annotating ? '在原文中编辑每一处字词的释义' : '点击标记字词，在原文中查看释义'}</p></div><div className="reader-tools"><span>{contexts.length} 处标注{article.sample ? ' · 示例课文' : ''}</span><div><button className="icon-button" aria-label="减小字号" disabled={fontSize <= 18} onClick={() => setFontSize(s => s - 2)}><Minus size={14} /></button><span>字</span><button className="icon-button" aria-label="增大字号" disabled={fontSize >= 30} onClick={() => setFontSize(s => s + 2)}><Plus size={14} /></button><button className="text-button" onClick={() => setOpened(new Set())}><EyeOff size={14} /> 收起全部</button></div></div>
+    <div className="reader-layout"><section className="reading-paper"><div className="reader-paper-heading"><span className="eyebrow">{article.era || '古诗文'} · {article.author || '作者待补'}</span><h1>{article.title}</h1>{article.summary && <p className="small muted">{article.summary}</p>}<div className="paper-divider"><span /><BookOpen size={17} /><span /></div><p>{annotating ? '在原文中编辑每一处字词的释义' : '点击标记字词，在原文中查看释义'}</p></div><div className="reader-tools"><span>{contexts.length} 处标注{article.sample ? ' · 示例课文' : ''}</span><div><button className="icon-button" aria-label="减小字号" disabled={fontSize <= 18} onClick={() => setFontSize(s => s - 2)}><Minus size={14} /></button><span>字</span><button className="icon-button" aria-label="增大字号" disabled={fontSize >= 30} onClick={() => setFontSize(s => s + 2)}><Plus size={14} /></button>{!!translations.length && !annotating && <button className="text-button" aria-pressed={showTranslation} onClick={() => setShowTranslation(value => !value)}><Languages size={14} /> {showTranslation ? '隐藏译文' : '显示译文'}</button>}<button className="text-button" onClick={() => setOpened(new Set())}><EyeOff size={14} /> 收起全部</button></div></div>
       {annotating && <div className="annotation-tools"><p>点击原文中具体的字，添加或修改这一处释义。绿色下划线表示已有标注。</p><label className="check-label"><input type="checkbox" checked={group} onChange={e => { setGroup(e.target.checked); setAnchor(null); }} /> 选择词组（依次点击起字、止字）</label>{anchor !== null && <p role="status">已选起字「{article.body.slice(anchor, anchor + [...article.body.slice(anchor)][0].length)}」，请点击词组的止字。<button className="text-button" onClick={() => setAnchor(null)}>重新选择</button></p>}</div>}
-      <div className={`reader-prose ${annotating ? 'annotation-prose' : ''}`} style={{ fontSize }}>{annotating ? editableText : <>{fragments}{article.body.slice(cursor)}</>}</div><div className="reader-end"><span />读有所思，习有所得<span /></div>
+      <div className={`reader-prose ${annotating ? 'annotation-prose' : showTranslation && translations.length ? 'translation-prose' : ''}`} style={{ fontSize }}>{annotating ? editableText : showTranslation && translations.length ? <>{translatedProse}{renderRange(translatedCursor, article.body.length)}</> : <>{fragments}{article.body.slice(cursor)}</>}</div>
+      {!annotating && !translations.length && <div className="translation-empty"><Languages size={18} /><div><strong>逐句译文待补</strong><p>译文会按原文句号分段，显示在每句话下方。</p></div><button className="button small-button" onClick={() => setEditingTranslation(true)}>录入译文</button></div>}
+      {!annotating && !!translations.length && <button className="translation-edit text-button" onClick={() => setEditingTranslation(true)}><Edit3 size={14} /> 编辑逐句译文</button>}<div className="reader-end"><span />读有所思，习有所得<span /></div>
       {!!pending && <div className="notice">有 {pending} 处标注需要重新确认位置和释义。<button className="text-button" onClick={() => setAnnotating(true)}>在本篇核对 <ArrowRight size={14} /></button></div>}
       {annotating && data.contexts.filter(c => c.articleId === article.id && !c.verified).map(c => <div className="manage-row" key={c.id}><span className="word-mini">{getWord(data, c.senseId)}</span><div><strong>{c.gloss}</strong><small>{c.text}</small></div><button className="button small-button" onClick={() => setEditingContext(c.id)}>重新定位与核对</button></div>)}
     </section><aside className="reader-aside"><section className="paper-card"><div className="spread"><h2>本篇字词</h2><span className="badge">{senseIds.length} 个义项</span></div><p className="muted small">选择你想加入计划的重点词。</p><div className="selection-actions"><button className="text-button" onClick={() => setSelected(selected.length === senseIds.length ? [] : senseIds)}>{selected.length === senseIds.length ? '取消全选' : '选择全部'}</button><button className="text-button" onClick={() => { setAnnotating(true); setAnchor(null); }}><Plus size={13} /> 添加标注</button></div><div className="word-checklist">{senseIds.map(id => { const context = contexts.find(c => c.senseId === id)!; return <label key={id}><input type="checkbox" checked={selected.includes(id)} onChange={e => setSelected(list => e.target.checked ? [...list, id] : list.filter(s => s !== id))} /><span className="check-word">{getWord(data, id)}</span><span className="muted">{data.cards[id] ? <><Check size={12} /> 已在计划</> : '未加入'}</span><button type="button" className="icon-button" aria-label={`定位「${getWord(data, id)}」`} onClick={e => { e.preventDefault(); document.getElementById(`word-${context.id}`)?.scrollIntoView({ behavior: 'smooth', block: 'center' }); }}><ChevronDown size={14} /></button></label>; })}</div><button className="button full" disabled={busy || !selected.length} onClick={() => void add()}><ListPlus size={16} /> 加入学习计划</button><button className="button primary full" disabled={busy || !selected.length} onClick={() => void add(true)}>开始本篇抽背 <ArrowRight size={16} /></button></section><div className="reading-tip"><span className="eyebrow">读 · 思 · 忆</span><p>先试着想一想，<br />再点开那个字。</p><span>查阅释义记为阅读，抽背自评用于安排下次复习。</span></div></aside></div>
     {editingArticle && <ArticleEditor article={article} onClose={() => setEditingArticle(false)} />}
+    {editingTranslation && <TranslationEditor article={article} onClose={() => setEditingTranslation(false)} />}
     {(selection || editingContext) && <ContextEditor context={data.contexts.find(c => c.id === editingContext && c.articleId === article.id)} initialArticle={article.id} initialSelection={selection ?? undefined} onClose={() => { setSelection(null); setEditingContext(null); }} />}
   </>;
+}
+
+function TranslationEditor({ article, onClose }: { article: Article; onClose: () => void }) {
+  const { update, notify } = useStore();
+  const sentences = articleSentences(article.body);
+  const [values, setValues] = useState(() => sentences.map(sentence => article.translations?.find(row => row.articleStart === sentence.articleStart && row.source === sentence.source)?.translation ?? ''));
+  const [busy, setBusy] = useState(false);
+  return <Modal title={`《${article.title}》逐句译文`} onClose={onClose} wide><form onSubmit={async event => {
+    event.preventDefault(); setBusy(true);
+    const translations = sentences.flatMap((sentence, index) => values[index].trim() ? [{ id: `translation:${sentence.articleStart}`, ...sentence, translation: values[index].trim() }] : []);
+    const ok = await update(current => saveArticle(current, { ...article, translations }));
+    setBusy(false); if (ok) { notify('逐句译文已保存。'); onClose(); }
+  }}><p className="small muted">按原文句号逐句对应。可以先填写一部分，空白句会保留为待补。</p><div className="translation-fields">{sentences.map((sentence, index) => <label key={sentence.articleStart}><span>{sentence.source}</span><textarea rows={2} value={values[index]} onChange={event => setValues(old => old.map((value, i) => i === index ? event.target.value : value))} placeholder="在这句话下方显示的译文…" /></label>)}</div><div className="form-footer"><span className="muted small">已填写 {values.filter(value => value.trim()).length} / {sentences.length} 句</span><button className="button primary" disabled={busy}><Save size={16} /> 保存逐句译文</button></div></form></Modal>;
 }

@@ -102,6 +102,8 @@
 :root[data-theme="dark"] .rating-button.good { color: #b4d39c; border-bottom-color: #91ab7e; }
 :root[data-theme="dark"] .rating-button.easy { color: #9dceb5; border-bottom-color: #719a87; }
 :root[data-theme="dark"] .inline-gloss { color: #dfbb91; }
+:root[data-theme="dark"] .sentence-translation { color: #aebaa8; border-color: #405046; }
+:root[data-theme="dark"] .translation-empty { color: #aebaa8; border-color: #405046; background: #17211c; }
 
 /* Keep body text and secondary labels legible on every study surface. */
 :root[data-theme="dark"] .breadcrumb strong,

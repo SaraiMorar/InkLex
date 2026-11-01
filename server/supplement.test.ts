@@ -13,7 +13,7 @@ import { mergeLegacySnapshot } from '../src/domain/api';
 
 const paths: string[] = [], handles: FileDatabase[] = [];
 const directory = () => { const p = mkdtempSync(join(tmpdir(), 'inklex-supplement-')); paths.push(p); return p; };
-const open = (path: string, importSupplement = true) => { const h = new FileDatabase(path, { importSupplement, importTextbookArticles: false }); handles.push(h); return h; };
+const open = (path: string, importSupplement = true) => { const h = new FileDatabase(path, { importSupplement, importTextbookArticles: false, importBiography2026: false }); handles.push(h); return h; };
 afterEach(() => {
   for (const h of handles.splice(0)) { try { h.close(); } catch { /* already closed */ } }
   for (const p of paths.splice(0)) rmSync(p, { recursive: true, force: true });

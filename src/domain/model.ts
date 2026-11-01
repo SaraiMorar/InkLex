@@ -3,10 +3,15 @@ import { z } from 'zod';
 const id = z.string().min(1).max(150);
 const date = z.iso.datetime();
 const text = z.string().min(1).max(100000);
+export const articleTranslationSchema = z.object({
+  id, articleStart: z.number().int().nonnegative(), source: text,
+  translation: z.string().min(1).max(100000),
+});
 export const articleSchema = z.object({
   id, title: z.string().min(1).max(120), author: z.string().max(80), era: z.string().max(40),
   body: text, summary: z.string().max(300), sample: z.boolean(),
   collection: z.enum(['curricular', 'extracurricular']).optional(),
+  translations: z.array(articleTranslationSchema).max(5000).optional(),
 });
 export const entrySchema = z.object({ id, word: z.string().min(1).max(40) });
 export const senseSchema = z.object({ id, entryId: id, meaning: z.string().min(1).max(1000), note: z.string().max(3000) });
@@ -85,6 +90,13 @@ export function validateDatabase(input: unknown): Database {
     } else if (context.articleStart !== null) throw new Error('零散例句含有无效的课文位置。');
   }
   for (const article of data.articles) {
+    const translations = article.translations ?? [];
+    if (new Set(translations.map(row => row.id)).size !== translations.length) throw new Error('课文含有重复的译文编号。');
+    for (const row of translations) {
+      if (article.body.slice(row.articleStart, row.articleStart + row.source.length) !== row.source) throw new Error('逐句译文与原文位置不匹配。');
+    }
+    const translationRanges = translations.map(row => ({ start: row.articleStart, end: row.articleStart + row.source.length })).sort((a, b) => a.start - b.start);
+    if (translationRanges.some((range, i) => i > 0 && range.start < translationRanges[i - 1].end)) throw new Error('课文中的逐句译文范围重叠。');
     const ranges = data.contexts.filter(c => c.articleId === article.id && c.verified)
       .map(c => ({ start: c.articleStart!, end: c.articleStart! + entries.get(senses.get(c.senseId)!.entryId)!.word.length }))
       .sort((a, b) => a.start - b.start);
@@ -123,6 +135,21 @@ export function sentenceAt(body: string, position: number) {
   while (end < body.length && !/[。！？\n]/.test(body[end])) end++;
   if (end < body.length && body[end] !== '\n') end++;
   return { text: body.slice(start, end), start: position - start };
+}
+export function articleSentences(body: string) {
+  const result: { articleStart: number; source: string }[] = [];
+  let start = 0;
+  for (const match of body.matchAll(/[。！？](?:[”’』】])?/gu)) {
+    const end = match.index + match[0].length;
+    const raw = body.slice(start, end);
+    const leading = raw.length - raw.replace(/^\n+/u, '').length;
+    if (raw.trim()) result.push({ articleStart: start + leading, source: raw.slice(leading) });
+    start = end;
+  }
+  const raw = body.slice(start);
+  const leading = raw.length - raw.replace(/^\n+/u, '').length;
+  if (raw.trim()) result.push({ articleStart: start + leading, source: raw.slice(leading) });
+  return result;
 }
 
 export interface ContextInput {
