@@ -32,7 +32,11 @@ export async function handleApi(request: IncomingMessage, response: ServerRespon
       if (!sameOrigin || request.headers['sec-fetch-site'] === 'cross-site' || request.headers['x-inklex-client'] !== '1') throw new HttpError(403, '请从 InkLex 应用内保存资料。');
       const body = await readJson(request);
       if (!Number.isSafeInteger(body?.revision) || body.revision < 0 || !body.data) throw new HttpError(400, '提交的资料或版本号不完整。');
-      json(response, 200, database.write(body.data, body.revision)); return true;
+      const saved = database.write(body.data, body.revision);
+      if (request.headers['x-inklex-return'] === 'minimal') {
+        json(response, 200, { revision: saved.revision, serverId: saved.serverId, pristine: saved.pristine, warning: saved.warning });
+      } else json(response, 200, saved);
+      return true;
     }
     json(response, 404, { error: '没有这个接口。' });
   } catch (error) {

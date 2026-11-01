@@ -1,15 +1,16 @@
 import { ArrowRight, BookOpen, Check, Clock3, Flame, Plus, Sparkles, Sprout } from 'lucide-react';
 import { ArticleCard, Empty, go, Heading, MemoryChart } from '../components';
 import { useStore } from '../store';
-import { dailyStats, intervalLabel, localDay, studyQueue } from '../domain/scheduler';
-import { articleCollection, contextsFor, getWord } from '../domain/model';
+import { dailyStats, eligibleSenseIds, intervalLabel, localDay, studyQueue } from '../domain/scheduler';
+import { articleCollection, getWord } from '../domain/model';
 
 export function Today() {
   const { data, now } = useStore();
   const stats = dailyStats(data, now);
   const queue = studyQueue(data, now);
   const latest = [...data.reviews].reverse().find(r => r.mode === 'scheduled');
-  const upcoming = Object.entries(data.cards).filter(([id, c]) => c.state !== 0 && contextsFor(data, id).length).sort(([, a], [, b]) => Date.parse(a.dueAt) - Date.parse(b.dueAt)).slice(0, 4);
+  const eligible = eligibleSenseIds(data);
+  const upcoming = Object.entries(data.cards).filter(([id, c]) => c.state !== 0 && eligible.has(id)).sort(([, a], [, b]) => Date.parse(a.dueAt) - Date.parse(b.dueAt)).slice(0, 4);
   const days = Array.from({ length: 7 }, (_, i) => { const day = new Date(now); day.setDate(day.getDate() - 6 + i); return day; });
   const activeDays = new Set(data.reviews.filter(r => r.mode === 'scheduled').map(r => localDay(new Date(r.time))));
   return <>

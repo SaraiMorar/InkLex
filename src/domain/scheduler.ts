@@ -18,8 +18,19 @@ export function localDay(date: Date) { return `${date.getFullYear()}-${String(da
 export function studiedToday(data: Database, now: Date) {
   return new Set(data.reviews.filter(r => r.mode === 'scheduled' && r.before?.state === 0 && localDay(new Date(r.time)) === localDay(now)).map(r => r.senseId)).size;
 }
+export function eligibleSenseIds(data: Database, articleIds: string[] = []) {
+  const scope = articleIds.length ? new Set(articleIds) : null;
+  return new Set(data.contexts.filter(context => context.verified
+    && (!scope || (context.articleId !== null && scope.has(context.articleId)))).map(context => context.senseId));
+}
+export function scheduledSenseReady(data: Database, senseId: string, now = new Date()) {
+  const card = data.cards[senseId];
+  if (!card || !eligibleSenseIds(data).has(senseId)) return false;
+  return card.state === 0 ? studiedToday(data, now) < data.settings.dailyNew : new Date(card.dueAt) <= now;
+}
 export function studyQueue(data: Database, now: Date, articleIds: string[] = []) {
-  const eligible = Object.entries(data.cards).filter(([id]) => contextsFor(data, id, articleIds).length);
+  const ids = eligibleSenseIds(data, articleIds);
+  const eligible = Object.entries(data.cards).filter(([id]) => ids.has(id));
   const due = eligible.filter(([, c]) => c.state !== 0 && new Date(c.dueAt).getTime() <= now.getTime())
     .sort(([, a], [, b]) => new Date(a.dueAt).getTime() - new Date(b.dueAt).getTime());
   const remaining = Math.max(0, data.settings.dailyNew - studiedToday(data, now));
@@ -27,7 +38,8 @@ export function studyQueue(data: Database, now: Date, articleIds: string[] = [])
   return [...due, ...fresh].map(([id]) => id);
 }
 export function dailyStats(data: Database, now: Date) {
-  const cards = Object.entries(data.cards).filter(([id]) => contextsFor(data, id).length).map(([, c]) => c);
+  const ids = eligibleSenseIds(data);
+  const cards = Object.entries(data.cards).filter(([id]) => ids.has(id)).map(([, c]) => c);
   const day = localDay(now);
   return {
     due: cards.filter(c => c.state !== 0 && new Date(c.dueAt) <= now).length,

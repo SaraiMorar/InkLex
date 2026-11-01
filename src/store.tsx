@@ -64,7 +64,7 @@ export function StoreProvider({ children }: { children: ReactNode }) {
     pending.current++; setSaving(true);
     const job = chain.current.then(async () => {
       try {
-        const snapshot = await transact(operation);
+        const snapshot = await transact(operation, latest.current ?? undefined);
         apply(snapshot); setNow(new Date()); result = true;
       } catch (error) {
         const message = error instanceof Error ? error.message : '操作未完成，请重试。';

@@ -1,9 +1,9 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { ArrowLeft, ArrowRight, Check, CircleHelp, Clock3, RotateCcw, Search, Shuffle, Sparkles, X } from 'lucide-react';
 import { Empty, go, Heading } from '../components';
 import { useStore } from '../store';
 import { articleCollection, contextsFor, getWord, type ArticleCollection, type Grade } from '../domain/model';
-import { chooseContext, dailyStats, gradeContext, intervalLabel, previewGrades, studyQueue } from '../domain/scheduler';
+import { chooseContext, dailyStats, eligibleSenseIds, gradeContext, intervalLabel, previewGrades, scheduledSenseReady, studyQueue } from '../domain/scheduler';
 
 const ratings: { grade: Grade; title: string; subtitle: string; className: string }[] = [
   { grade: 1, title: '忘记了', subtitle: '没想起来或答错', className: 'again' },
@@ -32,13 +32,20 @@ export function ReviewPage({ initialArticle }: { initialArticle: string | null }
   const busyRef = useRef(false);
   const [preview, setPreview] = useState<Record<number, string>>({});
   const [completed, setCompleted] = useState<Grade[]>([]);
-  const stats = dailyStats(data, now);
+  const stats = useMemo(() => dailyStats(data, now), [data, now]);
   const matchedArticles = data.articles.filter(a => (collection === 'all' || articleCollection(a) === collection) && `${a.title} ${a.author} ${a.summary}`.toLocaleLowerCase().includes(search.trim().toLocaleLowerCase()));
   const narrowed = collection !== 'all' || search.trim().length > 0;
   const scopeIds = articleIds.length ? articleIds : narrowed ? matchedArticles.map(a => a.id) : [];
   const emptyScope = narrowed && !scopeIds.length;
-  const dueIds = emptyScope ? [] : studyQueue(data, now, scopeIds);
-  const pool = emptyScope ? [] : data.senses.filter(s => contextsFor(data, s.id, scopeIds).length && (filter === 'all' || (filter === 'learned' ? data.cards[s.id]?.state > 0 : data.reviews.some(r => r.senseId === s.id && r.grade === 1)))).map(s => s.id);
+  const scopeKey = scopeIds.join('\u0001');
+  const dueIds = useMemo(() => emptyScope ? [] : studyQueue(data, now, scopeIds), [data, now, emptyScope, scopeKey]);
+  const pool = useMemo(() => {
+    if (emptyScope) return [];
+    const eligible = eligibleSenseIds(data, scopeIds);
+    const forgotten = filter === 'difficult' ? new Set(data.reviews.filter(review => review.grade === 1).map(review => review.senseId)) : null;
+    return data.senses.filter(sense => eligible.has(sense.id)
+      && (filter === 'all' || (filter === 'learned' ? data.cards[sense.id]?.state > 0 : forgotten?.has(sense.id)))).map(sense => sense.id);
+  }, [data, emptyScope, filter, scopeKey]);
   const question = questions?.[index];
   const context = data.contexts.find(c => c.id === question?.contextId);
   const word = question ? getWord(data, question.senseId) : '';
@@ -62,15 +69,17 @@ export function ReviewPage({ initialArticle }: { initialArticle: string | null }
   const grade = async (value: Grade) => {
     if (!question || !revealed || busyRef.current) return;
     busyRef.current = true; setBusy(true);
-    let nextDue = '';
+    let nextDue = '', skipped = false;
     const ok = await update(async current => {
+      if (mode === 'scheduled' && !scheduledSenseReady(current, question.senseId, new Date())) { skipped = true; return current; }
       const next = await gradeContext(current, question.contextId, value, mode);
       nextDue = next.cards[question.senseId]?.dueAt ?? '';
       return next;
     });
     if (ok) {
-      setCompleted(values => [...values, value]); setIndex(i => i + 1); setRevealed(false);
-      if (mode === 'scheduled') notify(`已记录 · ${intervalLabel(nextDue)}再复习`);
+      if (!skipped) setCompleted(values => [...values, value]);
+      setIndex(i => i + 1); setRevealed(false);
+      if (mode === 'scheduled') notify(skipped ? '这项已在其他窗口完成，本轮已自动跳过。' : `已记录 · ${intervalLabel(nextDue)}再复习`);
     }
     busyRef.current = false; setBusy(false);
   };

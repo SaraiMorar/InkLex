@@ -6,28 +6,31 @@ export interface Snapshot { data: Database; revision: number; serverId: string; 
 export class ApiError extends Error {
   constructor(readonly status: number, message: string) { super(message); }
 }
-async function request(method: 'GET' | 'PUT', body?: unknown): Promise<Snapshot> {
+async function request(method: 'GET' | 'PUT', body?: unknown, localData?: Database): Promise<Snapshot> {
   let response: Response;
   try {
     response = await fetch('/api/state', { method, cache: 'no-store', signal: AbortSignal.timeout(15000),
-      headers: { 'Content-Type': 'application/json', 'X-InkLex-Client': '1' }, body: body ? JSON.stringify(body) : undefined });
+      headers: { 'Content-Type': 'application/json', 'X-InkLex-Client': '1', ...(localData ? { 'X-InkLex-Return': 'minimal' } : {}) }, body: body ? JSON.stringify(body) : undefined });
   } catch { throw new ApiError(0, '无法连接学习服务。请确认服务正在运行，再重试。'); }
   let result;
   try { result = await response.json(); } catch { throw new ApiError(503, '学习服务返回了无效响应，请确认运行的是新版 InkLex。'); }
   if (!response.ok) throw new ApiError(response.status, result.error || '保存未完成，请重试。');
   if (!Number.isSafeInteger(result.revision) || typeof result.serverId !== 'string') throw new ApiError(503, '学习服务的数据版本不正确。');
-  return { data: validateDatabase(result.data), revision: result.revision, serverId: result.serverId, pristine: result.pristine === true, warning: result.warning };
+  return { data: result.data === undefined && localData ? localData : validateDatabase(result.data), revision: result.revision, serverId: result.serverId, pristine: result.pristine === true, warning: result.warning };
 }
 export const readServer = () => request('GET');
-export const writeServer = (data: Database, revision: number) => request('PUT', { data, revision });
+export const writeServer = (data: Database, revision: number) => request('PUT', { data, revision }, data);
 
-export async function transact(operation: (data: Database) => Database | Promise<Database>): Promise<Snapshot> {
+export async function transact(operation: (data: Database) => Database | Promise<Database>, initial?: Snapshot): Promise<Snapshot> {
+  let snapshot = initial ?? await readServer();
   for (let attempt = 0; attempt < 4; attempt++) {
-    const snapshot = await readServer();
     const next = await operation(snapshot.data);
     if (JSON.stringify(next) === JSON.stringify(snapshot.data)) return snapshot;
     try { return await writeServer(next, snapshot.revision); }
-    catch (error) { if (!(error instanceof ApiError) || error.status !== 409 || attempt === 3) throw error; }
+    catch (error) {
+      if (!(error instanceof ApiError) || error.status !== 409 || attempt === 3) throw error;
+      snapshot = await readServer();
+    }
   }
   throw new ApiError(409, '其他设备正在更新资料，请稍后再试。');
 }
