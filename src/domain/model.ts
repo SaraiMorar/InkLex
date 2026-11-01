@@ -60,6 +60,17 @@ export type Database = z.infer<typeof databaseSchema>;
 export type Review = z.infer<typeof reviewSchema>;
 export type Grade = Review['grade'];
 export const uid = () => crypto.randomUUID();
+// Equivalent source glosses often differ only in punctuation or synonym order.
+// Keep the original wording on Context.gloss, while using this key to share one
+// schedulable sense. Do not use containment here: “背叛” and “违背，背叛”
+// require an explicit editorial decision.
+export function meaningKey(value: string) {
+  const cleaned = value.normalize('NFKC').trim()
+    .replace(/^\d{1,3}[.、．:：]?\s*/u, '')
+    .replace(/[“”‘’"'()（）\s]/gu, '')
+    .replace(/[。；;,，、]+$/u, '');
+  return [...new Set(cleaned.split(/[，,、；;]/u).filter(Boolean))].sort().join('\u0001');
+}
 export const emptyDatabase = (): Database => ({
   version: 1, algorithm: 'ts-fsrs@6.0.0/FSRS-6', articles: [], entries: [], senses: [], contexts: [],
   cards: {}, reviews: [], readings: [], settings: { dailyNew: 10, retention: 0.9 },
@@ -162,7 +173,7 @@ export function saveContext(data: Database, input: ContextInput): Database {
   if (!word || !meaning) throw new Error('请填写字词和释义。');
   let entry = next.entries.find(e => e.word === word);
   if (!entry) { entry = { id: uid(), word }; next.entries.push(entry); }
-  let sense = input.existingSenseId ? next.senses.find(s => s.id === input.existingSenseId && s.entryId === entry!.id) : next.senses.find(s => s.entryId === entry!.id && s.meaning === meaning);
+  let sense = input.existingSenseId ? next.senses.find(s => s.id === input.existingSenseId && s.entryId === entry!.id) : next.senses.find(s => s.entryId === entry!.id && meaningKey(s.meaning) === meaningKey(meaning));
   if (input.existingSenseId && !sense) throw new Error('所选义项与字词不对应。');
   if (!sense) { sense = { id: uid(), entryId: entry.id, meaning, note: input.note.trim() }; next.senses.push(sense); }
   const old = next.contexts.find(c => c.id === input.id);

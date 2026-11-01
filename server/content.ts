@@ -1,6 +1,6 @@
 import { createHash } from 'node:crypto';
 import corpus from './content/gaosan-300.json' with { type: 'json' };
-import { emptyDatabase, validateDatabase, type Database } from '../src/domain/model.ts';
+import { emptyDatabase, meaningKey, validateDatabase, type Database } from '../src/domain/model.ts';
 import { mergeBackup } from '../src/domain/storage.ts';
 import { GAOSAN_CONTEXT_PREFIX } from '../src/domain/bundles.ts';
 
@@ -49,7 +49,7 @@ export function mergeBundledContent(current: Database): Database {
   const words = new Map(next.entries.map(entry => [entry.word, entry.id]));
   for (const sense of incoming.senses) {
     const word = incoming.entries.find(entry => entry.id === sense.entryId)!.word;
-    const target = next.senses.find(row => row.entryId === words.get(word) && row.meaning === sense.meaning)!;
+    const target = next.senses.find(row => row.entryId === words.get(word) && meaningKey(row.meaning) === meaningKey(sense.meaning))!;
     if (!target.note.includes(sense.note)) {
       const note = [target.note, sense.note].filter(Boolean).join('\n');
       if (note.length <= 3000) target.note = note;

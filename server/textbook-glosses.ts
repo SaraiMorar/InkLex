@@ -1,11 +1,10 @@
 import { createHash } from 'node:crypto';
 import corpus from './content/textbook-glosses.json' with { type: 'json' };
-import { validateDatabase, type Database } from '../src/domain/model.ts';
+import { meaningKey, validateDatabase, type Database } from '../src/domain/model.ts';
 
 export const TEXTBOOK_GLOSSES_ID = corpus.id;
 export const textbookGlossStats = corpus.stats;
 const hash = (value: string) => createHash('sha256').update(value).digest('hex').slice(0, 24);
-const normalized = (value: string) => value.replace(/\s/gu, '').replace(/[。；;，,]+$/u, '');
 
 export function mergeTextbookGlosses(current: Database): Database {
   const data = structuredClone(current);
@@ -16,7 +15,7 @@ export function mergeTextbookGlosses(current: Database): Database {
   }
   const articles = new Map(data.articles.map(article => [article.id, article]));
   const entries = new Map(data.entries.map(entry => [entry.word, entry]));
-  const senses = new Map(data.senses.map(sense => [JSON.stringify([sense.entryId, normalized(sense.meaning)]), sense]));
+  const senses = new Map(data.senses.map(sense => [JSON.stringify([sense.entryId, meaningKey(sense.meaning)]), sense]));
   const ranges = new Map<string, { start: number; end: number }[]>();
   const wordBySense = new Map(data.senses.map(sense => [sense.id, data.entries.find(entry => entry.id === sense.entryId)?.word ?? '']));
   for (const context of data.contexts) {
@@ -39,7 +38,7 @@ export function mergeTextbookGlosses(current: Database): Database {
       entry = { id: `textbook5:entry:${hash(row.word)}`, word: row.word };
       entries.set(row.word, entry); data.entries.push(entry);
     }
-    const senseKey = JSON.stringify([entry.id, normalized(row.meaning)]);
+    const senseKey = JSON.stringify([entry.id, meaningKey(row.meaning)]);
     let sense = senses.get(senseKey);
     if (!sense) {
       sense = { id: `textbook5:sense:${hash(senseKey)}`, entryId: entry.id, meaning: row.meaning,

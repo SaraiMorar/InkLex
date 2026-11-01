@@ -1,4 +1,4 @@
-import { type Database, validateDatabase } from './model.ts';
+import { meaningKey, type Database, validateDatabase } from './model.ts';
 import { createSeed } from './seed.ts';
 
 export const STORAGE_KEY = 'inklex.database.v1';
@@ -39,7 +39,7 @@ export function mergeBackup(current: Database, incoming: Database): Database {
   }
   for (const s of incoming.senses) {
     const row = { ...s, entryId: maps.entry.get(s.entryId)! };
-    const old = next.senses.find(x => x.entryId === row.entryId && x.meaning === row.meaning);
+    const old = next.senses.find(x => x.entryId === row.entryId && meaningKey(x.meaning) === meaningKey(row.meaning));
     maps.sense.set(s.id, old?.id ?? s.id);
     if (!old) { assertFree(next.senses, row); next.senses.push(row); }
   }

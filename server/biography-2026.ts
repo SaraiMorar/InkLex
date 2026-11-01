@@ -1,16 +1,15 @@
 import { createHash } from 'node:crypto';
 import corpus from './content/biography-2026.json' with { type: 'json' };
-import { sentenceAt, validateDatabase, type Database } from '../src/domain/model.ts';
+import { meaningKey, sentenceAt, validateDatabase, type Database } from '../src/domain/model.ts';
 
 export const BIOGRAPHY_2026_ID = corpus.id;
 export const biography2026Stats = corpus.stats;
 const hash = (value: string) => createHash('sha256').update(value).digest('hex').slice(0, 24);
-const normalized = (value: string) => value.replace(/\s/gu, '').replace(/[。；;，,]+$/u, '');
 
 export function mergeBiography2026(current: Database): Database {
   const data = structuredClone(current);
   const entries = new Map(data.entries.map(entry => [entry.word, entry]));
-  const senses = new Map(data.senses.map(sense => [JSON.stringify([sense.entryId, normalized(sense.meaning)]), sense]));
+  const senses = new Map(data.senses.map(sense => [JSON.stringify([sense.entryId, meaningKey(sense.meaning)]), sense]));
   for (const incoming of corpus.articles) {
     let article = data.articles.find(row => row.id === incoming.id);
     if (!article) {
@@ -31,7 +30,7 @@ export function mergeBiography2026(current: Database): Database {
         entry = { id: `biography2026:entry:${hash(row.word)}`, word: row.word };
         entries.set(row.word, entry); data.entries.push(entry);
       }
-      const senseKey = JSON.stringify([entry.id, normalized(row.meaning)]);
+      const senseKey = JSON.stringify([entry.id, meaningKey(row.meaning)]);
       let sense = senses.get(senseKey);
       if (!sense) {
         sense = { id: `biography2026:sense:${hash(senseKey)}`, entryId: entry.id, meaning: row.meaning,
