@@ -72,13 +72,6 @@ export function Reader({ articleId, params }: { articleId: string; params: URLSe
     const marked = contexts.some(c => start >= c.articleStart! && start < c.articleStart! + getWord(data, c.senseId).length);
     return <button key={start} className={`annotation-char ${marked ? 'marked' : ''} ${anchor === start ? 'selected' : ''}`} aria-label={`标注第 ${start + 1} 字「${char}」`} onClick={() => pick(start, char.length)}>{char}</button>;
   }) : null;
-  let cursor = 0;
-  const fragments = contexts.map(context => {
-    const before = article.body.slice(cursor, context.articleStart!);
-    const word = getWord(data, context.senseId);
-    cursor = context.articleStart! + word.length;
-    return <span key={context.id}>{before}<button id={`word-${context.id}`} className={`word-token ${opened.has(context.id) ? 'is-open' : ''}`} aria-label={`查看「${word}」的释义`} aria-expanded={opened.has(context.id)} onClick={() => toggle(context)}>{word}</button>{opened.has(context.id) && <span className="inline-gloss">（{context.gloss}）</span>}</span>;
-  });
   const renderRange = (start: number, end: number) => {
     let rangeCursor = start;
     const nodes = contexts.filter(context => context.articleStart! >= start && context.articleStart! < end).map(context => {
@@ -89,17 +82,23 @@ export function Reader({ articleId, params }: { articleId: string; params: URLSe
     });
     return <>{nodes}{article.body.slice(rangeCursor, end)}</>;
   };
+  let paragraphStart = 0;
+  const paragraphs = article.body.split('\n').map((line, index) => {
+    const start = paragraphStart;
+    paragraphStart += line.length + 1;
+    return line ? <p className="reader-paragraph" key={start}>{renderRange(start, start + line.length)}</p> : <div className="reader-paragraph-gap" key={`gap-${index}`} />;
+  });
   const translations = [...(article.translations ?? [])].sort((a, b) => a.articleStart - b.articleStart);
   let translatedCursor = 0;
   const translatedProse = translations.map(row => {
     const before = article.body.slice(translatedCursor, row.articleStart);
     translatedCursor = row.articleStart + row.source.length;
-    return <span key={row.id}>{before && <span>{renderRange(row.articleStart - before.length, row.articleStart)}</span>}<span className="translated-sentence"><span>{renderRange(row.articleStart, translatedCursor)}</span><span className="sentence-translation">{row.translation}</span></span></span>;
+    return <span key={row.id}>{before && <span>{renderRange(row.articleStart - before.length, row.articleStart)}</span>}<span className={`translated-sentence ${row.articleStart === 0 || article.body[row.articleStart - 1] === '\n' ? 'is-paragraph-start' : ''}`}><span>{renderRange(row.articleStart, translatedCursor)}</span><span className="sentence-translation">{row.translation}</span></span></span>;
   });
   return <><div className="reader-top"><button className="text-button" onClick={() => go(shelf)}><ArrowLeft size={16} /> 返回课文书架</button><div className="button-row"><button className="button small-button" onClick={() => { setAnnotating(v => !v); setAnchor(null); }}>{annotating ? '完成标注' : '编辑标注'}</button><button className="text-button" onClick={() => setEditingArticle(true)}><Edit3 size={14} /> 编辑课文</button></div></div>
     <div className="reader-layout"><section className="reading-paper"><div className="reader-paper-heading"><span className="eyebrow">{article.era || '古诗文'} · {article.author || '作者待补'}</span><h1>{article.title}</h1>{article.summary && <p className="small muted">{article.summary}</p>}<div className="paper-divider"><span /><BookOpen size={17} /><span /></div><p>{annotating ? '在原文中编辑每一处字词的释义' : '点击标记字词，在原文中查看释义'}</p></div><div className="reader-tools"><span>{contexts.length} 处标注{article.sample ? ' · 示例课文' : ''}</span><div><button className="icon-button" aria-label="减小字号" disabled={fontSize <= 18} onClick={() => setFontSize(s => s - 2)}><Minus size={14} /></button><span>字</span><button className="icon-button" aria-label="增大字号" disabled={fontSize >= 30} onClick={() => setFontSize(s => s + 2)}><Plus size={14} /></button>{!!translations.length && !annotating && <button className="text-button" aria-pressed={showTranslation} onClick={() => setShowTranslation(value => !value)}><Languages size={14} /> {showTranslation ? '隐藏译文' : '显示译文'}</button>}<button className="text-button" onClick={() => setOpened(new Set())}><EyeOff size={14} /> 收起全部</button></div></div>
       {annotating && <div className="annotation-tools"><p>点击原文中具体的字，添加或修改这一处释义。绿色下划线表示已有标注。</p><label className="check-label"><input type="checkbox" checked={group} onChange={e => { setGroup(e.target.checked); setAnchor(null); }} /> 选择词组（依次点击起字、止字）</label>{anchor !== null && <p role="status">已选起字「{article.body.slice(anchor, anchor + [...article.body.slice(anchor)][0].length)}」，请点击词组的止字。<button className="text-button" onClick={() => setAnchor(null)}>重新选择</button></p>}</div>}
-      <div className={`reader-prose ${annotating ? 'annotation-prose' : showTranslation && translations.length ? 'translation-prose' : ''}`} style={{ fontSize }}>{annotating ? editableText : showTranslation && translations.length ? <>{translatedProse}{renderRange(translatedCursor, article.body.length)}</> : <>{fragments}{article.body.slice(cursor)}</>}</div>
+      <div className={`reader-prose ${annotating ? 'annotation-prose' : showTranslation && translations.length ? 'translation-prose' : ''}`} style={{ fontSize }}>{annotating ? editableText : showTranslation && translations.length ? <>{translatedProse}{renderRange(translatedCursor, article.body.length)}</> : paragraphs}</div>
       {!annotating && !translations.length && <div className="translation-empty"><Languages size={18} /><div><strong>逐句译文待补</strong><p>译文会按原文句号分段，显示在每句话下方。</p></div><button className="button small-button" onClick={() => setEditingTranslation(true)}>录入译文</button></div>}
       {!annotating && !!translations.length && <button className="translation-edit text-button" onClick={() => setEditingTranslation(true)}><Edit3 size={14} /> 编辑逐句译文</button>}<div className="reader-end"><span />读有所思，习有所得<span /></div>
       {!!pending && <div className="notice">有 {pending} 处标注需要重新确认位置和释义。<button className="text-button" onClick={() => setAnnotating(true)}>在本篇核对 <ArrowRight size={14} /></button></div>}

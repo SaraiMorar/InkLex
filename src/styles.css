@@ -199,6 +199,8 @@ mark { color: var(--green); background: #e6eddc; padding: 1px 4px; border-radius
 .reader-tools > div { display: flex; align-items: center; gap: 5px; }
 .reader-tools .text-button { font-size: 10px; margin-left: 6px; }
 .reader-prose { font-family: var(--serif); line-height: 2.5; white-space: pre-wrap; overflow-wrap: anywhere; color: #414c3c; letter-spacing: .7px; padding: 24px 0 20px; }
+.reader-paragraph { margin: 0; text-indent: 2em; }
+.reader-paragraph-gap { height: 1em; }
 .word-token { display: inline; font: inherit; letter-spacing: inherit; padding: 1px 2px; border: 0; border-bottom: 1px dashed #99ab7b; border-radius: 2px; color: #456342; background: #eaf0dc90; box-decoration-break: clone; -webkit-box-decoration-break: clone; scroll-margin-top: 30px; }
 .word-token:hover, .word-token.is-open { background: #e1e9ce; color: #2a5034; }
 .annotation-tools { padding: 14px 16px; background: #f4f5e9; border: 1px solid #e5e8d7; border-radius: 6px; font-size: 14px; }
@@ -209,7 +211,8 @@ mark { color: var(--green); background: #e6eddc; padding: 1px 4px; border-radius
 .annotation-char:hover, .annotation-char:focus-visible, .annotation-char.selected { background: #dce8bd; outline: 1px solid #73945d; }
 .inline-gloss { color: #a17c55; font-family: -apple-system, "Noto Sans CJK SC", sans-serif; font-size: .73em; line-height: 1.9; letter-spacing: 0; overflow-wrap: anywhere; }
 .translated-sentence { display: block; margin-bottom: .72em; }
-.sentence-translation { display: block; margin: .2em 0 0 1.1em; padding-left: 1em; border-left: 2px solid #dce4d5; color: #77836e; font-family: -apple-system, "Noto Sans CJK SC", sans-serif; font-size: .62em; line-height: 1.75; letter-spacing: .02em; }
+.translated-sentence.is-paragraph-start { text-indent: 2em; }
+.sentence-translation { display: block; margin: .2em 0 0 1.1em; padding-left: 1em; border-left: 2px solid #dce4d5; color: #77836e; font-family: -apple-system, "Noto Sans CJK SC", sans-serif; font-size: .62em; line-height: 1.75; letter-spacing: .02em; text-indent: 0; }
 .translation-empty { display: flex; align-items: center; gap: 13px; margin: 24px 0 8px; padding: 14px 16px; border: 1px dashed #d7ddcf; border-radius: 8px; color: #74806c; background: #f8f9f3; }
 .translation-empty div { flex: 1; }
 .translation-empty strong { font-size: 13px; }
