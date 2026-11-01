@@ -6,6 +6,7 @@ import { enroll } from '../src/domain/scheduler';
 import { mergeBundledContent } from '../server/content';
 import { mergeSupplement } from '../server/supplement';
 import { mergeTextbookArticles } from '../server/textbook-articles';
+import { mergeTextbookGlosses } from '../server/textbook-glosses';
 
 const db = async (page: Page) => (await (await page.request.get('/api/state')).json()).data;
 
@@ -112,6 +113,27 @@ test('five textbook volumes are readable on the bookshelf without creating vocab
   const saved = await db(page);
   expect(saved.entries).toEqual(snapshot.data.entries); expect(saved.contexts).toEqual(snapshot.data.contexts);
   expect(saved.reviews).toEqual(snapshot.data.reviews); expect(saved.readings).toEqual(snapshot.data.readings);
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1)).toBe(true);
+});
+
+test('all textbook glosses open inline and share their linked sense with the vocabulary library', async ({ page, request }) => {
+  const snapshot = await (await request.get('/api/state')).json();
+  const data = mergeTextbookGlosses(mergeTextbookArticles(snapshot.data));
+  expect((await request.put('/api/state', { data: { revision: snapshot.revision, data }, headers: { 'X-InkLex-Client': '1' } })).ok()).toBe(true);
+  expect(data.contexts.filter((context: { id: string }) => context.id.startsWith('textbook5:context:'))).toHaveLength(3757);
+  await page.goto('/#/articles');
+  await page.getByLabel('搜索课文').fill('陈情表');
+  await page.locator('.article-card').click();
+  await expect(page.locator('.word-token')).toHaveCount(121);
+  await page.getByRole('button', { name: '查看「险衅」的释义', exact: true }).click();
+  await expect(page.locator('.inline-gloss')).toHaveText('（艰难祸患，指命运不好）');
+  await nav(page, '我的字词库');
+  await page.getByLabel('搜索字词或释义').fill('险衅');
+  const entry = page.locator('.word-card').filter({ has: page.getByText('险衅', { exact: true }) });
+  await expect(entry).toHaveCount(1);
+  await entry.click();
+  await expect(page.getByRole('dialog')).toContainText('选择性必修下册·陈情表');
+  await expect(page.getByRole('dialog')).toContainText('艰难祸患，指命运不好');
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1)).toBe(true);
 });
 

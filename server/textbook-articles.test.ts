@@ -11,7 +11,7 @@ import { mergeLegacySnapshot } from '../src/domain/api';
 
 const paths: string[] = [], handles: FileDatabase[] = [];
 const directory = () => { const p = mkdtempSync(join(tmpdir(), 'inklex-textbook-')); paths.push(p); return p; };
-const open = (path: string, importTextbookArticles = true) => { const h = new FileDatabase(path, { importTextbookArticles }); handles.push(h); return h; };
+const open = (path: string, importTextbookArticles = true) => { const h = new FileDatabase(path, { importTextbookArticles, importTextbookGlosses: false }); handles.push(h); return h; };
 afterEach(() => {
   for (const h of handles.splice(0)) { try { h.close(); } catch { /* already closed */ } }
   for (const p of paths.splice(0)) rmSync(p, { recursive: true, force: true });
