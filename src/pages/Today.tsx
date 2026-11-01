@@ -11,7 +11,9 @@ export function Today() {
   const latest = [...data.reviews].reverse().find(r => r.mode === 'scheduled');
   const eligible = eligibleSenseIds(data);
   const upcoming = Object.entries(data.cards).filter(([id, c]) => c.state !== 0 && eligible.has(id)).sort(([, a], [, b]) => Date.parse(a.dueAt) - Date.parse(b.dueAt)).slice(0, 4);
-  const days = Array.from({ length: 7 }, (_, i) => { const day = new Date(now); day.setDate(day.getDate() - 6 + i); return day; });
+  const studyToday = new Date(now);
+  studyToday.setHours(studyToday.getHours() - 3);
+  const days = Array.from({ length: 7 }, (_, i) => { const day = new Date(studyToday); day.setDate(day.getDate() - 6 + i); day.setHours(12); return day; });
   const activeDays = new Set(data.reviews.filter(r => r.mode === 'scheduled').map(r => localDay(new Date(r.time))));
   return <>
     <Heading eyebrow="A LITTLE EVERY DAY" title="温故，而知新。" subtitle="在原文中理解，在复习中记住。今天，也让一点知识留下来。" action={<button className="button" onClick={() => go('manage')}><Plus size={16} /> 添加学习资料</button>} />

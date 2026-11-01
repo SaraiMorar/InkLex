@@ -118,15 +118,23 @@ describe('real FSRS scheduling', () => {
     expect(studiedToday(next, at)).toBe(0);
     expect(dailyStats(next, at).done).toBe(0);
   });
-  it('applies the daily new cap globally, never hides due cards, and resets by local date', async () => {
+  it('applies the daily new cap globally, never hides due cards, and resets at local 03:00', async () => {
     const d = fixture(); d.settings.dailyNew = 1;
     const start = new Date(2026, 9, 30, 23, 59);
     let next = await enroll(d, d.senses.map(s => s.id), start);
     expect(studyQueue(next, start)).toHaveLength(1);
     next = await gradeContext(next, d.contexts[0].id, 1, 'scheduled', start);
     expect(studiedToday(next, start)).toBe(1); expect(studyQueue(next, start)).toHaveLength(0);
-    const tomorrow = new Date(2026, 9, 31, 0, 1);
+    const afterMidnight = new Date(2026, 9, 31, 0, 1);
+    expect(localDay(start)).toBe(localDay(afterMidnight));
+    expect(studiedToday(next, afterMidnight)).toBe(1);
+    expect(studyQueue(next, afterMidnight)).toHaveLength(1);
+    const beforeBoundary = new Date(2026, 9, 31, 2, 59);
+    const tomorrow = new Date(2026, 9, 31, 3, 0);
+    expect(localDay(beforeBoundary)).toBe(localDay(start));
     expect(localDay(start)).not.toBe(localDay(tomorrow)); expect(studyQueue(next, tomorrow)).toHaveLength(2);
+    expect(dailyStats(next, beforeBoundary).done).toBe(1);
+    expect(dailyStats(next, tomorrow).done).toBe(0);
     next.settings.dailyNew = 0;
     expect(studyQueue(next, tomorrow)).toEqual([d.senses[0].id]);
   });

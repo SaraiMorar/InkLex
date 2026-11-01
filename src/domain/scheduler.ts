@@ -14,7 +14,11 @@ function hydrate(card: StoredCard): DefaultSchedulerCard<'FSRS-6'> {
   return { ...card, dueAt: new Date(card.dueAt), lastReviewAt: card.lastReviewAt ? new Date(card.lastReviewAt) : null };
 }
 const serialize = (card: DefaultSchedulerCard<'FSRS-6'>) => cardSchema.parse(JSON.parse(JSON.stringify(card)));
-export function localDay(date: Date) { return `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}-${String(date.getDate()).padStart(2, '0')}`; }
+export function localDay(date: Date) {
+  const studyDate = new Date(date);
+  studyDate.setHours(studyDate.getHours() - 3);
+  return `${studyDate.getFullYear()}-${String(studyDate.getMonth() + 1).padStart(2, '0')}-${String(studyDate.getDate()).padStart(2, '0')}`;
+}
 export function studiedToday(data: Database, now: Date) {
   return new Set(data.reviews.filter(r => r.mode === 'scheduled' && r.before?.state === 0 && localDay(new Date(r.time)) === localDay(now)).map(r => r.senseId)).size;
 }
