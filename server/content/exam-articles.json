@@ -1,0 +1,1611 @@
+{
+  "id": "exam-articles-2026-11-v1",
+  "sources": [
+    {
+      "file": "综合练习四（静安）答案订正.docx",
+      "sha256": "5020542944b079d9141f894104390b1ddbd9243d66efea44651ad6324f35b319"
+    },
+    {
+      "file": "综合练习七（2026金山2模）答案详解.docx",
+      "sha256": "2c044c47886e20a00fdbe36f6100c889ad8d185f6b1fda4870ffd3f5e58831c3"
+    },
+    {
+      "file": "10月30日高三语文周测答案.docx",
+      "sha256": "9322d39a71db47502d330c25868c8e79f52219918b183cc63efced93495c8efb"
+    }
+  ],
+  "stats": {
+    "articles": 6,
+    "translations": 98,
+    "glosses": 88,
+    "pending": 0
+  },
+  "unresolved": [
+    {
+      "file": "综合练习四（静安）答案订正.docx",
+      "reason": "只有答案订正、断句片段和分析，无完整课外文言文原文，不拼凑或补造篇目。",
+      "paragraphs": [
+        {
+          "index": 14,
+          "text": "15.（2分）(1)战胜   (2)见识短浅的书生"
+        },
+        {
+          "index": 15,
+          "text": "16.（3分）吾尝望气汾晋/有圣人生/能往事之/富贵可取。"
+        },
+        {
+          "index": 16,
+          "text": "吾尝望气/汾晋有圣人生/能往事之/富贵可取。"
+        },
+        {
+          "index": 17,
+          "text": "17.（5分）大道推行可以取得天下江山，不成功也可以在一方割据称王。将自身托付于他人，实在无法忍受。（“道行”“王”“委质”“诚”“忍”各1分）。"
+        },
+        {
+          "index": 19,
+          "text": "18.（4分）①博学多识（精通儒书等）；②洞察力强（通过李密神态预判其结果、汾晋有圣人出）；③性情率直（直言李密非帝王之才）；④淡泊名利（不复入仕）。（答出两点即可）"
+        },
+        {
+          "index": 22,
+          "text": "19.（3分）作者欣赏叹服（称颂）魏先生察人之深，识人之智，故记载其事迹：魏预判李乃乱世雄杰而非帝王之才，最后李密果然败亡。写作此文警示（劝诫）世人不可恃勇妄为，行事不可违背道义。（一点2分）"
+        },
+        {
+          "index": 26,
+          "text": "22.（5分）甲文说理思路层层递进①开篇对孟子名言“求其放心”质疑：仅专心就行，“不必学问乎？”"
+        },
+        {
+          "index": 27,
+          "text": "再将孔子“不如学也”与之对比，指出孟子“求放心”另有其他意思。（2分）"
+        },
+        {
+          "index": 28,
+          "text": "②为释疑，作者引用孟子原句，指出“心”要有“仁”“礼”充实；"
+        },
+        {
+          "index": 29,
+          "text": "再援引“弈秋”典故强调“求其放心”只是做好学问的前提，了解具体技艺（学习内容）也十分重要。（2分）"
+        },
+        {
+          "index": 30,
+          "text": "③最后再次引用孟子之言明确观点：学问之道就是态度专一地致力于仁与礼。（1分）"
+        }
+      ]
+    }
+  ],
+  "articles": [
+    {
+      "id": "exam2026:article:duanzhou",
+      "title": "书端州郡斋壁",
+      "author": "包拯",
+      "era": "宋",
+      "body": "清心为治本，直道是身谋。\n秀干终成栋，精钢不作钩。\n仓充鼠雀喜，草尽兔狐愁。\n史册有遗训，毋贻来者羞。",
+      "summary": "2026金山二模 · 综合练习七；附原资料四联译文。原注：端州，今广东肇庆，包拯曾任端州知州。",
+      "sample": false,
+      "collection": "extracurricular",
+      "translations": [
+        {
+          "id": "exam2026:article:duanzhou:translation:1",
+          "articleStart": 0,
+          "source": "清心为治本，直道是身谋。",
+          "translation": "保持内心清正，是治理政事的根本；遵循正直之道，是立身处世的准则。"
+        },
+        {
+          "id": "exam2026:article:duanzhou:translation:2",
+          "articleStart": 13,
+          "source": "秀干终成栋，精钢不作钩。",
+          "translation": "笔直挺拔的树干，终究能成为栋梁；纯净坚硬的精钢，决不会用来做成弯曲的钩子。"
+        },
+        {
+          "id": "exam2026:article:duanzhou:translation:3",
+          "articleStart": 26,
+          "source": "仓充鼠雀喜，草尽兔狐愁。",
+          "translation": "粮仓装满时，老鼠和麻雀自然欢喜；草被除尽后，野兔和狐狸便无处藏身而发愁。"
+        },
+        {
+          "id": "exam2026:article:duanzhou:translation:4",
+          "articleStart": 39,
+          "source": "史册有遗训，毋贻来者羞。",
+          "translation": "史书上记载着先人的教诲，千万要留下清名，不要给后人留下指责的把柄。"
+        }
+      ],
+      "glosses": [],
+      "sourceFile": "综合练习七（2026金山2模）答案详解.docx",
+      "audit": [
+        {
+          "originalParagraph": 138,
+          "translationParagraphs": [
+            139
+          ],
+          "originalSource": "清心为治本，直道是身谋。",
+          "translationSource": "保持内心清正，是治理政事的根本；遵循正直之道，是立身处世的准则。"
+        },
+        {
+          "originalParagraph": 140,
+          "translationParagraphs": [
+            141
+          ],
+          "originalSource": "秀干终成栋，精钢不作钩。",
+          "translationSource": "笔直挺拔的树干，终究能成为栋梁；纯净坚硬的精钢，决不会用来做成弯曲的钩子。"
+        },
+        {
+          "originalParagraph": 142,
+          "translationParagraphs": [
+            143
+          ],
+          "originalSource": "仓充鼠雀喜，草尽兔狐愁。",
+          "translationSource": "粮仓装满时，老鼠和麻雀自然欢喜；草被除尽后，野兔和狐狸便无处藏身而发愁。"
+        },
+        {
+          "originalParagraph": 144,
+          "translationParagraphs": [
+            145
+          ],
+          "originalSource": "史册有遗训，毋贻来者羞。",
+          "translationSource": "史书上记载着先人的教诲，千万要留下清名，不要给后人留下指责的把柄。"
+        }
+      ]
+    },
+    {
+      "id": "exam2026:article:li-kongzhao",
+      "title": "李孔昭传（节选）",
+      "author": "",
+      "era": "清",
+      "body": "李孔昭，字光四，蓟州人。性孤介，平居教授生徒，倡明理学。崇祯十五年进士，见世事日非，不赴廷对，以所给牌坊银留助军饷。奉母隐盘山中，躬执樵采自给。母病，割股疗之。北都陷，素服哭于野者三载。蓟州城破，妻王殉难死，终身不再娶。形迹数易，人无识者。\n清初，诏求遗老，抚按交章荐，不出。一日，当道遣吏持书币往，遇负薪者，呼而问之，曰：“若识李进士耶？”负薪者诘得其故，以手遥指而去。吏至其室，虚矣。邻叟曰：“汝面失之。向所负薪者，李进士也！”后屡物色之，卒不得。时有某孝廉，当上公车，辄止不行，曰：“吾出郭门一步，且何面目见李光四乎？”\n会值邑中方兴役，按户签夫，驱孔昭，孔昭曰：“吾力不能任，愿出赀以代。”吏持去。阅数日，大学士杜立德闻孔昭在邑，急往候之。吏闻，趋谢罪。孔昭曰：“此间不知有李进士，若勿误也。”由是踪迹愈密，或黄冠，或儒服，见者甚稀。惟宝坻单者昌、崔周田、刘继宁皆高士，与之友善，往来无虚岁。\n者昌才名埒孔昭，入清不复应试。杜立德招之，不能致，独与孔昭徜徉田野。周田尝过盘山，与孔昭坐林石间相笑语。孔昭亦时下榻于其家，周田命其子执弟子礼，且迎孔昭母，事之如所生。继宁晚年为子择师游盘山，踪迹孔昭，得之。邀至其家，令其三子从受业。",
+      "summary": "2026金山二模 · 综合练习七；节选自《清史稿》，附原资料译文与字词释义，字词按原文标注保留。原注：埒（liè），等同，相等。",
+      "sample": false,
+      "collection": "extracurricular",
+      "translations": [
+        {
+          "id": "exam2026:article:li-kongzhao:translation:1",
+          "articleStart": 0,
+          "source": "李孔昭，字光四，蓟州人。",
+          "translation": "李孔昭，字光四，是蓟州人。"
+        },
+        {
+          "id": "exam2026:article:li-kongzhao:translation:2",
+          "articleStart": 12,
+          "source": "性孤介，平居教授生徒，倡明理学。",
+          "translation": "他性格孤高耿直，平日教授学生，倡导阐明理学。"
+        },
+        {
+          "id": "exam2026:article:li-kongzhao:translation:3",
+          "articleStart": 28,
+          "source": "崇祯十五年进士，见世事日非，不赴廷对，以所给牌坊银留助军饷。",
+          "translation": "（李孔昭）是崇祯十五年的进士，看到时局日益败坏，不去参加殿试，把朝廷给的牌坊银留下资助军饷。"
+        },
+        {
+          "id": "exam2026:article:li-kongzhao:translation:4",
+          "articleStart": 58,
+          "source": "奉母隐盘山中，躬执樵采自给。",
+          "translation": "他侍奉母亲隐居在盘山，亲自打柴来维持生活。"
+        },
+        {
+          "id": "exam2026:article:li-kongzhao:translation:5",
+          "articleStart": 72,
+          "source": "母病，割股疗之。",
+          "translation": "母亲病了，他割下大腿上的肉为母亲治病。"
+        },
+        {
+          "id": "exam2026:article:li-kongzhao:translation:6",
+          "articleStart": 80,
+          "source": "北都陷，素服哭于野者三载。",
+          "translation": "北京陷落，他穿丧服在野外哭了三年。"
+        },
+        {
+          "id": "exam2026:article:li-kongzhao:translation:7",
+          "articleStart": 93,
+          "source": "蓟州城破，妻王殉难死，终身不再娶。",
+          "translation": "蓟州城被攻破，妻子王氏殉难而死，他终身没有再娶。"
+        },
+        {
+          "id": "exam2026:article:li-kongzhao:translation:8",
+          "articleStart": 110,
+          "source": "形迹数易，人无识者。",
+          "translation": "他多次改变形迹，没有人能认出他。"
+        },
+        {
+          "id": "exam2026:article:li-kongzhao:translation:9",
+          "articleStart": 121,
+          "source": "清初，诏求遗老，抚按交章荐，不出。",
+          "translation": "清朝初年，朝廷下诏寻访遗老，巡抚和按察使交替上奏章推荐他，他不出来。"
+        },
+        {
+          "id": "exam2026:article:li-kongzhao:translation:10",
+          "articleStart": 138,
+          "source": "一日，当道遣吏持书币往，遇负薪者，呼而问之，曰：“若识李进士耶？”",
+          "translation": "一天，当权者派小吏带着书信和礼物前去，遇到一个背柴的人，叫住他问：“你认识李进士吗？”"
+        },
+        {
+          "id": "exam2026:article:li-kongzhao:translation:11",
+          "articleStart": 171,
+          "source": "负薪者诘得其故，以手遥指而去。",
+          "translation": "背柴的人问明缘故，用手遥指一个方向就离开了。"
+        },
+        {
+          "id": "exam2026:article:li-kongzhao:translation:12",
+          "articleStart": 186,
+          "source": "吏至其室，虚矣。",
+          "translation": "小吏到了他的屋子，是空的。"
+        },
+        {
+          "id": "exam2026:article:li-kongzhao:translation:13",
+          "articleStart": 194,
+          "source": "邻叟曰：“汝面失之。",
+          "translation": "邻家老人说：“你当面错过了。"
+        },
+        {
+          "id": "exam2026:article:li-kongzhao:translation:14",
+          "articleStart": 204,
+          "source": "向所负薪者，李进士也！”",
+          "translation": "刚才那个背柴的人，就是李进士！”"
+        },
+        {
+          "id": "exam2026:article:li-kongzhao:translation:15",
+          "articleStart": 216,
+          "source": "后屡物色之，卒不得。",
+          "translation": "后来多次寻访他，最终没能找到。"
+        },
+        {
+          "id": "exam2026:article:li-kongzhao:translation:16",
+          "articleStart": 226,
+          "source": "时有某孝廉，当上公车，辄止不行，曰：“吾出郭门一步，且何面目见李光四乎？”",
+          "translation": "当时有位举人，该上京应试了，总是不走，说：“我只要踏出外城一步，将有什么脸面去见李光四呢？”"
+        },
+        {
+          "id": "exam2026:article:li-kongzhao:translation:17",
+          "articleStart": 264,
+          "source": "会值邑中方兴役，按户签夫，驱孔昭，孔昭曰：“吾力不能任，愿出赀以代。”",
+          "translation": "恰逢县里正兴起劳役，按户征派夫役，驱赶孔昭。孔昭说：“我力气不能承担劳役，愿意出钱来代替。”"
+        },
+        {
+          "id": "exam2026:article:li-kongzhao:translation:18",
+          "articleStart": 299,
+          "source": "吏持去。",
+          "translation": "小吏拿钱离开。"
+        },
+        {
+          "id": "exam2026:article:li-kongzhao:translation:19",
+          "articleStart": 303,
+          "source": "阅数日，大学士杜立德闻孔昭在邑，急往候之。",
+          "translation": "过了几天，大学士杜立德听说孔昭在县里，急忙前去问候他。"
+        },
+        {
+          "id": "exam2026:article:li-kongzhao:translation:20",
+          "articleStart": 324,
+          "source": "吏闻，趋谢罪。",
+          "translation": "小吏听说了跑去谢罪。"
+        },
+        {
+          "id": "exam2026:article:li-kongzhao:translation:21",
+          "articleStart": 331,
+          "source": "孔昭曰：“此间不知有李进士，若勿误也。”",
+          "translation": "孔昭说：“这里不知道有李进士，你不要弄错了。”"
+        },
+        {
+          "id": "exam2026:article:li-kongzhao:translation:22",
+          "articleStart": 351,
+          "source": "由是踪迹愈密，或黄冠，或儒服，见者甚稀。",
+          "translation": "从此行踪更加隐秘，有时穿道士服，有时穿儒生服，见到他的人很少。"
+        },
+        {
+          "id": "exam2026:article:li-kongzhao:translation:23",
+          "articleStart": 371,
+          "source": "惟宝坻单者昌、崔周田、刘继宁皆高士，与之友善，往来无虚岁。",
+          "translation": "只有宝坻的单者昌、崔周田、刘继宁都是高士，和他交好，每年都往来。"
+        },
+        {
+          "id": "exam2026:article:li-kongzhao:translation:24",
+          "articleStart": 401,
+          "source": "者昌才名埒孔昭，入清不复应试。",
+          "translation": "单者昌的才名与李孔昭相等。进入清朝后不再参加科举考试。"
+        },
+        {
+          "id": "exam2026:article:li-kongzhao:translation:25",
+          "articleStart": 416,
+          "source": "杜立德招之，不能致，独与孔昭徜徉田野。",
+          "translation": "杜立德招揽他，不能招来，只与李孔昭在田野间漫步。"
+        },
+        {
+          "id": "exam2026:article:li-kongzhao:translation:26",
+          "articleStart": 435,
+          "source": "周田尝过盘山，与孔昭坐林石间相笑语。",
+          "translation": "崔周田曾到盘山，与李孔昭坐在树林石头间谈笑。"
+        },
+        {
+          "id": "exam2026:article:li-kongzhao:translation:27",
+          "articleStart": 453,
+          "source": "孔昭亦时下榻于其家，周田命其子执弟子礼，且迎孔昭母，事之如所生。",
+          "translation": "李孔昭也时常在他家住宿，崔周田让他的儿子行李弟子的礼节，并且接来李孔昭的母亲，像对待亲生母亲一样侍奉她。"
+        },
+        {
+          "id": "exam2026:article:li-kongzhao:translation:28",
+          "articleStart": 485,
+          "source": "继宁晚年为子择师游盘山，踪迹孔昭，得之。",
+          "translation": "刘继宁晚年为儿子选择老师，游历盘山，寻访李孔昭的踪迹，找到了他。"
+        },
+        {
+          "id": "exam2026:article:li-kongzhao:translation:29",
+          "articleStart": 505,
+          "source": "邀至其家，令其三子从受业。",
+          "translation": "邀请他到家中，让他的三个儿子跟随他学习。"
+        }
+      ],
+      "glosses": [
+        {
+          "ref": "jinshan:161:1",
+          "word": "孤介",
+          "meaning": "耿直",
+          "issue": "",
+          "articleStart": 13
+        },
+        {
+          "ref": "jinshan:161:2",
+          "word": "平居",
+          "meaning": "平时",
+          "issue": "",
+          "articleStart": 16
+        },
+        {
+          "ref": "jinshan:161:3",
+          "word": "日",
+          "meaning": "日渐",
+          "issue": "",
+          "articleStart": 39
+        },
+        {
+          "ref": "jinshan:161:4",
+          "word": "非",
+          "meaning": "不对;错误",
+          "issue": "",
+          "articleStart": 40
+        },
+        {
+          "ref": "jinshan:161:5",
+          "word": "廷对",
+          "meaning": "科举时代的殿试",
+          "issue": "",
+          "articleStart": 44
+        },
+        {
+          "ref": "jinshan:161:6",
+          "word": "助",
+          "meaning": "帮助，协助",
+          "issue": "",
+          "articleStart": 54
+        },
+        {
+          "ref": "jinshan:161:7",
+          "word": "奉",
+          "meaning": "侍奉",
+          "issue": "",
+          "articleStart": 58
+        },
+        {
+          "ref": "jinshan:161:8",
+          "word": "躬",
+          "meaning": "亲自",
+          "issue": "",
+          "articleStart": 65
+        },
+        {
+          "ref": "jinshan:161:9",
+          "word": "樵",
+          "meaning": "打柴",
+          "issue": "",
+          "articleStart": 67
+        },
+        {
+          "ref": "jinshan:161:10",
+          "word": "股",
+          "meaning": "大腿",
+          "issue": "",
+          "articleStart": 76
+        },
+        {
+          "ref": "jinshan:161:11",
+          "word": "素服",
+          "meaning": "本色或白色的衣服,多指丧服",
+          "issue": "",
+          "articleStart": 84
+        },
+        {
+          "ref": "jinshan:161:12",
+          "word": "易",
+          "meaning": "改变",
+          "issue": "",
+          "articleStart": 113
+        },
+        {
+          "ref": "jinshan:163:1",
+          "word": "遗",
+          "meaning": "留下",
+          "issue": "",
+          "articleStart": 126
+        },
+        {
+          "ref": "jinshan:163:2",
+          "word": "交",
+          "meaning": "相错，接合",
+          "issue": "",
+          "articleStart": 131
+        },
+        {
+          "ref": "jinshan:163:3",
+          "word": "当道",
+          "meaning": "指掌权的人",
+          "issue": "",
+          "articleStart": 141
+        },
+        {
+          "ref": "jinshan:163:4",
+          "word": "币",
+          "meaning": "钱币",
+          "issue": "",
+          "articleStart": 147
+        },
+        {
+          "ref": "jinshan:163:5",
+          "word": "负",
+          "meaning": "背着",
+          "issue": "",
+          "articleStart": 151
+        },
+        {
+          "ref": "jinshan:163:6",
+          "word": "薪",
+          "meaning": "柴火",
+          "issue": "",
+          "articleStart": 152
+        },
+        {
+          "ref": "jinshan:163:7",
+          "word": "若",
+          "meaning": "你",
+          "issue": "",
+          "articleStart": 163
+        },
+        {
+          "ref": "jinshan:163:8",
+          "word": "诘",
+          "meaning": "追问",
+          "issue": "",
+          "articleStart": 174
+        },
+        {
+          "ref": "jinshan:163:9",
+          "word": "故",
+          "meaning": "原因",
+          "issue": "",
+          "articleStart": 177
+        },
+        {
+          "ref": "jinshan:163:10",
+          "word": "虚",
+          "meaning": "空",
+          "issue": "",
+          "articleStart": 191
+        },
+        {
+          "ref": "jinshan:163:11",
+          "word": "面",
+          "meaning": "当面",
+          "issue": "",
+          "articleStart": 200
+        },
+        {
+          "ref": "jinshan:163:12",
+          "word": "失",
+          "meaning": "错过",
+          "issue": "",
+          "articleStart": 201
+        },
+        {
+          "ref": "jinshan:163:13",
+          "word": "向",
+          "meaning": "从前",
+          "issue": "",
+          "articleStart": 204
+        },
+        {
+          "ref": "jinshan:163:14",
+          "word": "物色",
+          "meaning": "按一定标准去访求",
+          "issue": "",
+          "articleStart": 218
+        },
+        {
+          "ref": "jinshan:163:15",
+          "word": "卒",
+          "meaning": "最终",
+          "issue": "",
+          "articleStart": 222
+        },
+        {
+          "ref": "jinshan:163:16",
+          "word": "公车",
+          "meaning": "入京会试",
+          "issue": "",
+          "articleStart": 234
+        },
+        {
+          "ref": "jinshan:163:17",
+          "word": "辄",
+          "meaning": "总是",
+          "issue": "",
+          "articleStart": 237
+        },
+        {
+          "ref": "jinshan:163:18",
+          "word": "行",
+          "meaning": "走",
+          "issue": "",
+          "articleStart": 240
+        },
+        {
+          "ref": "jinshan:163:19",
+          "word": "郭",
+          "meaning": "城外围着城的墙",
+          "issue": "",
+          "articleStart": 247
+        },
+        {
+          "ref": "jinshan:163:20",
+          "word": "且",
+          "meaning": "将要",
+          "issue": "",
+          "articleStart": 252
+        },
+        {
+          "ref": "jinshan:165:1",
+          "word": "值",
+          "meaning": "恰逢",
+          "issue": "",
+          "articleStart": 265
+        },
+        {
+          "ref": "jinshan:165:2",
+          "word": "邑",
+          "meaning": "县",
+          "issue": "",
+          "articleStart": 266
+        },
+        {
+          "ref": "jinshan:165:3",
+          "word": "方",
+          "meaning": "正在",
+          "issue": "",
+          "articleStart": 268
+        },
+        {
+          "ref": "jinshan:165:4",
+          "word": "兴",
+          "meaning": "发动",
+          "issue": "",
+          "articleStart": 269
+        },
+        {
+          "ref": "jinshan:165:5",
+          "word": "签",
+          "meaning": "征调",
+          "issue": "",
+          "articleStart": 274
+        },
+        {
+          "ref": "jinshan:165:6",
+          "word": "任",
+          "meaning": "负担，担任",
+          "issue": "",
+          "articleStart": 290
+        },
+        {
+          "ref": "jinshan:165:7",
+          "word": "赀",
+          "meaning": "钱财",
+          "issue": "",
+          "articleStart": 294
+        },
+        {
+          "ref": "jinshan:165:8",
+          "word": "阅",
+          "meaning": "经历",
+          "issue": "",
+          "articleStart": 303
+        },
+        {
+          "ref": "jinshan:165:9",
+          "word": "趋",
+          "meaning": "快走",
+          "issue": "",
+          "articleStart": 327
+        },
+        {
+          "ref": "jinshan:165:10",
+          "word": "谢罪",
+          "meaning": "承认过错，请求谅解",
+          "issue": "",
+          "articleStart": 328
+        },
+        {
+          "ref": "jinshan:165:11",
+          "word": "若",
+          "meaning": "你",
+          "issue": "",
+          "articleStart": 345
+        },
+        {
+          "ref": "jinshan:165:12",
+          "word": "密",
+          "meaning": "隐密的",
+          "issue": "",
+          "articleStart": 356
+        },
+        {
+          "ref": "jinshan:165:13",
+          "word": "或",
+          "meaning": "也许，有时，表示不定的词",
+          "issue": "",
+          "articleStart": 358
+        },
+        {
+          "ref": "jinshan:165:14",
+          "word": "稀",
+          "meaning": "少",
+          "issue": "",
+          "articleStart": 369
+        },
+        {
+          "ref": "jinshan:165:15",
+          "word": "与",
+          "meaning": "交往，友好",
+          "issue": "",
+          "articleStart": 389
+        },
+        {
+          "ref": "jinshan:165:16",
+          "word": "虚",
+          "meaning": "间断",
+          "issue": "",
+          "articleStart": 397
+        },
+        {
+          "ref": "jinshan:167:1",
+          "word": "致",
+          "meaning": "招引，使达到",
+          "issue": "",
+          "articleStart": 424
+        },
+        {
+          "ref": "jinshan:167:2",
+          "word": "下榻",
+          "meaning": "指客人住宿",
+          "issue": "",
+          "articleStart": 457
+        },
+        {
+          "ref": "jinshan:167:3",
+          "word": "迎",
+          "meaning": "接",
+          "issue": "",
+          "articleStart": 474
+        },
+        {
+          "ref": "jinshan:167:4",
+          "word": "得",
+          "meaning": "完成，实现",
+          "issue": "",
+          "articleStart": 502
+        },
+        {
+          "ref": "jinshan:167:5",
+          "word": "受业",
+          "meaning": "跟随老师学习",
+          "issue": "",
+          "articleStart": 515
+        },
+        {
+          "ref": "jinshan:173:2",
+          "word": "事",
+          "meaning": "侍奉",
+          "articleStart": 479,
+          "issue": ""
+        }
+      ],
+      "sourceFile": "综合练习七（2026金山2模）答案详解.docx",
+      "audit": [
+        {
+          "originalParagraph": 161,
+          "translationParagraphs": [
+            162
+          ],
+          "originalSource": "①李孔昭，字光四，蓟州人。性孤介（耿直），平居（平时）教授生徒，倡明理学。崇祯十五年进士，见世事日（日渐）非（不对;错误），不赴廷对（科举时代的殿试），以所给牌坊银留助（帮助，协助）军饷。奉（侍奉）母隐盘山中，躬（亲自）执樵（打柴）采自给。母病，割股（大腿）疗之。北都陷，素服（本色或白色的衣服,多指丧服）哭于野者三载。蓟州城破，妻王殉难死，终身不再娶。形迹数易（改变），人无识者。（19，这些都是真实可考的事迹，不虚构、不夸大，勾勒出传主忠于旧朝、至孝重情、淡泊名利的遗民志士形象，体现了人物传记的写实性。）",
+          "translationSource": "李孔昭，字光四，是蓟州人。他性格孤高耿直，平日教授学生，倡导阐明理学。（李孔昭）是崇祯十五年的进士，看到时局日益败坏，不去参加殿试，把朝廷给的牌坊银留下资助军饷。他侍奉母亲隐居在盘山，亲自打柴来维持生活。母亲病了，他割下大腿上的肉为母亲治病。北京陷落，他穿丧服在野外哭了三年。蓟州城被攻破，妻子王氏殉难而死，他终身没有再娶。他多次改变形迹，没有人能认出他。"
+        },
+        {
+          "originalParagraph": 163,
+          "translationParagraphs": [
+            164
+          ],
+          "originalSource": "②清初，诏求遗（留下）老，抚按交（相错，接合）章荐，不出。一日，当道（指掌权的人）遣吏持书币（钱币）往，遇负（背着）薪（柴火）者，呼而问之，曰：“若（你）识李进士耶？”负薪者诘（追问）得其故（原因），以手遥指而去。吏至其室，虚（空）矣。邻叟曰：“汝面（当面）失（错过）之。向（从前）所负薪者，李进士也！（19，戏剧性转折，增强感染力）”后屡物色（按一定标准去访求）之，卒（最终）不得（19，反复寻访而不得，强化其隐逸之深，侧面烘托，艺术化处理）。时有某孝廉，当上公车（入京会试），辄（总是）止不行（走），曰：“吾出郭（城外围着城的墙）门一步，且（将要）何面目见李光四乎（19，通过他人自愧来烘托李孔昭的品格）？”",
+          "translationSource": "清朝初年，朝廷下诏寻访遗老，巡抚和按察使交替上奏章推荐他，他不出来。一天，当权者派小吏带着书信和礼物前去，遇到一个背柴的人，叫住他问：“你认识李进士吗？”背柴的人问明缘故，用手遥指一个方向就离开了。小吏到了他的屋子，是空的。邻家老人说：“你当面错过了。刚才那个背柴的人，就是李进士！”后来多次寻访他，最终没能找到。当时有位举人，该上京应试了，总是不走，说：“我只要踏出外城一步，将有什么脸面去见李光四呢？”"
+        },
+        {
+          "originalParagraph": 165,
+          "translationParagraphs": [
+            166
+          ],
+          "originalSource": "③会值（恰逢）邑（县）中方（正在）兴（发动）役，按户签（征调）夫，驱孔昭，孔昭曰：“吾力不能任（负担，担任），愿出赀（钱财）以代。”吏持去。阅（经历）数日大学士杜立德闻孔昭在邑急往候之吏闻趋（快走）谢罪（承认过错，请求谅解）。孔昭曰：“此间不知有李进士，若（你）勿误也。”由是踪迹愈密（隐密的），或（也许，有时，表示不定的词）黄冠，或儒服，见者甚稀（少）。惟宝坻单者昌、崔周田、刘继宁皆高士，与（交往，友好）之友善，往来无虚（间断）岁。",
+          "translationSource": "恰逢县里正兴起劳役，按户征派夫役，驱赶孔昭。孔昭说：“我力气不能承担劳役，愿意出钱来代替。”小吏拿钱离开。过了几天，大学士杜立德听说孔昭在县里，急忙前去问候他。小吏听说了跑去谢罪。孔昭说：“这里不知道有李进士，你不要弄错了。”从此行踪更加隐秘，有时穿道士服，有时穿儒生服，见到他的人很少。只有宝坻的单者昌、崔周田、刘继宁都是高士，和他交好，每年都往来。"
+        },
+        {
+          "originalParagraph": 167,
+          "translationParagraphs": [
+            168
+          ],
+          "originalSource": "④者昌才名埒①孔昭，入清不复应试。杜立德招之，不能致（招引，使达到），独与孔昭徜徉田野。周田尝过盘山，与孔昭坐林石间相笑语。孔昭亦时下榻(指客人住宿)于其家，周田命其子执弟子礼，且迎(接)孔昭母，事之如所生。继宁晚年为子择师游盘山，踪迹孔昭，得(完成，实现)之。邀至其家，令其三子从受业(跟随老师学习)。",
+          "translationSource": "单者昌的才名与李孔昭相等。进入清朝后不再参加科举考试。杜立德招揽他，不能招来，只与李孔昭在田野间漫步。崔周田曾到盘山，与李孔昭坐在树林石头间谈笑。李孔昭也时常在他家住宿，崔周田让他的儿子行李弟子的礼节，并且接来李孔昭的母亲，像对待亲生母亲一样侍奉她。刘继宁晚年为儿子选择老师，游历盘山，寻访李孔昭的踪迹，找到了他。邀请他到家中，让他的三个儿子跟随他学习。"
+        }
+      ]
+    },
+    {
+      "id": "exam2026:article:yilvtang",
+      "title": "依绿堂记",
+      "author": "方岳",
+      "era": "宋",
+      "body": "客有名其堂曰依绿而谒记于子方子，子方子曰：“何哉？客所谓依绿者，岂平沙漫流、襟带左右，碧净一色、烟霏吐吞而水摇山动于倒景之灭没乎？”\n曰：“否。吾尝见雨蓑雪蓬啸歌而渔，江鸥沙禽浮沉下上于玲珑窈窕之外。”\n曰：“此惠崇、郭熙得意小景也，宁有是乎？”\n曰：“否。吾乡无陂湖而溪清不尘，春染而鸭头，秋吹而龙鳞，往往自多幽处。”\n“子亦与溪友提携山翁往来而朝夕于是乎？”\n曰：“否。”\n“如此则子何以名而予何以记？”\n曰：“吾尝手疏涧泉，汇为清池。时雨新霁，春草怒长，吾酣然醉卧，不知阿连之梦我。少焉醒，但见白鸟闲暇，深翘于平芜短莎之间，有鱼圉然，倏尔远逝，藻翻荇乱，牵动寒碧。吾以为有江湖之思焉，若是何如？”\n子方子曰：“噫！心与境忘则幽想逸发，神游飘萧，极意所到，忽若有遇。虽未尝登稽山而识贺老镜湖，忆子猷访戴安道处犹可想见，而夜半之雪兴故在；未尝泛沅度湘而见娥皇、舜英之古愁，班班于苍梧之竹上者未歇，而屈大夫滋兰之秋畹、采若之春洲，固无恙也。然则余三问而子三否者，不既在几研之间、履屐之下与？”\n曰：“某也恐未能，子姑记。”",
+      "summary": "2026金山二模 · 综合练习七；附原资料译文与字词释义，字词按原文标注保留。原注：子方，作者自称；惠崇、郭熙，北宋画家，惠崇擅山水花鸟小景，郭熙精山水，文中借指名家山水景致；子猷访戴，出自《世说新语》，王子猷雪夜乘兴访友，兴尽而返，重在精神意趣相通。",
+      "sample": false,
+      "collection": "extracurricular",
+      "translations": [
+        {
+          "id": "exam2026:article:yilvtang:translation:1",
+          "articleStart": 0,
+          "source": "客有名其堂曰依绿而谒记于子方子，子方子曰：“何哉？",
+          "translation": "有位客人将他的堂屋命名为“依绿”，并请我（子方）写一篇记。我（子方）说：“为什么呢？"
+        },
+        {
+          "id": "exam2026:article:yilvtang:translation:2",
+          "articleStart": 25,
+          "source": "客所谓依绿者，岂平沙漫流、襟带左右，碧净一色、烟霏吐吞而水摇山动于倒景之灭没乎？”",
+          "translation": "客人所说的‘依绿’，难道是指平旷的沙洲、漫流的江水环绕左右，碧绿澄净一色、烟云吞吐而山水倒影在其中变幻明灭的景象吗？”"
+        },
+        {
+          "id": "exam2026:article:yilvtang:translation:3",
+          "articleStart": 67,
+          "source": "曰：“否。",
+          "translation": "客人说：“不是。"
+        },
+        {
+          "id": "exam2026:article:yilvtang:translation:4",
+          "articleStart": 72,
+          "source": "吾尝见雨蓑雪蓬啸歌而渔，江鸥沙禽浮沉下上于玲珑窈窕之外。”",
+          "translation": "我曾见过披着蓑衣在雨雪中歌唱打渔，江鸥沙鸟在玲珑秀美的山水之外上下浮沉。”"
+        },
+        {
+          "id": "exam2026:article:yilvtang:translation:5",
+          "articleStart": 102,
+          "source": "曰：“此惠崇、郭熙得意小景也，宁有是乎？”",
+          "translation": "我说：“这是惠崇、郭熙得意的山水小景啊，难道有这样的景色吗？”"
+        },
+        {
+          "id": "exam2026:article:yilvtang:translation:6",
+          "articleStart": 124,
+          "source": "曰：“否。",
+          "translation": "客人说：“不是。"
+        },
+        {
+          "id": "exam2026:article:yilvtang:translation:7",
+          "articleStart": 129,
+          "source": "吾乡无陂湖而溪清不尘，春染而鸭头，秋吹而龙鳞，往往自多幽处。”",
+          "translation": "我的家乡没有湖泊，但溪水清澈不染尘埃，春天溪水如鸭头般碧绿，秋风吹拂如龙鳞般波光粼粼，往往自有幽静之处。”"
+        },
+        {
+          "id": "exam2026:article:yilvtang:translation:8",
+          "articleStart": 161,
+          "source": "“子亦与溪友提携山翁往来而朝夕于是乎？”",
+          "translation": "“那么你也常与溪边的朋友、山中的老翁往来，朝夕都在那里吗？”"
+        },
+        {
+          "id": "exam2026:article:yilvtang:translation:9",
+          "articleStart": 182,
+          "source": "曰：“否。”",
+          "translation": "客人说：“不是。”"
+        },
+        {
+          "id": "exam2026:article:yilvtang:translation:10",
+          "articleStart": 189,
+          "source": "“如此则子何以名而予何以记？”",
+          "translation": "“既然如此，那么你为何这样命名，而我又为何要写记呢？”"
+        },
+        {
+          "id": "exam2026:article:yilvtang:translation:11",
+          "articleStart": 205,
+          "source": "曰：“吾尝手疏涧泉，汇为清池。",
+          "translation": "客人说：“我曾亲手疏通山涧泉水，汇聚成清澈的池塘。"
+        },
+        {
+          "id": "exam2026:article:yilvtang:translation:12",
+          "articleStart": 220,
+          "source": "时雨新霁，春草怒长，吾酣然醉卧，不知阿连之梦我。",
+          "translation": "新雨初晴之时，春草蓬勃生长，我酣然醉卧，不知是否像谢灵运梦见谢惠连那样（沉醉于美景）。"
+        },
+        {
+          "id": "exam2026:article:yilvtang:translation:13",
+          "articleStart": 244,
+          "source": "少焉醒，但见白鸟闲暇，深翘于平芜短莎之间，有鱼圉然，倏尔远逝，藻翻荇乱，牵动寒碧。",
+          "translation": "过了一会儿醒来，只见白鸟悠闲自在，在平旷的原野和矮短的莎草间高高地翘立，有鱼儿静静地（待着），忽然间向远处游去，水藻和荇菜被搅乱，牵动了清寒碧绿的水波。"
+        },
+        {
+          "id": "exam2026:article:yilvtang:translation:14",
+          "articleStart": 285,
+          "source": "吾以为有江湖之思焉，若是何如？”",
+          "translation": "我因此产生了隐居江湖的思绪，像这样如何？”"
+        },
+        {
+          "id": "exam2026:article:yilvtang:translation:15",
+          "articleStart": 302,
+          "source": "子方子曰：“噫！",
+          "translation": "我（子方）说：“唉！"
+        },
+        {
+          "id": "exam2026:article:yilvtang:translation:16",
+          "articleStart": 310,
+          "source": "心与境忘则幽想逸发，神游飘萧，极意所到，忽若有遇。",
+          "translation": "内心与外界环境相忘，那么幽远的想象就会勃发，精神自由遨游，意念所到之处，忽然间仿佛有所遇合。"
+        },
+        {
+          "id": "exam2026:article:yilvtang:translation:17",
+          "articleStart": 335,
+          "source": "虽未尝登稽山而识贺老镜湖，忆子猷访戴安道处犹可想见，而夜半之雪兴故在；未尝泛沅度湘而见娥皇、舜英之古愁，班班于苍梧之竹上者未歇，而屈大夫滋兰之秋畹、采若之春洲，固无恙也。",
+          "translation": "即使不曾登上会稽山去见识贺知章的镜湖，回想王子猷雪夜访戴安道的情景仍可以想见，而半夜乘兴的意趣依然存在；不曾泛舟沅水湘江而见到娥皇、女英的千古哀愁，那斑斑泪痕留于苍梧竹上的痕迹未曾消歇，而屈原大夫种植兰草的秋日田埂、采摘杜若的春日洲渚，本来也安然无恙。"
+        },
+        {
+          "id": "exam2026:article:yilvtang:translation:18",
+          "articleStart": 420,
+          "source": "然则余三问而子三否者，不既在几研之间、履屐之下与？”",
+          "translation": "那么我三次询问而你三次否定，那（你所依傍的‘绿’）不就已经在书桌砚台之间、日常步履之下了吗？”"
+        },
+        {
+          "id": "exam2026:article:yilvtang:translation:19",
+          "articleStart": 447,
+          "source": "曰：“某也恐未能，子姑记。”",
+          "translation": "客人说：“我恐怕还未能达到（这种境界），您姑且写下这篇记吧。”"
+        }
+      ],
+      "glosses": [
+        {
+          "ref": "jinshan:202:1",
+          "word": "名",
+          "meaning": "命名",
+          "issue": "",
+          "articleStart": 2
+        },
+        {
+          "ref": "jinshan:202:2",
+          "word": "谒",
+          "meaning": "请求",
+          "issue": "",
+          "articleStart": 9
+        },
+        {
+          "ref": "jinshan:202:3",
+          "word": "岂",
+          "meaning": "难道",
+          "issue": "",
+          "articleStart": 32
+        },
+        {
+          "ref": "jinshan:202:4",
+          "word": "襟带",
+          "meaning": "衣襟和腰带，比喻地势险要",
+          "issue": "",
+          "articleStart": 38
+        },
+        {
+          "ref": "jinshan:202:5",
+          "word": "烟霏",
+          "meaning": "云气",
+          "issue": "",
+          "articleStart": 48
+        },
+        {
+          "ref": "jinshan:202:6",
+          "word": "灭",
+          "meaning": "消失，隐没",
+          "issue": "",
+          "articleStart": 61
+        },
+        {
+          "ref": "jinshan:204:1",
+          "word": "尝",
+          "meaning": "曾经",
+          "issue": "",
+          "articleStart": 73
+        },
+        {
+          "ref": "jinshan:204:2",
+          "word": "蓑",
+          "meaning": "用草或棕毛做成的防雨器",
+          "issue": "",
+          "articleStart": 76
+        },
+        {
+          "ref": "jinshan:204:3",
+          "word": "啸歌",
+          "meaning": "吟咏",
+          "issue": "",
+          "articleStart": 79
+        },
+        {
+          "ref": "jinshan:204:4",
+          "word": "玲珑",
+          "meaning": "灵活敏捷",
+          "issue": "",
+          "articleStart": 93
+        },
+        {
+          "ref": "jinshan:204:5",
+          "word": "窈窕",
+          "meaning": "幽深美好",
+          "issue": "",
+          "articleStart": 95
+        },
+        {
+          "ref": "jinshan:205:1",
+          "word": "宁",
+          "meaning": "难道",
+          "issue": "",
+          "articleStart": 117
+        },
+        {
+          "ref": "jinshan:206:1",
+          "word": "陂",
+          "meaning": "池塘",
+          "issue": "",
+          "articleStart": 132
+        },
+        {
+          "ref": "jinshan:207:1",
+          "word": "提携",
+          "meaning": "牵扶",
+          "issue": "",
+          "articleStart": 167
+        },
+        {
+          "ref": "jinshan:209:1",
+          "word": "何以",
+          "meaning": "为什么",
+          "issue": "",
+          "articleStart": 194
+        },
+        {
+          "ref": "jinshan:215:1",
+          "word": "霁",
+          "meaning": "雨雪停止，天放晴",
+          "issue": "",
+          "articleStart": 223
+        },
+        {
+          "ref": "jinshan:215:2",
+          "word": "少焉",
+          "meaning": "短暂的时间，一会儿",
+          "issue": "",
+          "articleStart": 244
+        },
+        {
+          "ref": "jinshan:215:3",
+          "word": "但",
+          "meaning": "只",
+          "issue": "",
+          "articleStart": 248
+        },
+        {
+          "ref": "jinshan:215:4",
+          "word": "倏尔",
+          "meaning": "忽然",
+          "issue": "",
+          "articleStart": 270
+        },
+        {
+          "ref": "jinshan:215:5",
+          "word": "逝",
+          "meaning": "过去",
+          "issue": "",
+          "articleStart": 273
+        },
+        {
+          "ref": "jinshan:215:6",
+          "word": "荇",
+          "meaning": "多年生草本植物",
+          "issue": "",
+          "articleStart": 277
+        },
+        {
+          "ref": "jinshan:217:1",
+          "word": "逸",
+          "meaning": "散失",
+          "issue": "",
+          "articleStart": 317
+        },
+        {
+          "ref": "jinshan:217:2",
+          "word": "发",
+          "meaning": "散开，分散",
+          "issue": "",
+          "articleStart": 318
+        },
+        {
+          "ref": "jinshan:217:3",
+          "word": "飘萧",
+          "meaning": "冷落，没有生气的样子",
+          "issue": "",
+          "articleStart": 322
+        },
+        {
+          "ref": "jinshan:217:4",
+          "word": "兴",
+          "meaning": "意趣",
+          "issue": "",
+          "articleStart": 366
+        },
+        {
+          "ref": "jinshan:217:5",
+          "word": "故",
+          "meaning": "仍，还是",
+          "issue": "",
+          "articleStart": 367
+        },
+        {
+          "ref": "jinshan:217:6",
+          "word": "泛",
+          "meaning": "漂浮",
+          "issue": "",
+          "articleStart": 372
+        },
+        {
+          "ref": "jinshan:217:7",
+          "word": "度",
+          "meaning": "越过",
+          "issue": "",
+          "articleStart": 374
+        },
+        {
+          "ref": "jinshan:217:8",
+          "word": "歇",
+          "meaning": "休息，停止",
+          "issue": "",
+          "articleStart": 397
+        },
+        {
+          "ref": "jinshan:217:9",
+          "word": "恙",
+          "meaning": "病，忧",
+          "issue": "",
+          "articleStart": 417
+        },
+        {
+          "ref": "jinshan:217:10",
+          "word": "几研",
+          "meaning": "几案和砚台",
+          "issue": "",
+          "articleStart": 434
+        },
+        {
+          "ref": "jinshan:217:11",
+          "word": "履",
+          "meaning": "鞋",
+          "issue": "",
+          "articleStart": 439
+        },
+        {
+          "ref": "jinshan:217:12",
+          "word": "屐",
+          "meaning": "鞋",
+          "issue": "",
+          "articleStart": 440
+        },
+        {
+          "ref": "jinshan:219:1",
+          "word": "姑",
+          "meaning": "暂且",
+          "issue": "",
+          "articleStart": 457
+        }
+      ],
+      "sourceFile": "综合练习七（2026金山2模）答案详解.docx",
+      "audit": [
+        {
+          "originalParagraph": 202,
+          "translationParagraphs": [
+            203
+          ],
+          "originalSource": "①客有名（命名）其堂曰依绿而谒（请求）记于子方①子，子方子曰：“何哉？客所谓依绿者，岂（难道）平沙漫流、襟带（衣襟和腰带，比喻地势险要）左右，碧净一色、烟霏（云气）吐吞而水摇山动于倒景之灭（消失，隐没）没乎？”",
+          "translationSource": "有位客人将他的堂屋命名为“依绿”，并请我（子方）写一篇记。我（子方）说：“为什么呢？客人所说的‘依绿’，难道是指平旷的沙洲、漫流的江水环绕左右，碧绿澄净一色、烟云吞吐而山水倒影在其中变幻明灭的景象吗？”"
+        },
+        {
+          "originalParagraph": 204,
+          "translationParagraphs": [
+            210
+          ],
+          "originalSource": "②曰：“否。吾尝（曾经）见雨蓑（用草或棕毛做成的防雨器）雪蓬啸歌（吟咏）而渔，江鸥沙禽浮沉下上于玲珑（灵活敏捷）窈窕（幽深美好）之外。”",
+          "translationSource": "客人说：“不是。我曾见过披着蓑衣在雨雪中歌唱打渔，江鸥沙鸟在玲珑秀美的山水之外上下浮沉。”"
+        },
+        {
+          "originalParagraph": 205,
+          "translationParagraphs": [
+            211
+          ],
+          "originalSource": "③曰：“此惠崇、郭熙②得意小景也，宁（难道）有是乎？”",
+          "translationSource": "我说：“这是惠崇、郭熙得意的山水小景啊，难道有这样的景色吗？”"
+        },
+        {
+          "originalParagraph": 206,
+          "translationParagraphs": [
+            212
+          ],
+          "originalSource": "④曰：“否。吾乡无陂（池塘）湖而溪清不尘，春染而鸭头，秋吹而龙鳞，往往自多幽处。”",
+          "translationSource": "客人说：“不是。我的家乡没有湖泊，但溪水清澈不染尘埃，春天溪水如鸭头般碧绿，秋风吹拂如龙鳞般波光粼粼，往往自有幽静之处。”"
+        },
+        {
+          "originalParagraph": 207,
+          "translationParagraphs": [
+            213
+          ],
+          "originalSource": "⑤“子亦与溪友提携（牵扶）山翁往来而朝夕于是乎？”",
+          "translationSource": "“那么你也常与溪边的朋友、山中的老翁往来，朝夕都在那里吗？”"
+        },
+        {
+          "originalParagraph": 208,
+          "translationParagraphs": [
+            213
+          ],
+          "originalSource": "⑥曰：“否。”",
+          "translationSource": "客人说：“不是。”"
+        },
+        {
+          "originalParagraph": 209,
+          "translationParagraphs": [
+            214
+          ],
+          "originalSource": "⑦“如此则子何以（为什么）名而予何以记？”（20AB正确）",
+          "translationSource": "“既然如此，那么你为何这样命名，而我又为何要写记呢？”"
+        },
+        {
+          "originalParagraph": 215,
+          "translationParagraphs": [
+            216
+          ],
+          "originalSource": "⑧曰：“吾尝手疏涧泉，汇为清池。时雨新霁（雨雪停止，天放晴），春草怒长，吾酣然醉卧，不知阿连之梦我。少焉（短暂的时间，一会儿）醒，但（只）见白鸟闲暇（21，静景），深翘于平芜短莎之间，有鱼圉然，倏尔（忽然）远逝（过去）（21，动景），藻翻荇（多年生草本植物）乱（21，动词），牵动（21，动词）寒碧。吾以为有江湖之思焉，若是何如？”",
+          "translationSource": "客人说：“我曾亲手疏通山涧泉水，汇聚成清澈的池塘。新雨初晴之时，春草蓬勃生长，我酣然醉卧，不知是否像谢灵运梦见谢惠连那样（沉醉于美景）。过了一会儿醒来，只见白鸟悠闲自在，在平旷的原野和矮短的莎草间高高地翘立，有鱼儿静静地（待着），忽然间向远处游去，水藻和荇菜被搅乱，牵动了清寒碧绿的水波。我因此产生了隐居江湖的思绪，像这样如何？”"
+        },
+        {
+          "originalParagraph": 217,
+          "translationParagraphs": [
+            218
+          ],
+          "originalSource": "⑨子方子曰：“噫！心与境忘则幽想逸（散失）发（散开，分散），神游飘萧（冷落，没有生气的样子），极意所到，忽若有遇。虽未尝登稽山而识贺老镜湖，忆子猷访戴③安道处犹可想见，而夜半之雪兴（意趣）故（仍，还是）在；未尝泛（漂浮）沅度（越过）湘而见娥皇、舜英之古愁，班班于苍梧之竹上者未歇（休息，停止），而屈大夫滋兰之秋畹、采若之春洲，固无恙（病，忧）也。然则余三问而子三否者，不既在几研（几案和砚台）之间、履（鞋）屐（鞋）之下与”（20C错误，作者明确指出，即使没有登上名山大川，也能通过内心的超然与古人精神相通）",
+          "translationSource": "我（子方）说：“唉！内心与外界环境相忘，那么幽远的想象就会勃发，精神自由遨游，意念所到之处，忽然间仿佛有所遇合。即使不曾登上会稽山去见识贺知章的镜湖，回想王子猷雪夜访戴安道的情景仍可以想见，而半夜乘兴的意趣依然存在；不曾泛舟沅水湘江而见到娥皇、女英的千古哀愁，那斑斑泪痕留于苍梧竹上的痕迹未曾消歇，而屈原大夫种植兰草的秋日田埂、采摘杜若的春日洲渚，本来也安然无恙。那么我三次询问而你三次否定，那（你所依傍的‘绿’）不就已经在书桌砚台之间、日常步履之下了吗？”"
+        },
+        {
+          "originalParagraph": 219,
+          "translationParagraphs": [
+            220
+          ],
+          "originalSource": "⑩曰：“某也恐未能，子姑（暂且）记。”（20D正确）",
+          "translationSource": "客人说：“我恐怕还未能达到（这种境界），您姑且写下这篇记吧。”"
+        }
+      ]
+    },
+    {
+      "id": "exam2026:article:lin-renzhao",
+      "title": "林仁肇传（节选）",
+      "author": "",
+      "era": "",
+      "body": "林仁肇，建阳人，事闽为裨将，沉毅果敢，文身为虎，军中谓之林虎子。\n闽亡，久不见用。会周侵淮南，元宗拔为将。仁肇率偏师援寿州。时周人正阳浮桥筑城，扼援师道路，仁肇率敢死士千人，以舟实薪刍，乘风举火焚桥，周将张永德来争，会风回，火不得施，我兵少却，永德鼓噪乘之，遂败，仁肇独骑一马为殿，永德引弓射之，屡将中，仁肇辄格去，永德惊曰：“此壮士，不可逼也。”遂舍之而还。\n开宝中，密言于后主曰：“宋淮南诸州，戍守单弱，而连年出兵，灭蜀，平荆湖，今又取岭表，往返数千里，师旅罢弊，此在兵家，为有可乘之势。请假臣兵数万，出寿春，渡淮，据正阳，因思旧之民以复故境，彼纵来援，吾形势已固，必不得志，兵起之日，请以臣举兵外叛闻，事成，国家衅其利，不成，族臣家，明陛下不预谋。”后主惧不敢从。\n时皇甫继勋、朱全赟掌兵柄，忌仁肇雄略，谋有以中之，会朝贡使自京师回，使使言仁肇密通中朝，见其画像于禁中，且已为筑大第，以待其至。后主方任继勋等，惑其言，使人持鸩往毒之，俄卒。\n初，仁肇尤为陈乔所知，至时，乔叹曰：“国势如此，而杀忠臣，吾不知所税驾也。”然不能白其诬。仁肇卒，逾年，后主遂见讨；又逾年，国为墟矣。",
+      "summary": "10月30日高三语文周测；据首句拟题，原文件未署篇名、作者和出处。附原资料全文译文。原文“国家衅其利”等字句按来稿保留，待核对。",
+      "sample": false,
+      "collection": "extracurricular",
+      "translations": [
+        {
+          "id": "exam2026:article:lin-renzhao:translation:1",
+          "articleStart": 0,
+          "source": "林仁肇，建阳人，事闽为裨将，沉毅果敢，文身为虎，军中谓之林虎子。",
+          "translation": "林仁肇，是建阳人。在闽国任职，做副将。他沉着坚毅、勇敢果决，身上刺着老虎的花纹，军队里的人都叫他“林虎子”。"
+        },
+        {
+          "id": "exam2026:article:lin-renzhao:translation:2",
+          "articleStart": 33,
+          "source": "闽亡，久不见用。",
+          "translation": "闽国灭亡之后，他很久没有被起用。"
+        },
+        {
+          "id": "exam2026:article:lin-renzhao:translation:3",
+          "articleStart": 41,
+          "source": "会周侵淮南，元宗拔为将。",
+          "translation": "恰逢后周进犯淮南，南唐元宗提拔他做将领。"
+        },
+        {
+          "id": "exam2026:article:lin-renzhao:translation:4",
+          "articleStart": 53,
+          "source": "仁肇率偏师援寿州。",
+          "translation": "林仁肇率领一支非主力的部队去支援寿州。"
+        },
+        {
+          "id": "exam2026:article:lin-renzhao:translation:5",
+          "articleStart": 62,
+          "source": "时周人正阳浮桥筑城，扼援师道路，仁肇率敢死士千人，以舟实薪刍，乘风举火焚桥，周将张永德来争，会风回，火不得施，我兵少却，永德鼓噪乘之，遂败，仁肇独骑一马为殿，永德引弓射之，屡将中，仁肇辄格去，永德惊曰：“此壮士，不可逼也。”",
+          "translation": "当时后周军队刚在正阳搭建浮桥、修筑城防，卡住了援军前进的道路。林仁肇带领一千名敢死的勇士，在船上装满柴草草料，借着风势点火去焚烧浮桥。后周将领张永德带兵赶来争夺浮桥，正巧风向反转，火攻没法施行，南唐军队稍稍后撤。张永德趁着机会擂鼓呐喊率军追击，南唐军于是战败。林仁肇独自骑马断后。张永德拉开弓箭射他，好几次眼看就要射中，都被林仁肇挡开。张永德惊叹说：“这人是壮士，不能紧逼他。”"
+        },
+        {
+          "id": "exam2026:article:lin-renzhao:translation:6",
+          "articleStart": 174,
+          "source": "遂舍之而还。",
+          "translation": "于是放弃追击，撤兵回去了。"
+        },
+        {
+          "id": "exam2026:article:lin-renzhao:translation:7",
+          "articleStart": 181,
+          "source": "开宝中，密言于后主曰：“宋淮南诸州，戍守单弱，而连年出兵，灭蜀，平荆湖，今又取岭表，往返数千里，师旅罢弊，此在兵家，为有可乘之势。",
+          "translation": "北宋开宝年间，林仁肇秘密向后主李煜进言说：“宋朝在淮南各州，守备兵力单薄；而且他们连年出兵，灭掉后蜀、平定荆湖，如今又攻取岭南，军队来回奔波几千里，士兵疲惫不堪。从用兵的角度来看，这正是我们可以抓住机会的时机。"
+        },
+        {
+          "id": "exam2026:article:lin-renzhao:translation:8",
+          "articleStart": 246,
+          "source": "请假臣兵数万，出寿春，渡淮，据正阳，因思旧之民以复故境，彼纵来援，吾形势已固，必不得志，兵起之日，请以臣举兵外叛闻，事成，国家衅其利，不成，族臣家，明陛下不预谋。”",
+          "translation": "请借给我几万兵马，从寿春出兵，渡过淮河，占据正阳，依靠怀念故国的百姓，收复原先的疆土。就算宋朝派兵来救援，我们的险要地势已经稳固，他们一定不能得逞。起兵的时候，请对外宣称是我带兵叛变投奔宋朝；事情如果成功，国家就享有这份战果；如果失败，就灭我全族，以此表明陛下事先没有参与谋划这件事。”"
+        },
+        {
+          "id": "exam2026:article:lin-renzhao:translation:9",
+          "articleStart": 328,
+          "source": "后主惧不敢从。",
+          "translation": "后主心中害怕，不敢听从他的计策。"
+        },
+        {
+          "id": "exam2026:article:lin-renzhao:translation:10",
+          "articleStart": 336,
+          "source": "时皇甫继勋、朱全赟掌兵柄，忌仁肇雄略，谋有以中之，会朝贡使自京师回，使使言仁肇密通中朝，见其画像于禁中，且已为筑大第，以待其至。",
+          "translation": "当时皇甫继勋、朱全赟掌握兵权，忌惮林仁肇雄才大略，打算设计陷害他。恰逢朝贡使从京师返回，（皇甫继勋等人）让朝贡使诬陷说林仁肇暗中和宋朝往来，在宫中看到了他的画像，并且（宋朝）已经替他建好了府第，来等待他的到来。"
+        },
+        {
+          "id": "exam2026:article:lin-renzhao:translation:11",
+          "articleStart": 400,
+          "source": "后主方任继勋等，惑其言，使人持鸩往毒之，俄卒。",
+          "translation": "后主正信任皇甫继勋等人，被这番话迷惑，派人带着毒酒去毒死林仁肇，不久林仁肇就死了。"
+        },
+        {
+          "id": "exam2026:article:lin-renzhao:translation:12",
+          "articleStart": 424,
+          "source": "初，仁肇尤为陈乔所知，至时，乔叹曰：“国势如此，而杀忠臣，吾不知所税驾也。”",
+          "translation": "当初，林仁肇一向很受陈乔赏识。到林仁肇被害这时，陈乔叹息说：“国家形势已经到了这个地步，却还要杀害忠臣，我不知道我们最后要落到什么下场！”"
+        },
+        {
+          "id": "exam2026:article:lin-renzhao:translation:13",
+          "articleStart": 462,
+          "source": "然不能白其诬。",
+          "translation": "但是他没办法洗清林仁肇的冤屈。"
+        },
+        {
+          "id": "exam2026:article:lin-renzhao:translation:14",
+          "articleStart": 469,
+          "source": "仁肇卒，逾年，后主遂见讨；又逾年，国为墟矣。",
+          "translation": "林仁肇死后过了一年，后主就遭到宋朝征讨；又过一年，南唐就灭亡了。"
+        }
+      ],
+      "glosses": [],
+      "sourceFile": "10月30日高三语文周测答案.docx",
+      "audit": [
+        {
+          "originalParagraph": 18,
+          "translationParagraphs": [
+            19
+          ],
+          "originalSource": "（1）林仁肇，建阳人，事闽为裨将，沉毅果敢，文身为虎，军中谓之林虎子。",
+          "translationSource": "林仁肇，是建阳人。在闽国任职，做副将。他沉着坚毅、勇敢果决，身上刺着老虎的花纹，军队里的人都叫他“林虎子”。"
+        },
+        {
+          "originalParagraph": 20,
+          "translationParagraphs": [
+            21
+          ],
+          "originalSource": "（2）闽亡，久不见用。会周侵淮南，元宗拔为将。仁肇率偏师援寿州。时周人正阳浮桥筑城，扼援师道路，仁肇率敢死士千人，以舟实薪刍，乘风举火焚桥，周将张永德来争，会风回，火不得施，我兵少却，永德鼓噪乘之，遂败，仁肇独骑一马为殿，永德引弓射之，屡将中，仁肇辄格去，永德惊曰：“此壮士，不可逼也。”遂舍之而还。",
+          "translationSource": "闽国灭亡之后，他很久没有被起用。恰逢后周进犯淮南，南唐元宗提拔他做将领。林仁肇率领一支非主力的部队去支援寿州。当时后周军队刚在正阳搭建浮桥、修筑城防，卡住了援军前进的道路。林仁肇带领一千名敢死的勇士，在船上装满柴草草料，借着风势点火去焚烧浮桥。后周将领张永德带兵赶来争夺浮桥，正巧风向反转，火攻没法施行，南唐军队稍稍后撤。张永德趁着机会擂鼓呐喊率军追击，南唐军于是战败。林仁肇独自骑马断后。张永德拉开弓箭射他，好几次眼看就要射中，都被林仁肇挡开。张永德惊叹说：“这人是壮士，不能紧逼他。”于是放弃追击，撤兵回去了。"
+        },
+        {
+          "originalParagraph": 22,
+          "translationParagraphs": [
+            23
+          ],
+          "originalSource": "（3）开宝中，密言于后主曰：“宋淮南诸州，戍守单弱，而连年出兵，灭蜀，平荆湖，今又取岭表，往返数千里，师旅罢弊，此在兵家，为有可乘之势。请假臣兵数万，出寿春，渡淮，据正阳，因思旧之民以复故境，彼纵来援，吾形势已固，必不得志，兵起之日，请以臣举兵外叛闻，事成，国家衅其利，不成，族臣家，明陛下不预谋。”后主惧不敢从。",
+          "translationSource": "北宋开宝年间，林仁肇秘密向后主李煜进言说：“宋朝在淮南各州，守备兵力单薄；而且他们连年出兵，灭掉后蜀、平定荆湖，如今又攻取岭南，军队来回奔波几千里，士兵疲惫不堪。从用兵的角度来看，这正是我们可以抓住机会的时机。请借给我几万兵马，从寿春出兵，渡过淮河，占据正阳，依靠怀念故国的百姓，收复原先的疆土。就算宋朝派兵来救援，我们的险要地势已经稳固，他们一定不能得逞。起兵的时候，请对外宣称是我带兵叛变投奔宋朝；事情如果成功，国家就享有这份战果；如果失败，就灭我全族，以此表明陛下事先没有参与谋划这件事。”后主心中害怕，不敢听从他的计策。"
+        },
+        {
+          "originalParagraph": 24,
+          "translationParagraphs": [
+            25
+          ],
+          "originalSource": "（4）时皇甫继勋、朱全赟掌兵柄，忌仁肇雄略，谋有以中之，会朝贡使自京师回，使使言仁肇密通中朝，见其画像于禁中，且已为筑大第，以待其至。后主方任继勋等，惑其言，使人持鸩往毒之，俄卒。",
+          "translationSource": "当时皇甫继勋、朱全赟掌握兵权，忌惮林仁肇雄才大略，打算设计陷害他。恰逢朝贡使从京师返回，（皇甫继勋等人）让朝贡使诬陷说林仁肇暗中和宋朝往来，在宫中看到了他的画像，并且（宋朝）已经替他建好了府第，来等待他的到来。后主正信任皇甫继勋等人，被这番话迷惑，派人带着毒酒去毒死林仁肇，不久林仁肇就死了。"
+        },
+        {
+          "originalParagraph": 26,
+          "translationParagraphs": [
+            27
+          ],
+          "originalSource": "（5）初，仁肇尤为陈乔所知，至时，乔叹曰：国势如此，而杀忠臣，吾不知所税驾也，然不能白其诬，仁肇卒，逾年，后主遂见讨，又逾年，国为墟矣。",
+          "translationSource": "当初，林仁肇一向很受陈乔赏识。到林仁肇被害这时，陈乔叹息说：“国家形势已经到了这个地步，却还要杀害忠臣，我不知道我们最后要落到什么下场！”但是他没办法洗清林仁肇的冤屈。林仁肇死后过了一年，后主就遭到宋朝征讨；又过一年，南唐就灭亡了。"
+        }
+      ]
+    },
+    {
+      "id": "exam2026:article:yizhangyuan",
+      "title": "一掌园记",
+      "author": "刘大櫆",
+      "era": "清",
+      "body": "吹竽、走狗、蹋鞠之人非昔，而齐之名不废；超足而射、鍧鍧殷殷者非昔，而韩、魏之名不废；击筑、悲歌、椎埋、屠狗之徒，其骨已朽，而燕、赵之名，学士大夫饫闻而喜称之。然则所谓物者无不亡，而独其名为可以永久欤！夫山渊之平，田海之迁，大地之浑合，曾不能以自主，而况於一园之兴废欤？其为终始可胜计哉！\n余伯父以一掌之地为园，命余为之记。余不及以为，已而废为居室。则向之名花异草，春兰秋菊之芳香，莲叶之亭亭，游鱼之隐见而浮沉，今皆不可复识，独其名犹在余意中。余记之，盖以志余之感，而亦非以为欲存其名於永久也。",
+      "summary": "10月30日高三语文周测；附原资料全文译文。原文及异体字按来稿保留。",
+      "sample": false,
+      "collection": "extracurricular",
+      "translations": [
+        {
+          "id": "exam2026:article:yizhangyuan:translation:1",
+          "articleStart": 0,
+          "source": "吹竽、走狗、蹋鞠之人非昔，而齐之名不废；超足而射、鍧鍧殷殷者非昔，而韩、魏之名不废；击筑、悲歌、椎埋、屠狗之徒，其骨已朽，而燕、赵之名，学士大夫饫闻而喜称之。",
+          "translation": "当年在齐国吹竽、赛狗、踢球的那些人早已不在了，可是齐国的声名却没有消失；当初韩、魏之地奔走射箭、车马轰鸣的人早已不是旧人，韩、魏的名号依然流传；那些击筑放歌、豪侠亡命、市井屠夫一类的燕赵之士，尸骨早已腐烂，但是燕赵的风骨声名，读书人依旧耳熟能详，乐于称道。"
+        },
+        {
+          "id": "exam2026:article:yizhangyuan:translation:2",
+          "articleStart": 79,
+          "source": "然则所谓物者无不亡，而独其名为可以永久欤！",
+          "translation": "这么看来，世间有形的万物没有不会消亡的，难道只有名声才可以永久留存吗？"
+        },
+        {
+          "id": "exam2026:article:yizhangyuan:translation:3",
+          "articleStart": 100,
+          "source": "夫山渊之平，田海之迁，大地之浑合，曾不能以自主，而况於一园之兴废欤？",
+          "translation": "高山可以削平、深谷可以填平，沧海桑田、大地变迁，连天地自身都不能主宰自己的变化，更何况一座园林的兴废呢？"
+        },
+        {
+          "id": "exam2026:article:yizhangyuan:translation:4",
+          "articleStart": 134,
+          "source": "其为终始可胜计哉！",
+          "translation": "它从兴建到荒废的过程，哪里能够一一细数清楚！"
+        },
+        {
+          "id": "exam2026:article:yizhangyuan:translation:5",
+          "articleStart": 144,
+          "source": "余伯父以一掌之地为园，命余为之记。",
+          "translation": "我的伯父在一块巴掌大的地方修建了这座园子，嘱咐我写一篇记文。"
+        },
+        {
+          "id": "exam2026:article:yizhangyuan:translation:6",
+          "articleStart": 161,
+          "source": "余不及以为，已而废为居室。",
+          "translation": "我还没来得及动笔，园子不久就荒废，改建成住房了。"
+        },
+        {
+          "id": "exam2026:article:yizhangyuan:translation:7",
+          "articleStart": 174,
+          "source": "则向之名花异草，春兰秋菊之芳香，莲叶之亭亭，游鱼之隐见而浮沉，今皆不可复识，独其名犹在余意中。",
+          "translation": "从前这里的奇花异草，春兰秋菊的芬芳，亭亭舒展的荷叶，时隐时现、上下游动的游鱼，如今全都再也看不到了，只有“一掌园”这个名字，还留在我的心里。"
+        },
+        {
+          "id": "exam2026:article:yizhangyuan:translation:8",
+          "articleStart": 221,
+          "source": "余记之，盖以志余之感，而亦非以为欲存其名於永久也。",
+          "translation": "我写下这篇记，只是用来记下我的感慨，并不是想要靠这篇文章，让这个名字永久流传下去。"
+        }
+      ],
+      "glosses": [],
+      "sourceFile": "10月30日高三语文周测答案.docx",
+      "audit": [
+        {
+          "originalParagraph": 30,
+          "translationParagraphs": [
+            31
+          ],
+          "originalSource": "（1）吹竽、走狗、蹋鞠之人非昔，而齐之名不废；超足而射、鍧鍧殷殷者非昔，而韩、魏之名不废；击筑、悲歌、椎埋、屠狗之徒，其骨已朽，而燕、赵之名，学士大夫饫闻而喜称之。然则所谓物者无不亡，而独其名为可以永久欤！夫山渊之平，田海之迁，大地之浑合，曾不能以自主，而况於一园之兴废欤？其为终始可胜计哉！",
+          "translationSource": "当年在齐国吹竽、赛狗、踢球的那些人早已不在了，可是齐国的声名却没有消失；当初韩、魏之地奔走射箭、车马轰鸣的人早已不是旧人，韩、魏的名号依然流传；那些击筑放歌、豪侠亡命、市井屠夫一类的燕赵之士，尸骨早已腐烂，但是燕赵的风骨声名，读书人依旧耳熟能详，乐于称道。这么看来，世间有形的万物没有不会消亡的，难道只有名声才可以永久留存吗？高山可以削平、深谷可以填平，沧海桑田、大地变迁，连天地自身都不能主宰自己的变化，更何况一座园林的兴废呢？它从兴建到荒废的过程，哪里能够一一细数清楚！"
+        },
+        {
+          "originalParagraph": 32,
+          "translationParagraphs": [
+            33
+          ],
+          "originalSource": "（2）余伯父以一掌之地为园，命余为之记。余不及以为，已而废为居室。则向之名花异草，春兰秋菊之芳香，莲叶之亭亭，游鱼之隐见而浮沉，今皆不可复识，独其名犹在余意中。余记之，盖以志余之感，而亦非以为欲存其名於永久也。",
+          "translationSource": "我的伯父在一块巴掌大的地方修建了这座园子，嘱咐我写一篇记文。我还没来得及动笔，园子不久就荒废，改建成住房了。从前这里的奇花异草，春兰秋菊的芬芳，亭亭舒展的荷叶，时隐时现、上下游动的游鱼，如今全都再也看不到了，只有“一掌园”这个名字，还留在我的心里。我写下这篇记，只是用来记下我的感慨，并不是想要靠这篇文章，让这个名字永久流传下去。"
+        }
+      ]
+    },
+    {
+      "id": "exam2026:article:qiushengfu",
+      "title": "秋声赋",
+      "author": "欧阳修",
+      "era": "宋",
+      "body": "欧阳子方夜读书，闻有声自西南来者，悚然而听之，曰：“异哉！”初淅沥以萧飒，忽奔腾而砰湃，如波涛夜惊，风雨骤至。其触于物也，鏦鏦铮铮，金铁皆鸣；又如赴敌之兵，衔枚疾走，不闻号令，但闻人马之行声。予谓童子：“此何声也？汝出视之。”童子曰：“星月皎洁，明河在天，四无人声，声在树间。”\n予曰：“噫嘻悲哉！此秋声也，胡为而来哉？盖夫秋之为状也：其色惨淡，烟霏云敛；其容清明，天高日晶；其气栗冽，砭人肌骨；其意萧条，山川寂寥。故其为声也，凄凄切切，呼号愤发。丰草绿缛而争茂，佳木葱茏而可悦；草拂之而色变，木遭之而叶脱。其所以摧败零落者，乃其一气之余烈。夫秋，刑官也，于时为阴；又兵象也，于行用金。是谓天地之义气，常以肃杀而为心。天之于物，春生秋实，故其在乐也，商声主西方之音，夷则为七月之律。商，伤也，物既老而悲伤；夷，戮也，物过盛而当杀。”\n“嗟乎！草木无情，有时飘零。人为动物，惟物之灵；百忧感其心，万事劳其形；有动于中，必摇其精。而况思其力之所不及，忧其智之所不能；宜其渥然丹者为槁木，黟然黑者为星星。奈何以非金石之质，欲与草木而争荣？念谁为之戕贼，亦何恨乎秋声！”\n童子莫对，垂头而睡。但闻四壁虫声唧唧，如助予之叹息。",
+      "summary": "10月30日高三语文周测；附原资料全文译文。",
+      "sample": false,
+      "collection": "extracurricular",
+      "translations": [
+        {
+          "id": "exam2026:article:qiushengfu:translation:1",
+          "articleStart": 0,
+          "source": "欧阳子方夜读书，闻有声自西南来者，悚然而听之，曰：“异哉！”",
+          "translation": "我夜里正在读书，听见有声音从西南方传来，吃惊地侧耳倾听，心想：奇怪啊！"
+        },
+        {
+          "id": "exam2026:article:qiushengfu:translation:2",
+          "articleStart": 30,
+          "source": "初淅沥以萧飒，忽奔腾而砰湃，如波涛夜惊，风雨骤至。",
+          "translation": "这声音起初淅淅沥沥、萧萧瑟瑟，忽然变得汹涌澎湃，像是夜里波涛翻涌，狂风暴雨骤然袭来。"
+        },
+        {
+          "id": "exam2026:article:qiushengfu:translation:3",
+          "articleStart": 55,
+          "source": "其触于物也，鏦鏦铮铮，金铁皆鸣；又如赴敌之兵，衔枚疾走，不闻号令，但闻人马之行声。",
+          "translation": "它撞击到物体上，叮叮当当，如同金属互相碰撞作响；又像奔赴战场的士兵，口中衔着枚，快步急行，听不到将帅的号令，只听见人马行进的声响。"
+        },
+        {
+          "id": "exam2026:article:qiushengfu:translation:4",
+          "articleStart": 96,
+          "source": "予谓童子：“此何声也？",
+          "translation": "我对书童说：“这是什么声音？"
+        },
+        {
+          "id": "exam2026:article:qiushengfu:translation:5",
+          "articleStart": 107,
+          "source": "汝出视之。”",
+          "translation": "你出去看看。”"
+        },
+        {
+          "id": "exam2026:article:qiushengfu:translation:6",
+          "articleStart": 113,
+          "source": "童子曰：“星月皎洁，明河在天，四无人声，声在树间。”",
+          "translation": "书童回来说：“星月明亮洁白，银河高悬在天上，四周没有人声，声音是从树林之间发出来的。”"
+        },
+        {
+          "id": "exam2026:article:qiushengfu:translation:7",
+          "articleStart": 140,
+          "source": "予曰：“噫嘻悲哉！",
+          "translation": "我说：“唉，可悲啊！"
+        },
+        {
+          "id": "exam2026:article:qiushengfu:translation:8",
+          "articleStart": 149,
+          "source": "此秋声也，胡为而来哉？",
+          "translation": "这就是秋声！它为什么会到来呢？"
+        },
+        {
+          "id": "exam2026:article:qiushengfu:translation:9",
+          "articleStart": 160,
+          "source": "盖夫秋之为状也：其色惨淡，烟霏云敛；其容清明，天高日晶；其气栗冽，砭人肌骨；其意萧条，山川寂寥。",
+          "translation": "秋天呈现出这样的景象：它的色调暗淡凄凉，烟雾飘散、云气收敛；它的容貌清朗明净，天空高远、日光透亮；它的寒气凛冽刺骨，刺进人的肌肤骨头；它的意境冷落萧条，山河空旷寂静。"
+        },
+        {
+          "id": "exam2026:article:qiushengfu:translation:10",
+          "articleStart": 208,
+          "source": "故其为声也，凄凄切切，呼号愤发。",
+          "translation": "所以它发出的声音，凄凄切切，呼啸激昂。"
+        },
+        {
+          "id": "exam2026:article:qiushengfu:translation:11",
+          "articleStart": 224,
+          "source": "丰草绿缛而争茂，佳木葱茏而可悦；草拂之而色变，木遭之而叶脱。",
+          "translation": "繁茂的青草碧绿繁盛、争相生长，美好的树木青翠葱茏，令人赏心悦目；可青草一被秋风拂过就改变颜色，树木遇上秋风就叶落飘零。"
+        },
+        {
+          "id": "exam2026:article:qiushengfu:translation:12",
+          "articleStart": 254,
+          "source": "其所以摧败零落者，乃其一气之余烈。",
+          "translation": "草木之所以衰败凋零，正是这股秋气剩下的威力造成的。"
+        },
+        {
+          "id": "exam2026:article:qiushengfu:translation:13",
+          "articleStart": 271,
+          "source": "夫秋，刑官也，于时为阴；又兵象也，于行用金。",
+          "translation": "秋天，对应掌管刑狱的秋官，在四时之中属于阴；又是征伐的象征，在五行里属金。"
+        },
+        {
+          "id": "exam2026:article:qiushengfu:translation:14",
+          "articleStart": 293,
+          "source": "是谓天地之义气，常以肃杀而为心。",
+          "translation": "这就是天地间严肃之气，常常怀着肃杀万物的本心。"
+        },
+        {
+          "id": "exam2026:article:qiushengfu:translation:15",
+          "articleStart": 309,
+          "source": "天之于物，春生秋实，故其在乐也，商声主西方之音，夷则为七月之律。",
+          "translation": "大自然对待万物，春天生长、秋天结果。所以在音乐上，商音对应西方、对应秋天；夷则是七月的乐律。"
+        },
+        {
+          "id": "exam2026:article:qiushengfu:translation:16",
+          "articleStart": 341,
+          "source": "商，伤也，物既老而悲伤；夷，戮也，物过盛而当杀。”",
+          "translation": "商，就是哀伤，万物衰老就生出悲伤；夷，就是杀戮，万物过于繁盛就该凋零减损。”"
+        },
+        {
+          "id": "exam2026:article:qiushengfu:translation:17",
+          "articleStart": 367,
+          "source": "“嗟乎！",
+          "translation": "“唉！"
+        },
+        {
+          "id": "exam2026:article:qiushengfu:translation:18",
+          "articleStart": 371,
+          "source": "草木无情，有时飘零。",
+          "translation": "草木本没有情感，到一定时节尚且飘落凋零。"
+        },
+        {
+          "id": "exam2026:article:qiushengfu:translation:19",
+          "articleStart": 381,
+          "source": "人为动物，惟物之灵；百忧感其心，万事劳其形；有动于中，必摇其精。",
+          "translation": "人是万物之中有灵性的；无数忧愁撼动他的内心，万千事务劳累他的身体；内心有所触动，一定会损耗人的精神。"
+        },
+        {
+          "id": "exam2026:article:qiushengfu:translation:20",
+          "articleStart": 413,
+          "source": "而况思其力之所不及，忧其智之所不能；宜其渥然丹者为槁木，黟然黑者为星星。",
+          "translation": "更何况还要去思索自己能力做不到的事，忧虑自己才智解决不了的难题。这样一来，红润的容颜变得像枯木一般憔悴，乌黑的头发变得花白，也就理所当然了。"
+        },
+        {
+          "id": "exam2026:article:qiushengfu:translation:21",
+          "articleStart": 449,
+          "source": "奈何以非金石之质，欲与草木而争荣？",
+          "translation": "人哪里有金石那样坚固的体质，怎能妄想和草木争一时的繁盛？"
+        },
+        {
+          "id": "exam2026:article:qiushengfu:translation:22",
+          "articleStart": 466,
+          "source": "念谁为之戕贼，亦何恨乎秋声！”",
+          "translation": "想一想，到底是谁在摧残自己，又何必去怨恨这秋声呢！”"
+        },
+        {
+          "id": "exam2026:article:qiushengfu:translation:23",
+          "articleStart": 482,
+          "source": "童子莫对，垂头而睡。",
+          "translation": "书童没有答话，低着头睡着了。"
+        },
+        {
+          "id": "exam2026:article:qiushengfu:translation:24",
+          "articleStart": 492,
+          "source": "但闻四壁虫声唧唧，如助予之叹息。",
+          "translation": "只听见墙壁四周小虫唧唧鸣叫，仿佛在附和我的叹息。"
+        }
+      ],
+      "glosses": [],
+      "sourceFile": "10月30日高三语文周测答案.docx",
+      "audit": [
+        {
+          "originalParagraph": 36,
+          "translationParagraphs": [
+            37
+          ],
+          "originalSource": "（1）欧阳子方夜读书，闻有声自西南来者，悚然而听之，曰：“异哉！” 初淅沥以萧飒，忽奔腾而砰湃，如波涛夜惊，风雨骤至。其触于物也，鏦鏦铮铮，金铁皆鸣；又如赴敌之兵，衔枚疾走，不闻号令，但闻人马之行声。予谓童子：“此何声也？汝出视之。” 童子曰：“星月皎洁，明河在天，四无人声，声在树间。”",
+          "translationSource": "我夜里正在读书，听见有声音从西南方传来，吃惊地侧耳倾听，心想：奇怪啊！这声音起初淅淅沥沥、萧萧瑟瑟，忽然变得汹涌澎湃，像是夜里波涛翻涌，狂风暴雨骤然袭来。它撞击到物体上，叮叮当当，如同金属互相碰撞作响；又像奔赴战场的士兵，口中衔着枚，快步急行，听不到将帅的号令，只听见人马行进的声响。我对书童说：“这是什么声音？你出去看看。”书童回来说：“星月明亮洁白，银河高悬在天上，四周没有人声，声音是从树林之间发出来的。”"
+        },
+        {
+          "originalParagraph": 38,
+          "translationParagraphs": [
+            39
+          ],
+          "originalSource": "（2）予曰：“噫嘻悲哉！此秋声也，胡为而来哉？盖夫秋之为状也：其色惨淡，烟霏云敛；其容清明，天高日晶；其气栗冽，砭人肌骨；其意萧条，山川寂寥。故其为声也，凄凄切切，呼号愤发。丰草绿缛而争茂，佳木葱茏而可悦；草拂之而色变，木遭之而叶脱。其所以摧败零落者，乃其一气之余烈。夫秋，刑官也，于时为阴；又兵象也，于行用金。是谓天地之义气，常以肃杀而为心。天之于物，春生秋实，故其在乐也，商声主西方之音，夷则为七月之律。商，伤也，物既老而悲伤；夷，戮也，物过盛而当杀。”",
+          "translationSource": "我说：“唉，可悲啊！这就是秋声！它为什么会到来呢？秋天呈现出这样的景象：它的色调暗淡凄凉，烟雾飘散、云气收敛；它的容貌清朗明净，天空高远、日光透亮；它的寒气凛冽刺骨，刺进人的肌肤骨头；它的意境冷落萧条，山河空旷寂静。所以它发出的声音，凄凄切切，呼啸激昂。繁茂的青草碧绿繁盛、争相生长，美好的树木青翠葱茏，令人赏心悦目；可青草一被秋风拂过就改变颜色，树木遇上秋风就叶落飘零。草木之所以衰败凋零，正是这股秋气剩下的威力造成的。秋天，对应掌管刑狱的秋官，在四时之中属于阴；又是征伐的象征，在五行里属金。这就是天地间严肃之气，常常怀着肃杀万物的本心。大自然对待万物，春天生长、秋天结果。所以在音乐上，商音对应西方、对应秋天；夷则是七月的乐律。商，就是哀伤，万物衰老就生出悲伤；夷，就是杀戮，万物过于繁盛就该凋零减损。”"
+        },
+        {
+          "originalParagraph": 40,
+          "translationParagraphs": [
+            41
+          ],
+          "originalSource": "（3）“嗟乎！草木无情，有时飘零。人为动物，惟物之灵；百忧感其心，万事劳其形；有动于中，必摇其精。而况思其力之所不及，忧其智之所不能；宜其渥然丹者为槁木，黟然黑者为星星。奈何以非金石之质，欲与草木而争荣？念谁为之戕贼，亦何恨乎秋声！”",
+          "translationSource": "“唉！草木本没有情感，到一定时节尚且飘落凋零。人是万物之中有灵性的；无数忧愁撼动他的内心，万千事务劳累他的身体；内心有所触动，一定会损耗人的精神。更何况还要去思索自己能力做不到的事，忧虑自己才智解决不了的难题。这样一来，红润的容颜变得像枯木一般憔悴，乌黑的头发变得花白，也就理所当然了。人哪里有金石那样坚固的体质，怎能妄想和草木争一时的繁盛？想一想，到底是谁在摧残自己，又何必去怨恨这秋声呢！”"
+        },
+        {
+          "originalParagraph": 42,
+          "translationParagraphs": [
+            43
+          ],
+          "originalSource": "（4）童子莫对，垂头而睡。但闻四壁虫声唧唧，如助予之叹息。",
+          "translationSource": "书童没有答话，低着头睡着了。只听见墙壁四周小虫唧唧鸣叫，仿佛在附和我的叹息。"
+        }
+      ]
+    }
+  ]
+}

@@ -8,6 +8,7 @@ import { mergeSupplement } from '../server/supplement';
 import { mergeTextbookArticles } from '../server/textbook-articles';
 import { mergeTextbookGlosses } from '../server/textbook-glosses';
 import { mergeBiography2026 } from '../server/biography-2026';
+import { mergeExamArticles } from '../server/exam-articles';
 
 const db = async (page: Page) => (await (await page.request.get('/api/state')).json()).data;
 
@@ -166,6 +167,39 @@ test('mock-exam texts show linked glosses and sentence translations while textbo
   await page.getByRole('dialog').locator('textarea').first().fill('独立寒秋，湘江向北流去。');
   await page.getByRole('button', { name: '保存逐句译文', exact: true }).click();
   await expect(page.locator('.sentence-translation')).toHaveText(['独立寒秋，湘江向北流去。']);
+});
+
+test('answer-document texts appear once with all translations and retain translations after editing', async ({ page, request }) => {
+  const snapshot = await (await request.get('/api/state')).json();
+  const data = mergeExamArticles(snapshot.data);
+  expect((await request.put('/api/state', { data: { revision: snapshot.revision, data }, headers: { 'X-InkLex-Client': '1' } })).ok()).toBe(true);
+  await page.goto('/#/articles?collection=extracurricular');
+  await expect(page.locator('.article-card')).toHaveCount(9);
+  for (const article of data.articles.filter(row => row.id.startsWith('exam2026:article:'))) {
+    await page.getByLabel('搜索课文').fill(article.title);
+    await expect(page.locator('.article-card')).toHaveCount(1);
+    await page.locator('.article-card').click();
+    await expect(page.locator('.sentence-translation')).toHaveText(article.translations!.map(row => row.translation));
+    await page.getByRole('button', { name: '隐藏译文', exact: true }).click();
+    await expect(page.locator('.sentence-translation')).toHaveCount(0);
+    await page.getByRole('button', { name: '显示译文', exact: true }).click();
+    await page.getByRole('button', { name: '编辑逐句译文', exact: true }).click();
+    await expect(page.getByRole('dialog').locator('textarea')).toHaveCount(article.translations!.length);
+    await page.getByRole('button', { name: '保存逐句译文', exact: true }).click();
+    await expect(page.getByRole('dialog')).toHaveCount(0);
+    await expect(page.locator('.sentence-translation')).toHaveText(article.translations!.map(row => row.translation));
+    expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1)).toBe(true);
+    await page.getByRole('button', { name: '返回课文书架', exact: true }).click();
+  }
+  await page.getByLabel('搜索课文').fill('李孔昭'); await page.locator('.article-card').click();
+  await page.getByRole('button', { name: '查看「孤介」的释义', exact: true }).click();
+  await expect(page.locator('.inline-gloss')).toHaveText('（耿直）');
+  await page.getByRole('button', { name: '查看「币」的释义', exact: true }).click();
+  await expect(page.locator('.inline-gloss').last()).toHaveText('（钱币）');
+  await expect(page.locator('.sentence-translation').filter({ hasText: '书信和礼物' })).toHaveCount(1);
+  await expect(page.locator('.word-token')).toHaveCount(54);
+  await page.reload();
+  await expect(page.locator('.sentence-translation')).toHaveCount(29);
 });
 
 test('full original text, independent inline explanations, no false reviews, responsive layout', async ({ page }, info) => {

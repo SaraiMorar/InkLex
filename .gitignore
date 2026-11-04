@@ -1,4 +1,5 @@
 node_modules/
+resources/local-sources/
 dist/
 dist-server/
 data/

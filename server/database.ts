@@ -11,6 +11,7 @@ import { TEXTBOOK_GLOSSES_ID, mergeTextbookGlosses } from './textbook-glosses.ts
 import { BIOGRAPHY_2026_ID, mergeBiography2026 } from './biography-2026.ts';
 import { SENSE_CLEANUP_ID, mergeSenseCleanup } from './sense-cleanup.ts';
 import { READING_LAYOUT_ID, unwrapDreamPoem } from './reading-layout.ts';
+import { EXAM_ARTICLES_ID, mergeExamArticles } from './exam-articles.ts';
 
 export interface Snapshot { data: Database; revision: number; serverId: string; pristine?: boolean; warning?: string }
 export class RevisionConflict extends Error {
@@ -21,7 +22,7 @@ type Row = { payload: string; revision: number; server_id: string };
 export class FileDatabase {
   readonly path: string;
   private db: DatabaseSync;
-  constructor(directory: string, options: { importBundledContent?: boolean; importSupplement?: boolean; importTextbookArticles?: boolean; importTextbookGlosses?: boolean; importBiography2026?: boolean; importSenseCleanup?: boolean; importReadingLayout?: boolean } = {}) {
+  constructor(directory: string, options: { importBundledContent?: boolean; importSupplement?: boolean; importTextbookArticles?: boolean; importTextbookGlosses?: boolean; importBiography2026?: boolean; importSenseCleanup?: boolean; importReadingLayout?: boolean; importExamArticles?: boolean } = {}) {
     mkdirSync(directory, { recursive: true });
     this.path = resolve(directory, 'inklex.sqlite');
     this.db = new DatabaseSync(this.path);
@@ -42,6 +43,7 @@ export class FileDatabase {
         if (options.importBiography2026 !== false) this.installContent(BIOGRAPHY_2026_ID, mergeBiography2026);
         if ((options.importSenseCleanup ?? options.importBiography2026 ?? true) !== false) this.installContent(SENSE_CLEANUP_ID, mergeSenseCleanup);
         if ((options.importReadingLayout ?? options.importTextbookGlosses ?? options.importTextbookArticles ?? true) !== false) this.installContent(READING_LAYOUT_ID, unwrapDreamPoem);
+        if ((options.importExamArticles ?? options.importBiography2026 ?? true) !== false) this.installContent(EXAM_ARTICLES_ID, mergeExamArticles);
       }
     } catch (error) { this.db.close(); throw error; }
   }
