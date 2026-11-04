@@ -13,7 +13,7 @@ import { enroll, gradeContext } from '../src/domain/scheduler';
 const paths: string[] = [], handles: FileDatabase[] = [];
 const directory = () => { const path = mkdtempSync(join(tmpdir(), 'inklex-exam-articles-')); paths.push(path); return path; };
 const open = (path: string, importExamArticles = true) => {
-  const db = new FileDatabase(path, { importSupplement: false, importTextbookArticles: false, importBiography2026: false, importExamArticles });
+  const db = new FileDatabase(path, { importSupplement: false, importTextbookArticles: false, importBiography2026: false, importExamArticles, importRecitation: false });
   handles.push(db); return db;
 };
 afterEach(() => {

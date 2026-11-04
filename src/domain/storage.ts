@@ -60,5 +60,24 @@ export function mergeBackup(current: Database, incoming: Database): Database {
     }
   }
   for (const r of incoming.readings) if (!next.readings.some(x => x.id === r.id)) next.readings.push({ ...r, contextId: maps.context.get(r.contextId)! });
+  if (incoming.recitation) {
+    next.recitation ??= { questions: [], cards: {}, reviews: [], dailyNew: incoming.recitation.dailyNew };
+    const state = next.recitation, questionMap = new Map<string, string>(), compatible = new Set<string>();
+    for (const question of incoming.recitation.questions) {
+      const old = state.questions.find(row => row.id === question.id || (row.work === question.work && row.prompt === question.prompt && JSON.stringify(row.answers) === JSON.stringify(question.answers)));
+      questionMap.set(question.id, old?.id ?? question.id);
+      if (!old) state.questions.push({ ...question, articleId: question.articleId ? maps.article.get(question.articleId) ?? null : null });
+      if (!old || (old.prompt === question.prompt && JSON.stringify(old.answers) === JSON.stringify(question.answers))) compatible.add(question.id);
+    }
+    const acceptedCards = new Set<string>();
+    for (const [oldId, card] of Object.entries(incoming.recitation.cards)) {
+      const questionId = questionMap.get(oldId)!;
+      if (compatible.has(oldId) && !state.cards[questionId]) { state.cards[questionId] = card; acceptedCards.add(oldId); }
+    }
+    for (const review of incoming.recitation.reviews) {
+      if (compatible.has(review.questionId) && (review.mode === 'practice' || acceptedCards.has(review.questionId)) && !state.reviews.some(row => row.id === review.id))
+        state.reviews.push({ ...review, questionId: questionMap.get(review.questionId)! });
+    }
+  }
   return validateDatabase(next);
 }

@@ -9,6 +9,7 @@ import { mergeTextbookArticles } from '../server/textbook-articles';
 import { mergeTextbookGlosses } from '../server/textbook-glosses';
 import { mergeBiography2026 } from '../server/biography-2026';
 import { mergeExamArticles } from '../server/exam-articles';
+import { mergeRecitationContent } from '../server/recitation-content';
 
 const db = async (page: Page) => (await (await page.request.get('/api/state')).json()).data;
 
@@ -30,7 +31,7 @@ test('bookshelf categories preserve original texts and allow moving new articles
   await expect(page.locator('.article-card')).toHaveCount(3);
   await page.reload();
   await expect(page.getByRole('button', { name: /^课外\s*\d+ 篇$/ })).toHaveAttribute('aria-pressed', 'true');
-  await expect(page.getByRole('navigation').getByRole('button')).toHaveCount(5);
+  await expect(page.getByRole('navigation').getByRole('button')).toHaveCount(6);
   await page.getByRole('button', { name: /小石潭记/ }).click();
   await expect(page.getByRole('navigation').getByRole('button', { name: /课文书架/ })).toHaveAttribute('aria-current', 'page');
   await expect(page.locator('.reader-prose')).toContainText('曰恕己，曰奉壹。');
@@ -200,6 +201,81 @@ test('answer-document texts appear once with all translations and retain transla
   await expect(page.locator('.word-token')).toHaveCount(54);
   await page.reload();
   await expect(page.locator('.sentence-translation')).toHaveCount(29);
+});
+
+test('understanding recitation filters 77 questions, checks exact characters and retries failed saves', async ({ page, request }, info) => {
+  const snapshot = await (await request.get('/api/state')).json();
+  const data = mergeRecitationContent(mergeTextbookArticles(snapshot.data));
+  expect((await request.put('/api/state', { data: { revision: snapshot.revision, data }, headers: { 'X-InkLex-Client': '1' } })).ok()).toBe(true);
+  await page.goto('/');
+  await page.getByRole('button', { name: '去默写', exact: true }).click();
+  await expect(page.getByRole('heading', { name: '理解性默写', exact: true })).toBeVisible();
+  await expect(page.locator('.recitation-card')).toHaveCount(77);
+  await page.locator('.recitation-works').getByRole('button', { name: /^离骚/ }).click();
+  await expect(page.locator('.recitation-card')).toHaveCount(20);
+  await page.getByLabel('搜索默写题').fill('修洁');
+  await expect(page.locator('.recitation-card')).toHaveCount(1);
+  await page.getByRole('button', { name: '背这道题', exact: true }).click();
+  await expect(page.locator('.recitation-answer')).toHaveCount(0);
+  await expect(page.locator('.rating-button')).toHaveCount(0);
+  await page.getByLabel('第 1 空', { exact: true }).fill('余虽好修姱以羁兮');
+  await page.getByLabel('第 2 空', { exact: true }).fill('謇朝谇而夕替。');
+  await page.getByRole('button', { name: '查看答案并核对', exact: true }).click();
+  await expect(page.locator('.check-row.incorrect ins')).toHaveText('鞿');
+  await expect(page.locator('.check-row.correct')).toContainText('第 2 空');
+  await page.screenshot({ path: `test-results/${info.project.name}-recitation-check.png`, fullPage: true });
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1)).toBe(true);
+  let failed = false;
+  await page.route('**/api/state', async route => {
+    if (route.request().method() === 'PUT' && !failed) { failed = true; await route.fulfill({ status: 503, contentType: 'application/json', body: JSON.stringify({ error: '默写保存测试失败' }) }); }
+    else await route.continue();
+  });
+  await page.locator('.rating-button.good').click();
+  await expect(page.getByRole('status')).toContainText('默写保存测试失败');
+  await expect(page.locator('.session-finish')).toHaveCount(0);
+  expect((await db(page)).recitation.reviews).toHaveLength(0);
+  await page.locator('.rating-button.good').click();
+  await expect(page.locator('.session-finish')).toContainText('已完成 1 道');
+  await page.reload();
+  const after = await db(page);
+  expect(after.recitation.reviews).toHaveLength(1);
+  expect(after.recitation.reviews[0]).toMatchObject({ mode: 'practice', questionId: 'recitation:lisao:005' });
+  expect(after.recitation.cards).toEqual({}); expect(after.cards).toEqual(data.cards); expect(after.reviews).toEqual(data.reviews);
+  await page.emulateMedia({ colorScheme: 'dark' });
+  await expect(page.locator('html')).toHaveAttribute('data-theme', 'dark');
+  await expect(page.locator('.recitation-card')).toHaveCount(77);
+});
+
+test('understanding recitation plans persist and only a scored recall updates the schedule', async ({ page, request }) => {
+  const snapshot = await (await request.get('/api/state')).json();
+  const data = mergeRecitationContent(snapshot.data);
+  expect((await request.put('/api/state', { data: { revision: snapshot.revision, data }, headers: { 'X-InkLex-Client': '1' } })).ok()).toBe(true);
+  await page.goto('/#/recitation');
+  await page.getByLabel('搜索默写题').fill('开篇以');
+  await expect(page.locator('.recitation-card')).toHaveCount(1);
+  await page.getByRole('button', { name: '加入默写计划', exact: true }).click();
+  await expect(page.getByRole('button', { name: '已加入计划', exact: true })).toBeDisabled();
+  await page.getByRole('button', { name: '今日复习', exact: true }).click();
+  await page.getByRole('button', { name: '开始默写复习', exact: true }).click();
+  await page.getByRole('button', { name: '查看答案并核对', exact: true }).click();
+  expect((await db(page)).recitation.reviews).toHaveLength(0);
+  await page.reload();
+  await page.getByRole('button', { name: '今日复习', exact: true }).click();
+  await page.getByRole('button', { name: '开始默写复习', exact: true }).click();
+  await page.getByRole('button', { name: '查看答案并核对', exact: true }).click();
+  await page.locator('.rating-button.again').click();
+  await expect(page.locator('.session-finish')).toContainText('已完成 1 道');
+  const after = await db(page), id = 'recitation:chenqingbiao:001';
+  expect(after.recitation.reviews).toHaveLength(1);
+  expect(after.recitation.reviews[0]).toMatchObject({ mode: 'scheduled', questionId: id, grade: 1 });
+  expect(Date.parse(after.recitation.cards[id].dueAt) - Date.parse(after.recitation.cards[id].lastReviewAt)).toBe(60000);
+  expect(after.cards).toEqual(data.cards); expect(after.reviews).toEqual(data.reviews);
+  const backup = await (await request.get('/api/backup')).json();
+  expect(backup.recitation).toEqual(after.recitation);
+  await page.getByRole('button', { name: '回到理解性默写', exact: true }).click();
+  await expect(page.getByRole('button', { name: '开始默写复习', exact: true })).toBeDisabled();
+  await page.reload();
+  expect((await db(page)).recitation.cards[id]).toEqual(after.recitation.cards[id]);
 });
 
 test('full original text, independent inline explanations, no false reviews, responsive layout', async ({ page }, info) => {

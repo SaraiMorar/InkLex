@@ -36,6 +36,20 @@ const reviewSchema = z.object({
   retention: z.number().min(0.7).max(0.97),
   nativeLog: z.record(z.string(), z.unknown()).nullable(),
 });
+export const recitationQuestionSchema = z.object({
+  id, work: z.string().min(1).max(120), author: z.string().max(80), number: z.number().int().positive(),
+  prompt: z.string().min(1).max(5000), answers: z.array(z.string().min(1).max(2000)).min(1).max(16),
+  alternatives: z.array(z.array(z.string().min(1).max(2000))).max(16).optional(),
+  note: z.string().max(3000), source: z.string().max(160), articleId: id.nullable(),
+});
+const recitationReviewSchema = reviewSchema.omit({ senseId: true, contextId: true }).extend({
+  questionId: id, responses: z.array(z.string().max(2000)).max(16),
+});
+const recitationSchema = z.object({
+  questions: z.array(recitationQuestionSchema).max(50000),
+  cards: z.record(z.string(), cardSchema), reviews: z.array(recitationReviewSchema).max(500000),
+  dailyNew: z.number().int().min(0).max(100),
+});
 export const databaseSchema = z.object({
   version: z.literal(1), algorithm: z.literal('ts-fsrs@6.0.0/FSRS-6'),
   articles: z.array(articleSchema).max(10000), entries: z.array(entrySchema).max(50000),
@@ -43,6 +57,7 @@ export const databaseSchema = z.object({
   cards: z.record(z.string(), cardSchema), reviews: z.array(reviewSchema).max(500000),
   readings: z.array(z.object({ id, contextId: id, time: date })).max(500000),
   settings: z.object({ dailyNew: z.number().int().min(0).max(100), retention: z.number().min(0.7).max(0.97) }),
+  recitation: recitationSchema.optional(),
 });
 
 export type Article = z.infer<typeof articleSchema>;
@@ -58,6 +73,8 @@ export type Context = z.infer<typeof contextSchema>;
 export type StoredCard = z.infer<typeof cardSchema>;
 export type Database = z.infer<typeof databaseSchema>;
 export type Review = z.infer<typeof reviewSchema>;
+export type RecitationQuestion = z.infer<typeof recitationQuestionSchema>;
+export type RecitationState = z.infer<typeof recitationSchema>;
 export type Grade = Review['grade'];
 export const uid = () => crypto.randomUUID();
 // Equivalent source glosses often differ only in punctuation or synonym order.
@@ -124,6 +141,22 @@ export function validateDatabase(input: unknown): Database {
     if (review.mode === 'scheduled' && (!review.before || !review.after)) throw new Error('正式复习记录缺少记忆状态。');
   }
   for (const reading of data.readings) if (!contexts.has(reading.contextId)) throw new Error('阅读记录的关联内容缺失。');
+  if (data.recitation) {
+    const state = data.recitation, questionIds = new Set(state.questions.map(row => row.id));
+    if (questionIds.size !== state.questions.length || new Set(state.reviews.map(row => row.id)).size !== state.reviews.length) throw new Error('默写资料含有重复编号。');
+    for (const question of state.questions) {
+      if (question.alternatives && question.alternatives.length !== question.answers.length) throw new Error('默写题的备选答案数量不匹配。');
+    }
+    for (const [questionId, card] of Object.entries(state.cards)) {
+      if (!questionIds.has(questionId)) throw new Error('默写卡片的题目缺失。');
+      if (card.lastReviewAt && new Date(card.dueAt) < new Date(card.lastReviewAt)) throw new Error('默写到期时间早于评分时间。');
+      if (card.state !== 0 && (!card.lastReviewAt || card.stability <= 0)) throw new Error('默写复习状态不完整。');
+    }
+    for (const review of state.reviews) {
+      if (!questionIds.has(review.questionId)) throw new Error('默写记录的题目缺失。');
+      if (review.mode === 'scheduled' && (!review.before || !review.after)) throw new Error('默写复习记录缺少记忆状态。');
+    }
+  }
   return data;
 }
 

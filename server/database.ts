@@ -12,6 +12,7 @@ import { BIOGRAPHY_2026_ID, mergeBiography2026 } from './biography-2026.ts';
 import { SENSE_CLEANUP_ID, mergeSenseCleanup } from './sense-cleanup.ts';
 import { READING_LAYOUT_ID, unwrapDreamPoem } from './reading-layout.ts';
 import { EXAM_ARTICLES_ID, mergeExamArticles } from './exam-articles.ts';
+import { RECITATION_CONTENT_ID, mergeRecitationContent } from './recitation-content.ts';
 
 export interface Snapshot { data: Database; revision: number; serverId: string; pristine?: boolean; warning?: string }
 export class RevisionConflict extends Error {
@@ -22,7 +23,7 @@ type Row = { payload: string; revision: number; server_id: string };
 export class FileDatabase {
   readonly path: string;
   private db: DatabaseSync;
-  constructor(directory: string, options: { importBundledContent?: boolean; importSupplement?: boolean; importTextbookArticles?: boolean; importTextbookGlosses?: boolean; importBiography2026?: boolean; importSenseCleanup?: boolean; importReadingLayout?: boolean; importExamArticles?: boolean } = {}) {
+  constructor(directory: string, options: { importBundledContent?: boolean; importSupplement?: boolean; importTextbookArticles?: boolean; importTextbookGlosses?: boolean; importBiography2026?: boolean; importSenseCleanup?: boolean; importReadingLayout?: boolean; importExamArticles?: boolean; importRecitation?: boolean } = {}) {
     mkdirSync(directory, { recursive: true });
     this.path = resolve(directory, 'inklex.sqlite');
     this.db = new DatabaseSync(this.path);
@@ -44,6 +45,7 @@ export class FileDatabase {
         if ((options.importSenseCleanup ?? options.importBiography2026 ?? true) !== false) this.installContent(SENSE_CLEANUP_ID, mergeSenseCleanup);
         if ((options.importReadingLayout ?? options.importTextbookGlosses ?? options.importTextbookArticles ?? true) !== false) this.installContent(READING_LAYOUT_ID, unwrapDreamPoem);
         if ((options.importExamArticles ?? options.importBiography2026 ?? true) !== false) this.installContent(EXAM_ARTICLES_ID, mergeExamArticles);
+        if ((options.importRecitation ?? options.importExamArticles ?? options.importBiography2026 ?? true) !== false) this.installContent(RECITATION_CONTENT_ID, mergeRecitationContent);
       }
     } catch (error) { this.db.close(); throw error; }
   }

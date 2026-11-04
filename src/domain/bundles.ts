@@ -13,5 +13,7 @@ export function bundledContentFrom(data: Database): Database {
   const articleIds = new Set(contexts.map(context => context.articleId));
   return { ...emptyDatabase(), articles: data.articles.filter(a => a.id.startsWith('textbook5:article:')
     || a.id.startsWith('exam2026:article:') || articleIds.has(a.id)),
-    entries: data.entries.filter(entry => entryIds.has(entry.id)), senses, contexts };
+    entries: data.entries.filter(entry => entryIds.has(entry.id)), senses, contexts,
+    ...(data.recitation ? { recitation: { questions: data.recitation.questions.filter(q => q.id.startsWith('recitation:')),
+      cards: {}, reviews: [], dailyNew: 10 } } : {}) };
 }

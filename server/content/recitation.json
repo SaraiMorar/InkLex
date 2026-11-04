@@ -1,0 +1,1472 @@
+{
+  "id": "understanding-recitation-20261105-v1",
+  "sources": [
+    {
+      "file": "李密《陈情表》情景默写.docx",
+      "sha256": "fe9a002f48cd50899402594d30a03cf13d4c13e5e2c379786a2cef09ebeaa280",
+      "questions": 42
+    },
+    {
+      "file": "《离骚》周末作业（2026.9.19）.docx",
+      "sha256": "e9805fb2dd09991281f1638515f6c8c5cc2c226e5f5c42c253180a600add2535",
+      "questions": 20
+    },
+    {
+      "file": "《兰亭集序》作业docx.pdf",
+      "sha256": "20ebc937df458dced1c9ceee16b43f468ac42dcc89a5592bee1ffe62efdfbd3c",
+      "questions": 15
+    }
+  ],
+  "answerReferences": [
+    {
+      "work": "陈情表",
+      "reference": "现有书架《陈情表》完整原文"
+    },
+    {
+      "work": "离骚",
+      "url": "https://www.gushiwen.cn/shiwenv_1997f465971c.aspx",
+      "reference": "原文及生僻字核对"
+    },
+    {
+      "work": "兰亭集序",
+      "url": "https://www.dpm.org.cn/lemmas/245215.html",
+      "reference": "故宫博物院《兰亭序》释文核对；通假字沿用题目课文写法"
+    }
+  ],
+  "questions": [
+    {
+      "id": "recitation:chenqingbiao:001",
+      "work": "陈情表",
+      "author": "李密",
+      "number": 1,
+      "prompt": "李密在《陈情表》中开篇以“＿＿＿＿，＿＿＿＿”极写幼年孤苦，奠定全文悲怆基调。",
+      "answers": [
+        "臣以险衅",
+        "夙遭闵凶"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "李密《陈情表》情景默写.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:chenqingbiao:002",
+      "work": "陈情表",
+      "author": "李密",
+      "number": 2,
+      "prompt": "在《陈情表》中，李密一开篇写到了自己幼年的不幸遭遇，其中提到自己早年丧父的两句是“＿＿＿＿，＿＿＿＿”。",
+      "answers": [
+        "生孩六月",
+        "慈父见背"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "李密《陈情表》情景默写.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:chenqingbiao:003",
+      "work": "陈情表",
+      "author": "李密",
+      "number": 3,
+      "prompt": "李密在《陈情表》中暗写家族势力迫使母亲改变守节之志，间接交代自己幼年不得不由祖母独自抚养的句子是：“＿＿＿＿，＿＿＿＿”。",
+      "answers": [
+        "行年四岁",
+        "舅夺母志"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "李密《陈情表》情景默写.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:chenqingbiao:004",
+      "work": "陈情表",
+      "author": "李密",
+      "number": 4,
+      "prompt": "在古人笔下，凡是可能引起别人产生不良联想的事物，都尽可能地采用讳饰的方法，比如生病、死亡、如厕等。李密《陈情表》中用“＿＿＿＿”来婉指父亲去世，又用“＿＿＿＿”来婉称母亲改嫁。",
+      "answers": [
+        "慈父见背",
+        "舅夺母志"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "李密《陈情表》情景默写.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:chenqingbiao:005",
+      "work": "陈情表",
+      "author": "李密",
+      "number": 5,
+      "prompt": "李密在《陈情表》中首先概述了自己不幸的命运，并进一步深化了与祖母之间的情感纽带，“＿＿＿＿，＿＿＿＿”两句强调了祖母对自己的付出，也透露出祖孙间的深厚情感。",
+      "answers": [
+        "祖母刘愍臣孤弱",
+        "躬亲抚养"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "李密《陈情表》情景默写.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:chenqingbiao:006",
+      "work": "陈情表",
+      "author": "李密",
+      "number": 6,
+      "prompt": "在《陈情表》中，李密一开篇写到了自己幼年的生活情况，其中提到自己从小体弱多病、发育迟缓的两句是：“＿＿＿＿，＿＿＿＿”。",
+      "answers": [
+        "臣少多疾病",
+        "九岁不行"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "李密《陈情表》情景默写.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:chenqingbiao:007",
+      "work": "陈情表",
+      "author": "李密",
+      "number": 7,
+      "prompt": "李密在《陈情表》中用“＿＿＿＿，＿＿＿＿”两句表现他孤独的长大成人。",
+      "answers": [
+        "零丁孤苦",
+        "至于成立"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "按课文写“零丁”，注意不要误写为“伶仃”。",
+      "source": "李密《陈情表》情景默写.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:chenqingbiao:008",
+      "work": "陈情表",
+      "author": "李密",
+      "number": 8,
+      "prompt": "在《陈情表》中，李密向晋武帝陈述了自己的家庭情况，“＿＿＿＿，＿＿＿＿”两句让我们知道李密不但是家里的独子，而且至少是两代单传了。",
+      "answers": [
+        "既无伯叔",
+        "终鲜兄弟"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "李密《陈情表》情景默写.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:chenqingbiao:009",
+      "work": "陈情表",
+      "author": "李密",
+      "number": 9,
+      "prompt": "《陈情表》中用“＿＿＿＿，＿＿＿＿”两句写出了自己家门冷落、人丁稀少的情况。",
+      "answers": [
+        "门衰祚薄",
+        "晚有儿息"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "李密《陈情表》情景默写.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:chenqingbiao:010",
+      "work": "陈情表",
+      "author": "李密",
+      "number": 10,
+      "prompt": "家史采访活动中，爷爷回忆幼年境况时，用《陈情表》中的“＿＿＿＿，＿＿＿＿”来形容外面没有可以依靠的亲戚、家里也无人照看门户的情形。",
+      "answers": [
+        "外无期功强近之亲",
+        "内无应门五尺之僮"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "李密《陈情表》情景默写.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:chenqingbiao:011",
+      "work": "陈情表",
+      "author": "李密",
+      "number": 11,
+      "prompt": "古代文人常以“影”表达孤独之感，比如李密《陈情表》中“＿＿＿＿，＿＿＿＿”的心酸画面。",
+      "answers": [
+        "茕茕孑立",
+        "形影相吊"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "李密《陈情表》情景默写.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:chenqingbiao:012",
+      "work": "陈情表",
+      "author": "李密",
+      "number": 12,
+      "prompt": "李密《陈情表》中，写祖母常年卧病，不能自理的两句是：“＿＿＿＿，＿＿＿＿”。",
+      "answers": [
+        "而刘夙婴疾病",
+        "常在床蓐"
+      ],
+      "alternatives": [
+        [
+          "刘夙婴疾病"
+        ],
+        []
+      ],
+      "note": "",
+      "source": "李密《陈情表》情景默写.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:chenqingbiao:013",
+      "work": "陈情表",
+      "author": "李密",
+      "number": 13,
+      "prompt": "李密在《陈情表》中用“＿＿＿＿，＿＿＿＿”两句，既写出了祖母刘氏病重时自己亲自侍奉、守护在侧的细节，又表达了他因孝亲而难以远离的拳拳之心。",
+      "answers": [
+        "臣侍汤药",
+        "未曾废离"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "李密《陈情表》情景默写.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:chenqingbiao:014",
+      "work": "陈情表",
+      "author": "李密",
+      "number": 14,
+      "prompt": "李密在《陈情表》中用“＿＿＿＿，＿＿＿＿”两句，既点明自己归顺晋朝的时机，又生动写出蒙受朝廷清明教化的感激之情，为后文“忠君”与“孝亲”的矛盾张本。",
+      "answers": [
+        "逮奉圣朝",
+        "沐浴清化"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "李密《陈情表》情景默写.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:chenqingbiao:015",
+      "work": "陈情表",
+      "author": "李密",
+      "number": 15,
+      "prompt": "察举制，是中国古代选拔官吏的一种制度。李密《陈情表》中“＿＿＿＿，＿＿＿＿”就是这种制度的体现。",
+      "answers": [
+        "前太守臣逵察臣孝廉",
+        "后刺史臣荣举臣秀才"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "李密《陈情表》情景默写.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:chenqingbiao:016",
+      "work": "陈情表",
+      "author": "李密",
+      "number": 16,
+      "prompt": "在《陈情表》中，面对太守和刺史的举荐，李密的回应是：“＿＿＿＿，＿＿＿＿”。",
+      "answers": [
+        "臣以供养无主",
+        "辞不赴命"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "李密《陈情表》情景默写.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:chenqingbiao:017",
+      "work": "陈情表",
+      "author": "李密",
+      "number": 17,
+      "prompt": "李密在《陈情表》中提到，朝廷以特别的诏书形式，正式任命他为郎中，表达了对他的赏识与重用，这两句是：“＿＿＿＿，＿＿＿＿”。",
+      "answers": [
+        "诏书特下",
+        "拜臣郎中"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "李密《陈情表》情景默写.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:chenqingbiao:018",
+      "work": "陈情表",
+      "author": "李密",
+      "number": 18,
+      "prompt": "李密在《陈情表》中以“＿＿＿＿，＿＿＿＿”两句，陈述自己不久又蒙皇帝提拔担任太子侍从官的经历，通过连续的官职晋升体现君主恩遇之隆。",
+      "answers": [
+        "寻蒙国恩",
+        "除臣洗马"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "李密《陈情表》情景默写.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:chenqingbiao:019",
+      "work": "陈情表",
+      "author": "李密",
+      "number": 19,
+      "prompt": "李密在《陈情表》中自谦身份低微，却蒙朝廷任命侍奉太子，他深感惶恐，认为即使牺牲生命也无法报答皇恩的句子是：“＿＿＿＿，＿＿＿＿，＿＿＿＿”。",
+      "answers": [
+        "猥以微贱",
+        "当侍东宫",
+        "非臣陨首所能上报"
+      ],
+      "alternatives": [
+        [],
+        [],
+        []
+      ],
+      "note": "",
+      "source": "李密《陈情表》情景默写.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:chenqingbiao:020",
+      "work": "陈情表",
+      "author": "李密",
+      "number": 20,
+      "prompt": "在《陈情表》中，委婉地拒绝了太守和刺史的举荐之后，李密收到了朝廷先后任命他为郎中和洗马的诏书，对此，李密回应是：“＿＿＿＿，＿＿＿＿”。",
+      "answers": [
+        "臣具以表闻",
+        "辞不就职"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "李密《陈情表》情景默写.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:chenqingbiao:021",
+      "work": "陈情表",
+      "author": "李密",
+      "number": 21,
+      "prompt": "《陈情表》中，李密用“＿＿＿＿，＿＿＿＿”，写出了自己辞任洗马后朝廷严厉责备的态度。",
+      "answers": [
+        "诏书切峻",
+        "责臣逋慢"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "李密《陈情表》情景默写.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:chenqingbiao:022",
+      "work": "陈情表",
+      "author": "李密",
+      "number": 22,
+      "prompt": "李密在《陈情表》中描述地方官员紧迫催促，连续发文逼迫自己即刻上路赴任的句子是：“＿＿＿＿，＿＿＿＿”。",
+      "answers": [
+        "郡县逼迫",
+        "催臣上道"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "李密《陈情表》情景默写.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:chenqingbiao:023",
+      "work": "陈情表",
+      "author": "李密",
+      "number": 23,
+      "prompt": "《陈情表》中，李密用比喻、夸张的手法，写州郡长官到家中催逼赴任之急迫的两句是：“＿＿＿＿，＿＿＿＿”。",
+      "answers": [
+        "州司临门",
+        "急于星火"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "李密《陈情表》情景默写.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:chenqingbiao:024",
+      "work": "陈情表",
+      "author": "李密",
+      "number": 24,
+      "prompt": "《陈情表》中“＿＿＿＿，＿＿＿＿；＿＿＿＿，＿＿＿＿”四句写出了李密在接到朝廷任命后，内心的矛盾和痛苦，因为他既想遵从皇帝的命令，又放心不下祖母。",
+      "answers": [
+        "臣欲奉诏奔驰",
+        "则刘病日笃",
+        "欲苟顺私情",
+        "则告诉不许"
+      ],
+      "alternatives": [
+        [],
+        [],
+        [],
+        []
+      ],
+      "note": "",
+      "source": "李密《陈情表》情景默写.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:chenqingbiao:025",
+      "work": "陈情表",
+      "author": "李密",
+      "number": 25,
+      "prompt": "《陈情表》中，李密用“＿＿＿＿，＿＿＿＿”两句形容自己在朝廷的逼迫下，处境十分狼狈。",
+      "answers": [
+        "臣之进退",
+        "实为狼狈"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "李密《陈情表》情景默写.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:chenqingbiao:026",
+      "work": "陈情表",
+      "author": "李密",
+      "number": 26,
+      "prompt": "在《陈情表》中作者抓住晋朝“＿＿＿＿”的治国原则，坚持和祖母相依为命，因此“＿＿＿＿”。",
+      "answers": [
+        "以孝治天下",
+        "是以区区不能废远"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "李密《陈情表》情景默写.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:chenqingbiao:027",
+      "work": "陈情表",
+      "author": "李密",
+      "number": 27,
+      "prompt": "李密在《陈情表》中以朝廷对年老功臣的体恤为比照，突出自己孤苦无依、更需怜悯的特殊处境，写道：“＿＿＿＿，＿＿＿＿，＿＿＿＿，＿＿＿＿”。",
+      "answers": [
+        "凡在故老",
+        "犹蒙矜育",
+        "况臣孤苦",
+        "特为尤甚"
+      ],
+      "alternatives": [
+        [],
+        [],
+        [],
+        []
+      ],
+      "note": "",
+      "source": "李密《陈情表》情景默写.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:chenqingbiao:028",
+      "work": "陈情表",
+      "author": "李密",
+      "number": 28,
+      "prompt": "李密在《陈情表》中自述年轻时曾在蜀汉朝廷担任郎官职务，以此表明自己并非初次出仕的句子是：“＿＿＿＿，＿＿＿＿”。",
+      "answers": [
+        "且臣少仕伪朝",
+        "历职郎署"
+      ],
+      "alternatives": [
+        [
+          "臣少仕伪朝"
+        ],
+        []
+      ],
+      "note": "",
+      "source": "李密《陈情表》情景默写.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:chenqingbiao:029",
+      "work": "陈情表",
+      "author": "李密",
+      "number": 29,
+      "prompt": "《陈情表》中，为了打消了晋武帝对前朝旧臣的猜忌与疑虑，李密用“＿＿＿＿，＿＿＿＿”两句来表明自己是醉心官场、贪慕名利之人。",
+      "answers": [
+        "本图宦达",
+        "不矜名节"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "李密《陈情表》情景默写.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:chenqingbiao:030",
+      "work": "陈情表",
+      "author": "李密",
+      "number": 30,
+      "prompt": "李密在《陈情表》中以“＿＿＿＿，＿＿＿＿”两句自陈身为前朝遗民的卑微身份，既是对晋武帝的谦恭之辞，也暗含不敢奢求恩宠的自抑之情。",
+      "answers": [
+        "今臣亡国贱俘",
+        "至微至陋"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "李密《陈情表》情景默写.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:chenqingbiao:031",
+      "work": "陈情表",
+      "author": "李密",
+      "number": 31,
+      "prompt": "李密在《陈情表》中提到自己现在的境况，不过是一个身份低微的亡国俘虏，但是却“＿＿＿＿，＿＿＿＿”，因此，他并不敢再奢求得到更高的官位。",
+      "answers": [
+        "过蒙拔擢",
+        "宠命优渥"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "李密《陈情表》情景默写.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:chenqingbiao:032",
+      "work": "陈情表",
+      "author": "李密",
+      "number": 32,
+      "prompt": "李密在《陈情表》中面对朝廷的优厚任命，以“＿＿＿＿，＿＿＿＿”两句郑重声明自己绝不敢犹豫拖延，更没有拒绝赴任的非分之想，以此消解晋武帝对自己的猜忌。",
+      "answers": [
+        "岂敢盘桓",
+        "有所希冀"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "李密《陈情表》情景默写.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:chenqingbiao:033",
+      "work": "陈情表",
+      "author": "李密",
+      "number": 33,
+      "prompt": "李密在《陈情表》中用“＿＿＿＿，＿＿＿＿”比喻祖母刘氏已到垂暮之年，又以“＿＿＿＿，＿＿＿＿”极言其生命危殆、朝不保夕的处境，成为全文恳请终养祖母的核心依据。",
+      "answers": [
+        "日薄西山",
+        "气息奄奄",
+        "人命危浅",
+        "朝不虑夕"
+      ],
+      "alternatives": [
+        [
+          "但以刘日薄西山"
+        ],
+        [],
+        [],
+        []
+      ],
+      "note": "首空也可连同上文写作“但以刘日薄西山”。",
+      "source": "李密《陈情表》情景默写.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:chenqingbiao:034",
+      "work": "陈情表",
+      "author": "李密",
+      "number": 34,
+      "prompt": "李密在《陈情表》中以血脉相依的深情告白，强调自己与祖母刘氏互为生命依托的句子是：“＿＿＿＿，＿＿＿＿；＿＿＿＿，＿＿＿＿”。",
+      "answers": [
+        "臣无祖母",
+        "无以至今日",
+        "祖母无臣",
+        "无以终余年"
+      ],
+      "alternatives": [
+        [],
+        [],
+        [],
+        []
+      ],
+      "note": "",
+      "source": "李密《陈情表》情景默写.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:chenqingbiao:035",
+      "work": "陈情表",
+      "author": "李密",
+      "number": 35,
+      "prompt": "李密《陈情表》“＿＿＿＿，＿＿＿＿，＿＿＿＿”，申述了孝敬祖母，不能远离的拳拳之心。",
+      "answers": [
+        "母、孙二人",
+        "更相为命",
+        "是以区区不能废远"
+      ],
+      "alternatives": [
+        [],
+        [],
+        []
+      ],
+      "note": "",
+      "source": "李密《陈情表》情景默写.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:chenqingbiao:036",
+      "work": "陈情表",
+      "author": "李密",
+      "number": 36,
+      "prompt": "李密在《陈情表》中以精准的年龄对比阐述尽孝刻不容缓、尽忠来日方长的道理，进一步打消了晋武帝的疑虑，他写道：“＿＿＿＿，＿＿＿＿；＿＿＿＿，＿＿＿＿”。",
+      "answers": [
+        "臣密今年四十有四",
+        "祖母今年九十有六",
+        "是臣尽节于陛下之日长",
+        "报养刘之日短也"
+      ],
+      "alternatives": [
+        [],
+        [],
+        [],
+        []
+      ],
+      "note": "",
+      "source": "李密《陈情表》情景默写.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:chenqingbiao:037",
+      "work": "陈情表",
+      "author": "李密",
+      "number": 37,
+      "prompt": "《陈情表》中，李密用乌鸦反哺的典故来表达自己要抚养祖母终老的句子是：“＿＿＿＿，＿＿＿＿。”",
+      "answers": [
+        "乌鸟私情",
+        "愿乞终养"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "李密《陈情表》情景默写.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:chenqingbiao:038",
+      "work": "陈情表",
+      "author": "李密",
+      "number": 38,
+      "prompt": "《陈情表》中李密申言自己的苦衷是世人和天地神明皆知的句子是：“＿＿＿＿，＿＿＿＿，＿＿＿＿”。",
+      "answers": [
+        "臣之辛苦",
+        "非独蜀之人士及二州牧伯所见明知",
+        "皇天后土实所共鉴"
+      ],
+      "alternatives": [
+        [],
+        [],
+        []
+      ],
+      "note": "",
+      "source": "李密《陈情表》情景默写.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:chenqingbiao:039",
+      "work": "陈情表",
+      "author": "李密",
+      "number": 39,
+      "prompt": "《陈情表》中李密用“＿＿＿＿，＿＿＿＿”两句要求晋武帝的怜悯他的现状并准许他的要求。",
+      "answers": [
+        "愿陛下矜愍愚诚",
+        "听臣微志"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "李密《陈情表》情景默写.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:chenqingbiao:040",
+      "work": "陈情表",
+      "author": "李密",
+      "number": 40,
+      "prompt": "李密在《陈情表》中以“＿＿＿＿，＿＿＿＿”两句，既饱含对祖母刘氏能够侥幸安度晚年的虔诚祈愿，又暗含尽孝之后定当尽忠的隐诺。",
+      "answers": [
+        "庶刘侥幸",
+        "保卒余年"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "李密《陈情表》情景默写.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:chenqingbiao:041",
+      "work": "陈情表",
+      "author": "李密",
+      "number": 41,
+      "prompt": "李密在《陈情表》结尾以“＿＿＿＿，＿＿＿＿”两句，表达自己活着不惜性命为国出力，死后也要报答君王之恩。",
+      "answers": [
+        "臣生当陨首",
+        "死当结草"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "李密《陈情表》情景默写.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:chenqingbiao:042",
+      "work": "陈情表",
+      "author": "李密",
+      "number": 42,
+      "prompt": "古代奏章常以谦辞收束，李密在《陈情表》结尾用“＿＿＿＿，＿＿＿＿”两句，表达敬畏之心，成为古代臣属上奏的经典范式。",
+      "answers": [
+        "臣不胜犬马怖惧之情",
+        "谨拜表以闻"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "李密《陈情表》情景默写.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:lisao:001",
+      "work": "离骚",
+      "author": "屈原",
+      "number": 1,
+      "prompt": "《离骚》中，写屈原看到草木零落，感慨时光易逝，担心国君易老、昏聩误国的句子是：“＿＿＿＿，＿＿＿＿”。",
+      "answers": [
+        "惟草木之零落兮",
+        "恐美人之迟暮"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "《离骚》周末作业（2026.9.19）.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:lisao:002",
+      "work": "离骚",
+      "author": "屈原",
+      "number": 2,
+      "prompt": "《离骚》中用春秋更替来抒发情感的句子是：“＿＿＿＿，＿＿＿＿”。",
+      "answers": [
+        "日月忽其不淹兮",
+        "春与秋其代序"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "《离骚》周末作业（2026.9.19）.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:lisao:003",
+      "work": "离骚",
+      "author": "屈原",
+      "number": 3,
+      "prompt": "屈原在《离骚》中表达自己虽然遭到不公的待遇，但是为了自己心中追求的目标九死不悔的语句是：“＿＿＿＿，＿＿＿＿”。",
+      "answers": [
+        "亦余心之所善兮",
+        "虽九死其犹未悔"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "《离骚》周末作业（2026.9.19）.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:lisao:004",
+      "work": "离骚",
+      "author": "屈原",
+      "number": 4,
+      "prompt": "屈原在《离骚》中“＿＿＿＿，＿＿＿＿”体现了他深感于人民的痛苦处境，充满了对人民深刻的同情。",
+      "answers": [
+        "长太息以掩涕兮",
+        "哀民生之多艰"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "《离骚》周末作业（2026.9.19）.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:lisao:005",
+      "work": "离骚",
+      "author": "屈原",
+      "number": 5,
+      "prompt": "文中表达自己虽爱好修洁严以律己，但早晨被诟骂晚上被免职的句子是：“＿＿＿＿，＿＿＿＿”。",
+      "answers": [
+        "余虽好修姱以鞿羁兮",
+        "謇朝谇而夕替"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "鞿羁（jījī）、謇（jiǎn）、谇（suì）；注意“鞿”字不可漏写。",
+      "source": "《离骚》周末作业（2026.9.19）.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:lisao:006",
+      "work": "离骚",
+      "author": "屈原",
+      "number": 6,
+      "prompt": "《离骚》中，用比喻的手法，写出自己才能优秀却遭到嫉妒和造谣中伤的句子：“＿＿＿＿，＿＿＿＿”。",
+      "answers": [
+        "众女嫉余之蛾眉兮",
+        "谣诼谓余以善淫"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "《离骚》周末作业（2026.9.19）.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:lisao:007",
+      "work": "离骚",
+      "author": "屈原",
+      "number": 7,
+      "prompt": "《离骚》中，表明自己追慕古代圣贤，宁死不失正义的句子：“＿＿＿＿，＿＿＿＿”。",
+      "answers": [
+        "伏清白以死直兮",
+        "固前圣之所厚"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "《离骚》周末作业（2026.9.19）.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:lisao:008",
+      "work": "离骚",
+      "author": "屈原",
+      "number": 8,
+      "prompt": "《离骚》中，表现诗人怨恨君王过分荒唐，始终不能明了自己心迹的句子是：“＿＿＿＿，＿＿＿＿”。",
+      "answers": [
+        "怨灵修之浩荡兮",
+        "终不察夫民心"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "《离骚》周末作业（2026.9.19）.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:lisao:009",
+      "work": "离骚",
+      "author": "屈原",
+      "number": 9,
+      "prompt": "《离骚》中，表现诗人忍受委屈压抑意志，忍受责骂和侮辱的句子是：“＿＿＿＿，＿＿＿＿”。",
+      "answers": [
+        "屈心而抑志兮",
+        "忍尤而攘诟"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "《离骚》周末作业（2026.9.19）.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:lisao:010",
+      "work": "离骚",
+      "author": "屈原",
+      "number": 10,
+      "prompt": "《离骚》中，表达人生在世虽然各有各的乐趣，但诗人唯独把爱美德当做常态的句子是：“＿＿＿＿，＿＿＿＿”。",
+      "answers": [
+        "民生各有所乐兮",
+        "余独好修以为常"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "《离骚》周末作业（2026.9.19）.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:lisao:011",
+      "work": "离骚",
+      "author": "屈原",
+      "number": 11,
+      "prompt": "《离骚》中，表现诗人宁愿突然死去随着流水消逝啊，也不肯做出世俗小人的模样的句子是：“＿＿＿＿，＿＿＿＿”。",
+      "answers": [
+        "宁溘死以流亡兮",
+        "余不忍为此态也"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "《离骚》周末作业（2026.9.19）.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:lisao:012",
+      "work": "离骚",
+      "author": "屈原",
+      "number": 12,
+      "prompt": "《离骚》中，用大鸟和小鸟不合群来比喻说明自己绝不随波逐流的两句：“＿＿＿＿，＿＿＿＿”。",
+      "answers": [
+        "鸷鸟之不群兮",
+        "自前世而固然"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "《离骚》周末作业（2026.9.19）.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:lisao:013",
+      "work": "离骚",
+      "author": "屈原",
+      "number": 13,
+      "prompt": "《离骚》中，用方圆不相合说明自己和世俗小人不相容的两句：“＿＿＿＿，＿＿＿＿”。",
+      "answers": [
+        "何方圜之能周兮",
+        "夫孰异道而相安"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "《离骚》周末作业（2026.9.19）.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:lisao:014",
+      "work": "离骚",
+      "author": "屈原",
+      "number": 14,
+      "prompt": "《离骚》中，用香草做比喻说明自己遭贬黜是因为德行高尚的两句：“＿＿＿＿，＿＿＿＿”。",
+      "answers": [
+        "既替余以蕙纕兮",
+        "又申之以揽茝"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "纕（xiāng）、茝（chǎi）；注意不要漏掉“蕙纕”的“纕”。",
+      "source": "《离骚》周末作业（2026.9.19）.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:lisao:015",
+      "work": "离骚",
+      "author": "屈原",
+      "number": 15,
+      "prompt": "《离骚》中，表明自己所处的社会本来就是善于投机取巧，违背规矩的现状的两句：“＿＿＿＿，＿＿＿＿”。",
+      "answers": [
+        "固时俗之工巧兮",
+        "偭规矩而改错"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "《离骚》周末作业（2026.9.19）.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:lisao:016",
+      "work": "离骚",
+      "author": "屈原",
+      "number": 16,
+      "prompt": "《离骚》中，表明当时社会中的人们违背准则，把苟合取悦别人奉为信条的两句：“＿＿＿＿，＿＿＿＿”。",
+      "answers": [
+        "背绳墨以追曲兮",
+        "竞周容以为度"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "《离骚》周末作业（2026.9.19）.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:lisao:017",
+      "work": "离骚",
+      "author": "屈原",
+      "number": 17,
+      "prompt": "《离骚》中，表明作者在黑暗混乱社会中烦闷失意，走投无路的两句：“＿＿＿＿，＿＿＿＿”。",
+      "answers": [
+        "忳郁邑余侘傺兮",
+        "吾独穷困乎此时也"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "《离骚》周末作业（2026.9.19）.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:lisao:018",
+      "work": "离骚",
+      "author": "屈原",
+      "number": 18,
+      "prompt": "屈原在《离骚》中，用“＿＿＿＿，＿＿＿＿”两句表明自己宁死也不与世俗同流合污的坚决态度。",
+      "answers": [
+        "宁溘死以流亡兮",
+        "余不忍为此态也"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "《离骚》周末作业（2026.9.19）.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:lisao:019",
+      "work": "离骚",
+      "author": "屈原",
+      "number": 19,
+      "prompt": "《离骚》中诗人表明自己追慕古代圣贤，宁死不失正义，要保持清白为正道而死的句子：“＿＿＿＿，＿＿＿＿”。",
+      "answers": [
+        "伏清白以死直兮",
+        "固前圣之所厚"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "《离骚》周末作业（2026.9.19）.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:lisao:020",
+      "work": "离骚",
+      "author": "屈原",
+      "number": 20,
+      "prompt": "屈原在《离骚（节选）》中四次以死明志，其中“＿＿＿＿，＿＿＿＿”两句表达自己即使粉身碎骨，也不会改变自己的内心追求的坚决。",
+      "answers": [
+        "虽体解吾犹未变兮",
+        "岂余心之可惩"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "《离骚》周末作业（2026.9.19）.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:lanting:001",
+      "work": "兰亭集序",
+      "author": "王羲之",
+      "number": 1,
+      "prompt": "王羲之《兰亭集序》中写兰亭的“山”“木”的句子是“＿＿＿＿，＿＿＿＿”",
+      "answers": [
+        "此地有崇山峻岭",
+        "茂林修竹"
+      ],
+      "alternatives": [
+        [
+          "崇山峻岭"
+        ],
+        []
+      ],
+      "note": "",
+      "source": "《兰亭集序》作业docx.pdf",
+      "articleId": null
+    },
+    {
+      "id": "recitation:lanting:002",
+      "work": "兰亭集序",
+      "author": "王羲之",
+      "number": 2,
+      "prompt": "王羲之《兰亭集序》中写兰亭的“水”的句子是“＿＿＿＿，＿＿＿＿”。",
+      "answers": [
+        "又有清流激湍",
+        "映带左右"
+      ],
+      "alternatives": [
+        [
+          "清流激湍"
+        ],
+        []
+      ],
+      "note": "",
+      "source": "《兰亭集序》作业docx.pdf",
+      "articleId": null
+    },
+    {
+      "id": "recitation:lanting:003",
+      "work": "兰亭集序",
+      "author": "王羲之",
+      "number": 3,
+      "prompt": "《兰亭集序》中交代集会地点的句子是“＿＿＿＿”，表明集会地点周围有高峻的山峰的句子是“＿＿＿＿”。",
+      "answers": [
+        "会于会稽山阴之兰亭",
+        "此地有崇山峻岭"
+      ],
+      "alternatives": [
+        [],
+        [
+          "崇山峻岭"
+        ]
+      ],
+      "note": "",
+      "source": "《兰亭集序》作业docx.pdf",
+      "articleId": null
+    },
+    {
+      "id": "recitation:lanting:004",
+      "work": "兰亭集序",
+      "author": "王羲之",
+      "number": 4,
+      "prompt": "《兰亭集序》中交代集会目的的句子是“＿＿＿＿”，直接表明作者参加集会时的心情的句子是“＿＿＿＿”。",
+      "answers": [
+        "修禊事也",
+        "信可乐也"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "《兰亭集序》作业docx.pdf",
+      "articleId": null
+    },
+    {
+      "id": "recitation:lanting:005",
+      "work": "兰亭集序",
+      "author": "王羲之",
+      "number": 5,
+      "prompt": "《陋室铭》中“谈笑有鸿儒，往来无白丁”两句描绘宾客尽是文人雅士、贤德之人，《兰亭集序》中表达类似意思的句子：“＿＿＿＿，＿＿＿＿。”",
+      "answers": [
+        "群贤毕至",
+        "少长咸集"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "《兰亭集序》作业docx.pdf",
+      "articleId": null
+    },
+    {
+      "id": "recitation:lanting:006",
+      "work": "兰亭集序",
+      "author": "王羲之",
+      "number": 6,
+      "prompt": "虽然没有演奏音乐的盛况，但喝点酒，作点诗，也足够来痛快地表达幽深内藏的感情了。王羲之在《兰亭集序》中表达这一意思的句子是“＿＿＿＿，＿＿＿＿，＿＿＿＿”。",
+      "answers": [
+        "虽无丝竹管弦之盛",
+        "一觞一咏",
+        "亦足以畅叙幽情"
+      ],
+      "alternatives": [
+        [],
+        [],
+        []
+      ],
+      "note": "",
+      "source": "《兰亭集序》作业docx.pdf",
+      "articleId": null
+    },
+    {
+      "id": "recitation:lanting:007",
+      "work": "兰亭集序",
+      "author": "王羲之",
+      "number": 7,
+      "prompt": "王羲之的《兰亭集序》中表现兰亭气候宜人的句子：“＿＿＿＿，＿＿＿＿。”",
+      "answers": [
+        "天朗气清",
+        "惠风和畅"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "《兰亭集序》作业docx.pdf",
+      "articleId": null
+    },
+    {
+      "id": "recitation:lanting:008",
+      "work": "兰亭集序",
+      "author": "王羲之",
+      "number": 8,
+      "prompt": "我们在感叹时光流逝时，往往会说“光阴似箭，日月如梭”，《兰亭集序》中与此句意义相近的句子：“＿＿＿＿，＿＿＿＿。”",
+      "answers": [
+        "夫人之相与",
+        "俯仰一世"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "《兰亭集序》作业docx.pdf",
+      "articleId": null
+    },
+    {
+      "id": "recitation:lanting:009",
+      "work": "兰亭集序",
+      "author": "王羲之",
+      "number": 9,
+      "prompt": "在《兰亭集序》中，王羲之认为人在美好的时光中总会“＿＿＿＿，＿＿＿＿”，而在事过境迁之后又不免感慨横生。",
+      "answers": [
+        "快然自足",
+        "不知老之将至"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "《兰亭集序》作业docx.pdf",
+      "articleId": null
+    },
+    {
+      "id": "recitation:lanting:010",
+      "work": "兰亭集序",
+      "author": "王羲之",
+      "number": 10,
+      "prompt": "王羲之在《兰亭集序》中写每个人的寿命长短听凭造化，最后都归结于消亡的句子：“＿＿＿＿，＿＿＿＿。”",
+      "answers": [
+        "况修短随化",
+        "终期于尽"
+      ],
+      "alternatives": [
+        [
+          "修短随化"
+        ],
+        []
+      ],
+      "note": "",
+      "source": "《兰亭集序》作业docx.pdf",
+      "articleId": null
+    },
+    {
+      "id": "recitation:lanting:011",
+      "work": "兰亭集序",
+      "author": "王羲之",
+      "number": 11,
+      "prompt": "针对魏晋名士崇尚虚无的思想，王羲之在《兰亭集序》中批评这一思想的句子：“＿＿＿＿，＿＿＿＿”是作者超越了人生无常之痛的理性思考。",
+      "answers": [
+        "固知一死生为虚诞",
+        "齐彭殇为妄作"
+      ],
+      "alternatives": [
+        [
+          "一死生为虚诞"
+        ],
+        []
+      ],
+      "note": "",
+      "source": "《兰亭集序》作业docx.pdf",
+      "articleId": null
+    },
+    {
+      "id": "recitation:lanting:012",
+      "work": "兰亭集序",
+      "author": "王羲之",
+      "number": 12,
+      "prompt": "在《兰亭集序》中，“＿＿＿＿，＿＿＿＿”，这是历来脍炙人口的名句，因为它说出了古往今来人们的普遍感受：在回忆往事时，尽管感情上已经发生了变化，仍免不了产生这样那样的感慨。",
+      "answers": [
+        "情随事迁",
+        "感慨系之矣"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "《兰亭集序》作业docx.pdf",
+      "articleId": null
+    },
+    {
+      "id": "recitation:lanting:013",
+      "work": "兰亭集序",
+      "author": "王羲之",
+      "number": 13,
+      "prompt": "在《兰亭集序》中，“＿＿＿＿，＿＿＿＿”是说“静：谈玄悟道”。在《兰亭集序》中，“＿＿＿＿，＿＿＿＿”是说“躁：寄情于物”。",
+      "answers": [
+        "或取诸怀抱",
+        "悟言一室之内",
+        "或因寄所托",
+        "放浪形骸之外"
+      ],
+      "alternatives": [
+        [],
+        [],
+        [],
+        []
+      ],
+      "note": "",
+      "source": "《兰亭集序》作业docx.pdf",
+      "articleId": null
+    },
+    {
+      "id": "recitation:lanting:014",
+      "work": "兰亭集序",
+      "author": "王羲之",
+      "number": 14,
+      "prompt": "《兰亭集序》中能纵展眼力，开畅胸怀，极视听乐趣的前提的句子是：＿＿＿＿，＿＿＿＿。",
+      "answers": [
+        "仰观宇宙之大",
+        "俯察品类之盛"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "《兰亭集序》作业docx.pdf",
+      "articleId": null
+    },
+    {
+      "id": "recitation:lanting:015",
+      "work": "兰亭集序",
+      "author": "王羲之",
+      "number": 15,
+      "prompt": "在《兰亭集序》中，当作者阅读到；古人的文章并从中看到了自己的掠影时的状态是“＿＿＿＿，＿＿＿＿”。",
+      "answers": [
+        "未尝不临文嗟悼",
+        "不能喻之于怀"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "《兰亭集序》作业docx.pdf",
+      "articleId": null
+    }
+  ]
+}
