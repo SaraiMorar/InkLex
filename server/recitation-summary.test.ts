@@ -17,7 +17,7 @@ const paths: string[] = [], handles: FileDatabase[] = [];
 const directory = () => { const p = mkdtempSync(join(tmpdir(), 'inklex-recitations-summary-')); paths.push(p); return p; };
 const open = (path: string, importRecitationSummary = true) => {
   const h = new FileDatabase(path, { importSupplement: false, importTextbookArticles: false, importBiography2026: false,
-    importRecitation: true, importRecitationSummary });
+    importRecitation: true, importRecitationSummary, importRecitationChenlan: false });
   handles.push(h); return h;
 };
 afterEach(() => {

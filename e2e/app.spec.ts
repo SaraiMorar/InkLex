@@ -11,6 +11,7 @@ import { mergeBiography2026 } from '../server/biography-2026';
 import { mergeExamArticles } from '../server/exam-articles';
 import { mergeRecitationContent } from '../server/recitation-content';
 import { mergeRecitationSummary } from '../server/recitation-summary';
+import { mergeRecitationChenlan } from '../server/recitation-chenlan';
 
 const db = async (page: Page) => (await (await page.request.get('/api/state')).json()).data;
 
@@ -325,6 +326,43 @@ test('the supplied recitation collection supports exact recall and a practice se
   await page.getByLabel('默写出题顺序').selectOption('ordered');
   await page.getByRole('button', { name: '开始默写抽背', exact: true }).click();
   await expect(page.locator('.session-header')).toContainText('1 / 286');
+});
+
+test('Chenqingbiao and Lanting supplement supports both stated variants and three-part recall', async ({ page, request }) => {
+  const snapshot = await (await request.get('/api/state')).json();
+  const data = mergeRecitationChenlan(mergeRecitationSummary(mergeRecitationContent(mergeTextbookArticles(snapshot.data))));
+  expect((await request.put('/api/state', { data: { revision: snapshot.revision, data }, headers: { 'X-InkLex-Client': '1' } })).ok()).toBe(true);
+  await page.goto('/#/recitation');
+  await expect(page.locator('.recitation-card')).toHaveCount(322);
+  await page.locator('.recitation-works').getByRole('button', { name: /^陈情表/ }).click();
+  await page.getByLabel('搜索默写题').fill('凄凉比喻');
+  await expect(page.locator('.recitation-card')).toHaveCount(1);
+  await expect(page.locator('.recitation-source')).toContainText('陈情表与兰亭集序补充默写');
+  await page.getByRole('button', { name: '背这道题', exact: true }).click();
+  await page.getByLabel('第 1 空', { exact: true }).fill('但以刘日薄西山');
+  await page.getByLabel('第 2 空', { exact: true }).fill('气息奄奄');
+  await page.getByRole('button', { name: '查看答案并核对', exact: true }).click();
+  await expect(page.locator('.check-row.correct')).toHaveCount(2);
+  await expect(page.locator('.recitation-reference')).toContainText('原文完整表述为“但以刘日薄西山，气息奄奄”');
+  await page.locator('.rating-button.good').click();
+  await expect(page.locator('.session-finish')).toContainText('已完成 1 道');
+  await page.getByRole('button', { name: '回到理解性默写', exact: true }).click();
+  await page.locator('.recitation-works').getByRole('button', { name: /^兰亭集序/ }).click();
+  await page.getByLabel('搜索默写题').fill('先前所喜欢的事物');
+  await expect(page.locator('.recitation-card')).toHaveCount(1);
+  await page.getByRole('button', { name: '背这道题', exact: true }).click();
+  await page.getByLabel('第 1 空', { exact: true }).fill('向之所欣');
+  await page.getByLabel('第 2 空', { exact: true }).fill('俯仰之间');
+  await page.getByLabel('第 3 空', { exact: true }).fill('已成陈迹');
+  await page.getByRole('button', { name: '查看答案并核对', exact: true }).click();
+  await expect(page.locator('.check-row.correct')).toHaveCount(2);
+  await expect(page.locator('.check-row.incorrect del')).toHaveText('成');
+  await expect(page.locator('.check-row.incorrect ins')).toHaveText('为');
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1)).toBe(true);
+  const saved = await db(page);
+  expect(saved.recitation.reviews).toHaveLength(1);
+  expect(saved.recitation.reviews[0]).toMatchObject({ mode: 'practice', questionId: 'recitation:chenlan:chenqingbiao:014' });
+  expect(saved.cards).toEqual(data.cards); expect(saved.reviews).toEqual(data.reviews);
 });
 
 test('full original text, independent inline explanations, no false reviews, responsive layout', async ({ page }, info) => {
