@@ -1,6 +1,7 @@
 .recitation-toolbar { display: flex; justify-content: space-between; align-items: center; gap: 16px; margin-bottom: 18px; flex-wrap: wrap; }
 .recitation-toolbar .search-field { min-width: 240px; }
-.recitation-works { margin-bottom: 22px; }
+.recitation-works { margin-bottom: 22px; flex-wrap: wrap; align-items: flex-start; }
+.recitation-works .scope-chip { flex-shrink: 0; max-width: 100%; }
 .recitation-works .scope-chip span { margin-left: 6px; opacity: .75; }
 .recitation-settings { margin-bottom: 24px; }
 .recitation-settings h2 { margin-bottom: 10px; }
@@ -10,6 +11,7 @@
 .recitation-bank { display: grid; gap: 16px; }
 .recitation-bank .paper-card + .paper-card { margin-top: 0; }
 .recitation-card h2 { display: block; font: 500 17px/2 var(--serif); margin: 16px 0 18px; overflow-wrap: anywhere; letter-spacing: .2px; }
+.recitation-source { margin-top: 12px; color: var(--muted); font-size: 11px; line-height: 1.6; overflow-wrap: anywhere; }
 .recitation-card summary { cursor: pointer; color: var(--green); font-size: 12px; }
 .recitation-card-actions { display: flex; justify-content: flex-end; gap: 22px; border-top: 1px solid var(--line); margin-top: 17px; padding-top: 15px; flex-wrap: wrap; }
 .recitation-reference { text-align: left; margin: 14px 0; }

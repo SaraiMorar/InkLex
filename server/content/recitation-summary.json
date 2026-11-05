@@ -1,0 +1,3928 @@
+{
+  "id": "understanding-recitations-summary-20261105-v1",
+  "source": {
+    "file": "理解性默写汇总_答案填写版.docx",
+    "sha256": "359fd6ab12124d5a208930ad251b4dc3a429c507dabb19b77ec0b45b5a5c3f9b"
+  },
+  "stats": {
+    "questions": 209,
+    "answers": 476,
+    "works": 19
+  },
+  "stemCorrections": [
+    {
+      "paragraph": 31,
+      "originalPrompt": "用四个短句描写天门山打开的雄伟气势的句子是＿＿＿＿，＿＿＿＿。＿＿＿＿，＿＿＿＿。",
+      "correctedPrompt": "用四个短句描写洞天石门打开的雄伟气势的句子是＿＿＿＿，＿＿＿＿。＿＿＿＿，＿＿＿＿。"
+    },
+    {
+      "paragraph": 112,
+      "originalPrompt": "《子路曾皙冉有公西华侍坐》中，孔子以反问肯定子路的治国抱负，暗示其才能可堪大任的一句是：＿＿＿＿？",
+      "correctedPrompt": "《子路曾皙冉有公西华侍坐》中，孔子以反问肯定公西华的治国抱负，暗示其才能可堪大任的一句是：＿＿＿＿？"
+    },
+    {
+      "paragraph": 140,
+      "originalPrompt": "《〈论语〉十二章》中，孔子以“仁”为最高标准，强调需以一生践行的两句是：＿＿＿＿，＿＿＿＿。",
+      "correctedPrompt": "《〈论语〉十二章》中，曾子以“仁”为最高标准，强调需以一生践行的两句是：＿＿＿＿，＿＿＿＿。"
+    },
+    {
+      "paragraph": 176,
+      "originalPrompt": "圣人以不言之教来教化民众，学习众人所不具备的知识，默默地补救众人所犯下的过错。《老子》第二十四章中，《老子》四章中老子用“＿＿＿＿，＿＿＿＿”阐明这个道理。",
+      "correctedPrompt": "圣人以不言之教来教化民众，学习众人所不具备的知识，默默地补救众人所犯下的过错。《老子》第六十四章中，《老子》四章中老子用“＿＿＿＿，＿＿＿＿”阐明这个道理。"
+    }
+  ],
+  "incomplete": [
+    {
+      "work": "陈情表",
+      "number": 1,
+      "text": "（1）察举制是中国古代选拔官吏的一种制度。李密《陈情表》“［题干未完，无法确定］，",
+      "reason": "题干和答案均未提供完整，保留原样，未作为可背诵题目。"
+    }
+  ],
+  "questions": [
+    {
+      "id": "recitation:summary:0004",
+      "work": "沁园春·长沙",
+      "author": "毛泽东",
+      "number": 1,
+      "prompt": "《沁园春·长沙》点明时间地点环境的句子：＿＿＿＿，＿＿＿＿，＿＿＿＿。",
+      "answers": [
+        "独立寒秋",
+        "湘江北去",
+        "橘子洲头"
+      ],
+      "alternatives": [
+        [],
+        [],
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0005",
+      "work": "沁园春·长沙",
+      "author": "毛泽东",
+      "number": 2,
+      "prompt": "《沁园春·长沙》概括湘江秋景的句子＿＿＿＿。",
+      "answers": [
+        "万类霜天竞自由"
+      ],
+      "alternatives": [
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0006",
+      "work": "沁园春·长沙",
+      "author": "毛泽东",
+      "number": 3,
+      "prompt": "《沁园春·长沙》描写远望之景的句子：＿＿＿＿，＿＿＿＿；＿＿＿＿，＿＿＿＿。",
+      "answers": [
+        "看万山红遍",
+        "层林尽染",
+        "漫江碧透",
+        "百舸争流"
+      ],
+      "alternatives": [
+        [],
+        [],
+        [],
+        []
+      ],
+      "note": "注：题干称“远望之景”，前两句侧重远望山林，后两句写江景；原题设四空，依空数填写。",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0008",
+      "work": "沁园春·长沙",
+      "author": "毛泽东",
+      "number": 4,
+      "prompt": "《沁园春·长沙》描写仰望与俯瞰之景的句子：＿＿＿＿，＿＿＿＿。",
+      "answers": [
+        "鹰击长空",
+        "鱼翔浅底"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0009",
+      "work": "沁园春·长沙",
+      "author": "毛泽东",
+      "number": 5,
+      "prompt": "在《沁园春·长沙》中，作者面对一派生机勃勃的大千世界，思绪万千，不禁发问，＿＿＿＿，＿＿＿＿，＿＿＿＿？",
+      "answers": [
+        "怅寥廓",
+        "问苍茫大地",
+        "谁主沉浮"
+      ],
+      "alternatives": [
+        [],
+        [],
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0010",
+      "work": "沁园春·长沙",
+      "author": "毛泽东",
+      "number": 6,
+      "prompt": "《沁园春·长沙》引起诗人对往昔生活回忆的过渡句：＿＿＿＿，＿＿＿＿。",
+      "answers": [
+        "携来百侣曾游",
+        "忆往昔峥嵘岁月稠"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0011",
+      "work": "沁园春·长沙",
+      "author": "毛泽东",
+      "number": 7,
+      "prompt": "《沁园春·长沙》蔑视权贵的句子：＿＿＿＿。",
+      "answers": [
+        "粪土当年万户侯"
+      ],
+      "alternatives": [
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0012",
+      "work": "沁园春·长沙",
+      "author": "毛泽东",
+      "number": 8,
+      "prompt": "《沁园春·长沙》表现革命者关注国家大事的言行的句子：＿＿＿＿，＿＿＿＿。",
+      "answers": [
+        "指点江山",
+        "激扬文字"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0013",
+      "work": "沁园春·长沙",
+      "author": "毛泽东",
+      "number": 9,
+      "prompt": "《沁园春·长沙》表现革命者青春风采的句子：＿＿＿＿，＿＿＿＿；＿＿＿＿，＿＿＿＿。",
+      "answers": [
+        "恰同学少年",
+        "风华正茂",
+        "书生意气",
+        "挥斥方遒"
+      ],
+      "alternatives": [
+        [],
+        [],
+        [],
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0014",
+      "work": "沁园春·长沙",
+      "author": "毛泽东",
+      "number": 10,
+      "prompt": "《沁园春·长沙》静中有动、生气勃勃的场面描写的句子：＿＿＿＿，＿＿＿＿。",
+      "answers": [
+        "漫江碧透",
+        "百舸争流"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0016",
+      "work": "短歌行",
+      "author": "曹操",
+      "number": 1,
+      "prompt": "《短歌行》中比喻人生短促的句子：“＿＿＿＿，＿＿＿＿。”",
+      "answers": [
+        "譬如朝露",
+        "去日苦多"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0017",
+      "work": "短歌行",
+      "author": "曹操",
+      "number": 2,
+      "prompt": "《短歌行》中把贤者比喻为高空的明月的句子：“＿＿＿＿，＿＿＿＿”。",
+      "answers": [
+        "明明如月",
+        "何时可掇"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0018",
+      "work": "短歌行",
+      "author": "曹操",
+      "number": 3,
+      "prompt": "《短歌行》中比喻贤士们还没有归宿的句子：“＿＿＿＿，＿＿＿＿”。",
+      "answers": [
+        "绕树三匝",
+        "何枝可依"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0019",
+      "work": "短歌行",
+      "author": "曹操",
+      "number": 4,
+      "prompt": "引用《诗经·小雅·鹿鸣》里的诗句来表明自己热情礼遇贤才的句子是＿＿＿＿，＿＿＿＿。＿＿＿＿，＿＿＿＿。",
+      "answers": [
+        "呦呦鹿鸣",
+        "食野之苹",
+        "我有嘉宾",
+        "鼓瑟吹笙"
+      ],
+      "alternatives": [
+        [],
+        [],
+        [],
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0020",
+      "work": "短歌行",
+      "author": "曹操",
+      "number": 5,
+      "prompt": "《短歌行》中出自《诗经·郑风·子衿》，借写姑娘思念情人来表达渴慕贤才之意的句子：“＿＿＿＿，＿＿＿＿”。",
+      "answers": [
+        "青青子衿",
+        "悠悠我心"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0021",
+      "work": "短歌行",
+      "author": "曹操",
+      "number": 6,
+      "prompt": "曹操《短歌行》中，“＿＿＿＿，＿＿＿＿”两句写出了主客久别重逢，欢快畅谈，念念不忘往日的情谊。",
+      "answers": [
+        "契阔谈讌",
+        "心念旧恩"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0022",
+      "work": "短歌行",
+      "author": "曹操",
+      "number": 7,
+      "prompt": "《短歌行》中出自《管子·形解》，表示希望尽可能多地接纳人才的句子：“＿＿＿＿，＿＿＿＿。”",
+      "answers": [
+        "山不厌高",
+        "海不厌深"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0023",
+      "work": "短歌行",
+      "author": "曹操",
+      "number": 8,
+      "prompt": "《短歌行》中借用典故，表示自己像周公一样热切殷勤地接待贤才，使天下人才都心悦诚服地归顺的句子：“＿＿＿＿，＿＿＿＿。”",
+      "answers": [
+        "周公吐哺",
+        "天下归心"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0025",
+      "work": "梦游天姥吟留别",
+      "author": "李白",
+      "number": 1,
+      "prompt": "《梦游天姥吟留别》中最能表现主旨的句子是＿＿＿＿，＿＿＿＿。",
+      "answers": [
+        "安能摧眉折腰事权贵",
+        "使我不得开心颜"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0026",
+      "work": "梦游天姥吟留别",
+      "author": "李白",
+      "number": 2,
+      "prompt": "浪漫主义诗人李白善于描写想象的世界，他在《梦游天姥吟留别》中，描写云中仙人出场时的穿着与出行工具的诗句“＿＿＿＿”和“＿＿＿＿”令人叹为观止。",
+      "answers": [
+        "霓为衣兮风为马",
+        "虎鼓瑟兮鸾回车"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0027",
+      "work": "梦游天姥吟留别",
+      "author": "李白",
+      "number": 3,
+      "prompt": "李白的《梦游天姥吟留别》中描写天姥山巍峨、挺拔的诗句是＿＿＿＿，＿＿＿＿。＿＿＿＿，＿＿＿＿。",
+      "answers": [
+        "天姥连天向天横",
+        "势拔五岳掩赤城",
+        "天台四万八千丈",
+        "对此欲倒东南倾"
+      ],
+      "alternatives": [
+        [],
+        [],
+        [],
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0028",
+      "work": "梦游天姥吟留别",
+      "author": "李白",
+      "number": 4,
+      "prompt": "李白的《梦游天姥吟留别》中描写仙人盛会异彩纷呈场面的句子是＿＿＿＿，＿＿＿＿。＿＿＿＿，＿＿＿＿。",
+      "answers": [
+        "霓为衣兮风为马",
+        "云之君兮纷纷而来下",
+        "虎鼓瑟兮鸾回车",
+        "仙之人兮列如麻"
+      ],
+      "alternatives": [
+        [],
+        [],
+        [],
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0029",
+      "work": "梦游天姥吟留别",
+      "author": "李白",
+      "number": 5,
+      "prompt": "李白的《梦游天姥吟留别》中由现实转入梦境的过渡句是＿＿＿＿，＿＿＿＿。",
+      "answers": [
+        "我欲因之梦吴越",
+        "一夜飞度镜湖月"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0030",
+      "work": "梦游天姥吟留别",
+      "author": "李白",
+      "number": 6,
+      "prompt": "李白的《梦游天姥吟留别》中由梦境转入现实的过渡句是＿＿＿＿，＿＿＿＿。＿＿＿＿，＿＿＿＿。",
+      "answers": [
+        "忽魂悸以魄动",
+        "恍惊起而长嗟",
+        "惟觉时之枕席",
+        "失向来之烟霞"
+      ],
+      "alternatives": [
+        [],
+        [],
+        [],
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0031",
+      "work": "梦游天姥吟留别",
+      "author": "李白",
+      "number": 7,
+      "prompt": "用四个短句描写洞天石门打开的雄伟气势的句子是＿＿＿＿，＿＿＿＿。＿＿＿＿，＿＿＿＿。",
+      "answers": [
+        "列缺霹雳",
+        "丘峦崩摧",
+        "洞天石扉",
+        "訇然中开"
+      ],
+      "alternatives": [
+        [],
+        [],
+        [],
+        []
+      ],
+      "note": "注：原诗写的是“洞天石扉”打开，“天门山”是题干表述有误。",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0033",
+      "work": "梦游天姥吟留别",
+      "author": "李白",
+      "number": 8,
+      "prompt": "李白的《梦游天姥吟留别》中描写了著名诗人谢灵运住过的地方溪水荡漾，猿啼凄清的环境的句子是：＿＿＿＿，＿＿＿＿。",
+      "answers": [
+        "谢公宿处今尚在",
+        "渌水荡漾清猿啼"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0034",
+      "work": "梦游天姥吟留别",
+      "author": "李白",
+      "number": 9,
+      "prompt": "李白在《梦游天姥吟留别》中“＿＿＿＿，＿＿＿＿”两句写登天姥仙山的所见所闻，只见东方的海中涌出一轮红日，四周是苍翠的群山，耳际是山顶的天鸡的叫声。",
+      "answers": [
+        "半壁见海日",
+        "空中闻天鸡"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0035",
+      "work": "梦游天姥吟留别",
+      "author": "李白",
+      "number": 10,
+      "prompt": "《梦游天姥吟留别》中诗人写山之夜景，诗人正迷恋花石美景，千岩万转，忽然夜幕降临了，诗人耳畔回响着从山谷传来的熊的咆叫声，龙的吟啸声。“＿＿＿＿，＿＿＿＿。＿＿＿＿，＿＿＿＿。”巨大的声响震得山石、泉水、森林、峰峦都在发抖。此时“＿＿＿＿，＿＿＿＿”，天气也急剧地变化，黑沉沉的云天像要下雨，蒙蒙的水面上升腾起烟雾。高峻雄奇的天姥山有声有色，恰似一个光怪陆离的神奇世界。",
+      "answers": [
+        "千岩万转路不定",
+        "迷花倚石忽已暝",
+        "熊咆龙吟殷岩泉",
+        "栗深林兮惊层巅",
+        "云青青兮欲雨",
+        "水澹澹兮生烟"
+      ],
+      "alternatives": [
+        [],
+        [],
+        [],
+        [],
+        [],
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0037",
+      "work": "登高",
+      "author": "杜甫",
+      "number": 1,
+      "prompt": "杜甫《登高》中，以急风、高天、哀猿、清渚、白沙、飞鸟等意象描绘秋日凄凉景象，营造沉郁悲凉意境的诗句是：＿＿＿＿，＿＿＿＿。",
+      "answers": [
+        "风急天高猿啸哀",
+        "渚清沙白鸟飞回"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0038",
+      "work": "登高",
+      "author": "杜甫",
+      "number": 2,
+      "prompt": "诗人在《登高》中用“＿＿＿＿，＿＿＿＿”两句，通过“落木”“长江”的典型意象，既写出秋景的壮阔，又暗含时光易逝、壮志难酬的感慨，对仗工整，气象雄浑。",
+      "answers": [
+        "无边落木萧萧下",
+        "不尽长江滚滚来"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0039",
+      "work": "登高",
+      "author": "杜甫",
+      "number": 3,
+      "prompt": "《登高》中，直接抒发诗人漂泊异乡、年老多病之愁，体现其羁旅孤独之感的核心诗句是：＿＿＿＿，＿＿＿＿。",
+      "answers": [
+        "万里悲秋常作客",
+        "百年多病独登台"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0040",
+      "work": "登高",
+      "author": "杜甫",
+      "number": 4,
+      "prompt": "杜甫在诗中感慨人生艰难、壮志未酬，以“＿＿＿＿，＿＿＿＿”两句写出白发日增、因病断酒的无奈，进一步强化了忧国伤时的悲郁情怀。",
+      "answers": [
+        "艰难苦恨繁霜鬓",
+        "潦倒新停浊酒杯"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0042",
+      "work": "念奴娇·赤壁怀古",
+      "author": "苏轼",
+      "number": 1,
+      "prompt": "古战场赤壁的陡峭山崖与汹涌浪涛，在苏轼《念奴娇·赤壁怀古》中被赋予震撼的动态美的词句是：＿＿＿＿，＿＿＿＿，＿＿＿＿。",
+      "answers": [
+        "乱石穿空",
+        "惊涛拍岸",
+        "卷起千堆雪"
+      ],
+      "alternatives": [
+        [],
+        [],
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0043",
+      "work": "念奴娇·赤壁怀古",
+      "author": "苏轼",
+      "number": 2,
+      "prompt": "苏轼在《念奴娇·赤壁怀古》以简洁笔墨刻画周瑜从容破敌的豪气，凸显其儒雅与果敢并存的形象的词句是：＿＿＿＿，＿＿＿＿，＿＿＿＿。",
+      "answers": [
+        "羽扇纶巾",
+        "谈笑间",
+        "樯橹灰飞烟灭"
+      ],
+      "alternatives": [
+        [],
+        [],
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0044",
+      "work": "念奴娇·赤壁怀古",
+      "author": "苏轼",
+      "number": 3,
+      "prompt": "面对历史与现实的交织，苏轼在《念奴娇·赤壁怀古》以酒祭江月，表达超脱尘俗的旷达心境的词句是：＿＿＿＿，＿＿＿＿。",
+      "answers": [
+        "人生如梦",
+        "一尊还酹江月"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0046",
+      "work": "师说",
+      "author": "韩愈",
+      "number": 1,
+      "prompt": "《师说》中，韩愈认为老师的职能是：＿＿＿＿，＿＿＿＿。",
+      "answers": [
+        "师者",
+        "所以传道受业解惑也"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0047",
+      "work": "师说",
+      "author": "韩愈",
+      "number": 2,
+      "prompt": "韩愈在《师说》中论述从师学习的重要性，明确择师的标准的句子是：＿＿＿＿，＿＿＿＿。",
+      "answers": [
+        "道之所存",
+        "师之所存也"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0048",
+      "work": "师说",
+      "author": "韩愈",
+      "number": 3,
+      "prompt": "《师说》中强调了从师是为了学道，和他人的年龄大小无关的两句是：＿＿＿＿，＿＿＿＿？",
+      "answers": [
+        "吾师道也",
+        "夫庸知其年之先后生于吾乎"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0049",
+      "work": "师说",
+      "author": "韩愈",
+      "number": 4,
+      "prompt": "“没有人是天生懂道理的”，这与《师说》中“＿＿＿＿，＿＿＿＿”一致。",
+      "answers": [
+        "人非生而知之者",
+        "孰能无惑"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0050",
+      "work": "师说",
+      "author": "韩愈",
+      "number": 5,
+      "prompt": "韩愈的《师说》中，与“老师是用来传授道理，解决疑惑”观点相背的两句是：＿＿＿＿，＿＿＿＿。",
+      "answers": [
+        "授之书而习其句读者",
+        "非吾所谓传其道解其惑者也"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0051",
+      "work": "师说",
+      "author": "韩愈",
+      "number": 6,
+      "prompt": "韩愈的《师说》中，作者认为如果人有了疑惑却不去向老师请教，最终的后果将会是：“＿＿＿＿，＿＿＿＿”",
+      "answers": [
+        "其为惑也",
+        "终不解矣"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0052",
+      "work": "师说",
+      "author": "韩愈",
+      "number": 7,
+      "prompt": "韩愈的《师说》中，作者说明了自己择师的标准是不分年龄大小的，除了“年纪比自己大的、懂得道理本来就比自己早的”这一类人，还包括“＿＿＿＿，＿＿＿＿”。",
+      "answers": [
+        "生乎吾后",
+        "其闻道也亦先乎吾"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0053",
+      "work": "师说",
+      "author": "韩愈",
+      "number": 8,
+      "prompt": "韩愈《师说》中，“＿＿＿＿，＿＿＿＿”两句淡化了人们地位的高低、年龄的大小，紧接这两句总结出“道理存在的地方就是老师存在的地方”的观点。",
+      "answers": [
+        "无贵无贱",
+        "无长无少"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0055",
+      "work": "劝学",
+      "author": "荀子",
+      "number": 1,
+      "prompt": "《劝学》一文中，通过君子之口提出论点以示郑重且具有针对性的句子是“＿＿＿＿，＿＿＿＿”。",
+      "answers": [
+        "君子曰",
+        "学不可以已"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0056",
+      "work": "劝学",
+      "author": "荀子",
+      "number": 2,
+      "prompt": "《劝学》中，直接阐述学与思的关系的句子是：＿＿＿＿，＿＿＿＿。",
+      "answers": [
+        "吾尝终日而思矣",
+        "不如须臾之所学也"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0057",
+      "work": "劝学",
+      "author": "荀子",
+      "number": 3,
+      "prompt": "古人云：“谋事在人，成事在天。”但是一个人不坚持肯定是不会成功的。《劝学》中“＿＿＿＿，＿＿＿＿”两句说的正是这个道理。",
+      "answers": [
+        "锲而舍之",
+        "朽木不折"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0058",
+      "work": "劝学",
+      "author": "荀子",
+      "number": 4,
+      "prompt": "儒道两家都曾用行路形象地论述积累的重要性。《老子》中说“九层之台，起于累土；千里之行，始于足下”；《劝学》中则说“＿＿＿＿，＿＿＿＿”。",
+      "answers": [
+        "故不积跬步",
+        "无以至千里"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0059",
+      "work": "劝学",
+      "author": "荀子",
+      "number": 5,
+      "prompt": "荀子在《劝学》中说将直木烤成符合圆规的曲度，“＿＿＿＿”，也不能够再使其恢复原状的原因是“＿＿＿＿”，告诫我们只有经过学习才能增长知识、锻炼才干。",
+      "answers": [
+        "虽有槁暴",
+        "輮使之然也"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "书架现有《劝学》对应句有缺字，本题按所给文件保留“輮使之然也”。",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0060",
+      "work": "劝学",
+      "author": "荀子",
+      "number": 6,
+      "prompt": "《劝学》中以“雕刻打磨”为例来说明坚持学习的重要性的两句是：＿＿＿＿，＿＿＿＿。",
+      "answers": [
+        "锲而不舍",
+        "金石可镂"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0061",
+      "work": "劝学",
+      "author": "荀子",
+      "number": 7,
+      "prompt": "《劝学》中荀子写蚯蚓之利是因为“＿＿＿＿”，蟹无定居是因为“＿＿＿＿”，正反对比，强调学习态度要专一。",
+      "answers": [
+        "用心一也",
+        "用心躁也"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0062",
+      "work": "劝学",
+      "author": "荀子",
+      "number": 8,
+      "prompt": "古代诗文中，有许多借助描写“风雨”来抒发感情的名句。而《劝学》中则用“＿＿＿＿，＿＿＿＿”来形象地论述积累的重要性。",
+      "answers": [
+        "积土成山",
+        "风雨兴焉"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0063",
+      "work": "劝学",
+      "author": "荀子",
+      "number": 9,
+      "prompt": "《劝学》中“＿＿＿＿，＿＿＿＿”两句，通过“木”与“金”的变化进一步说明了客观事物经过人工改造，可以改变原来的状况。",
+      "answers": [
+        "木受绳则直",
+        "金就砺则利"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0064",
+      "work": "劝学",
+      "author": "荀子",
+      "number": 10,
+      "prompt": "《劝学》中体现君子涉猎广泛且时常深刻地进行自我反省的句子是：＿＿＿＿，＿＿＿＿。",
+      "answers": [
+        "君子博学而日参省乎己",
+        "则知明而行无过矣"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0065",
+      "work": "劝学",
+      "author": "荀子",
+      "number": 11,
+      "prompt": "荀子在《劝学》中用水流入海的例子来强调积累的重要性的句子是：＿＿＿＿，＿＿＿＿。",
+      "answers": [
+        "不积小流",
+        "无以成江海"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0066",
+      "work": "劝学",
+      "author": "荀子",
+      "number": 12,
+      "prompt": "荀子在《劝学》中指出，只要“＿＿＿＿”，就能有让远处的人看得更清楚的效果；只要借助车马，即使不擅长跑步，也能“＿＿＿＿”。",
+      "answers": [
+        "登高而招",
+        "致千里"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0067",
+      "work": "劝学",
+      "author": "荀子",
+      "number": 13,
+      "prompt": "《劝学》中写青色“＿＿＿＿”却胜于蓝；冰，是水变成的，却“＿＿＿＿”，设置悬念，吸引人读下去。",
+      "answers": [
+        "取之于蓝",
+        "寒于水"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0068",
+      "work": "劝学",
+      "author": "荀子",
+      "number": 14,
+      "prompt": "荀子在《劝学》中论证学习的作用时用了五个生活中的例子，先用“＿＿＿＿，＿＿＿＿”来说明学习的作用，接着用登高而招、顺风而呼、假舆马、假舟楫四个比喻强调学习能够弥补不足。",
+      "answers": [
+        "吾尝跂而望矣",
+        "不如登高之博见也"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0069",
+      "work": "劝学",
+      "author": "荀子",
+      "number": 15,
+      "prompt": "荀子在《劝学》中指出，只要“＿＿＿＿”，就能有让听的人听得特别清楚的效果；只要借助船只，不会游水，也能“＿＿＿＿”。",
+      "answers": [
+        "顺风而呼",
+        "绝江河"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0070",
+      "work": "劝学",
+      "author": "荀子",
+      "number": 16,
+      "prompt": "荀子在《劝学》中用君子跟别人没有什么两样，来论证学习必须善于利用外物，进而得出结论的句子是：＿＿＿＿，＿＿＿＿。",
+      "answers": [
+        "君子生非异也",
+        "善假于物也"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0071",
+      "work": "劝学",
+      "author": "荀子",
+      "number": 17,
+      "prompt": "荀子在《劝学》中，“＿＿＿＿，＿＿＿＿”却能“上食埃土，下饮黄泉”，这是因为蚯蚓“用心一”。",
+      "answers": [
+        "蚓无爪牙之利",
+        "筋骨之强"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0072",
+      "work": "劝学",
+      "author": "荀子",
+      "number": 18,
+      "prompt": "荀子在《劝学》中，螃蟹虽有六跪而二螯，然“＿＿＿＿，＿＿＿＿”，从反面突出强调了学习要专心的重要性。",
+      "answers": [
+        "非蛇鳝之穴无可寄托者",
+        "用心躁也"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0073",
+      "work": "劝学",
+      "author": "荀子",
+      "number": 19,
+      "prompt": "《劝学》中，荀子说即使“＿＿＿＿”，但通过火烤把它加工成车轮，也能做到“＿＿＿＿”，以此来阐述学习可以修身养性。",
+      "answers": [
+        "木直中绳",
+        "其曲中规"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0074",
+      "work": "劝学",
+      "author": "荀子",
+      "number": 20,
+      "prompt": "荀子认为人性本“恶”，且认为后天学习可以改造人，因此《劝学》并非一般意义上的劝勉人们学习文化知识，而是劝人积“善”，指出“积善成德”可以达到“＿＿＿＿，＿＿＿＿”的神奇效果。",
+      "answers": [
+        "神明自得",
+        "圣心备焉"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0075",
+      "work": "劝学",
+      "author": "荀子",
+      "number": 21,
+      "prompt": "荀子《劝学》中以“劣马”为正例，强调学习必须持之以恒的句子是：＿＿＿＿，＿＿＿＿。",
+      "answers": [
+        "驽马十驾",
+        "功在不舍"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0076",
+      "work": "劝学",
+      "author": "荀子",
+      "number": 22,
+      "prompt": "荀子《劝学》中以“良马”为反例，强调学习必须持之以恒的句子是：＿＿＿＿，＿＿＿＿。",
+      "answers": [
+        "骐骥一跃",
+        "不能十步"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0077",
+      "work": "劝学",
+      "author": "荀子",
+      "number": 23,
+      "prompt": "荀子在《劝学》中以行路作比，提醒人们若不重视积累，就难以到达远方的句子是：＿＿＿＿，＿＿＿＿。",
+      "answers": [
+        "故不积跬步",
+        "无以至千里"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0078",
+      "work": "劝学",
+      "author": "荀子",
+      "number": 24,
+      "prompt": "《劝学》开篇连用比喻强调学习的重大意义，并顺势推论出“＿＿＿＿，＿＿＿＿”的观点，强调了广泛学习并不断省察自己的重要性。",
+      "answers": [
+        "君子博学而日参省乎己",
+        "则知明而行无过矣"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0079",
+      "work": "劝学",
+      "author": "荀子",
+      "number": 25,
+      "prompt": "《劝学》中，“＿＿＿＿”一句是说君子的天赋本性跟其他人并没有什么不同，然而学识却超过一般人，这是因为他们“＿＿＿＿”。这说明了善于利用客观条件可以弥补自身不足的道理。",
+      "answers": [
+        "君子生非异也",
+        "善假于物也"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0080",
+      "work": "劝学",
+      "author": "荀子",
+      "number": 26,
+      "prompt": "《劝学》中先写积土的神奇效果是“＿＿＿＿”，再写积水的神奇效果是“＿＿＿＿”，然后写积善的神奇效果，阐述学习中积累的重要性。",
+      "answers": [
+        "风雨兴焉",
+        "蛟龙生焉"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0081",
+      "work": "劝学",
+      "author": "荀子",
+      "number": 27,
+      "prompt": "《劝学》中举例论证借助外物的重要性时说，终日殚精竭虑思考，却“＿＿＿＿”，踮起脚极目远望，也“＿＿＿＿”。",
+      "answers": [
+        "不如须臾之所学也",
+        "不如登高之博见也"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0082",
+      "work": "劝学",
+      "author": "荀子",
+      "number": 28,
+      "prompt": "在荀子的《劝学》中，“＿＿＿＿，＿＿＿＿”两句表明，只要肯下功夫，坚持不懈，连坚硬的金石都可以雕刻。",
+      "answers": [
+        "锲而不舍",
+        "金石可镂"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0083",
+      "work": "劝学",
+      "author": "荀子",
+      "number": 29,
+      "prompt": "善于“站在巨人的肩膀上”的人总是更容易成功，《劝学》中表达上述意思的概括性的两句是：＿＿＿＿，＿＿＿＿。",
+      "answers": [
+        "君子生非异也",
+        "善假于物也"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0084",
+      "work": "劝学",
+      "author": "荀子",
+      "number": 30,
+      "prompt": "荀子认为人的知识、道德、才能是后天不断广泛学习改造获得的。“金”要锋利，需“就砺”；人要改造成为“＿＿＿＿”的君子，就要“＿＿＿＿”。",
+      "answers": [
+        "知明而行无过",
+        "博学而日参省乎己"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0085",
+      "work": "劝学",
+      "author": "荀子",
+      "number": 31,
+      "prompt": "在《劝学》中，作者用木材经墨线比量而取直和金属制作的刀剑经磨砺而变锋利来设喻，引出了“＿＿＿＿，＿＿＿＿”的结论。",
+      "answers": [
+        "君子博学而日参省乎己",
+        "则知明而行无过矣"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0086",
+      "work": "劝学",
+      "author": "荀子",
+      "number": 32,
+      "prompt": "荀子《劝学》中“＿＿＿＿，＿＿＿＿”两句以良马设喻，来说明学习和做事都不能一蹴而就，而要勤于积累。",
+      "answers": [
+        "骐骥一跃",
+        "不能十步"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0087",
+      "work": "劝学",
+      "author": "荀子",
+      "number": 33,
+      "prompt": "《劝学》中“＿＿＿＿”借踮脚看比喻“思”的局限，“＿＿＿＿”则以登高远望比喻“学”的重要性。",
+      "answers": [
+        "吾尝跂而望矣",
+        "不如登高之博见也"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0088",
+      "work": "劝学",
+      "author": "荀子",
+      "number": 34,
+      "prompt": "荀子在《劝学》写到，“骐骥”是一种很善跑的骏马，但它一次跨越也不够人的十步远，与之相反的是“＿＿＿＿，＿＿＿＿”，通过正反对比说明坚持的重要性。",
+      "answers": [
+        "驽马十驾",
+        "功在不舍"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0089",
+      "work": "劝学",
+      "author": "荀子",
+      "number": 35,
+      "prompt": "荀子的《劝学》中，“＿＿＿＿，＿＿＿＿”这两句从反面说明要想远达千里之外的地方，就必须一步一步地积累。",
+      "answers": [
+        "故不积跬步",
+        "无以至千里"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0090",
+      "work": "劝学",
+      "author": "荀子",
+      "number": 36,
+      "prompt": "荀子的《劝学》中，“＿＿＿＿，＿＿＿＿”这两句从反面论证了做事情要有锲而不舍的坚持精神。",
+      "answers": [
+        "锲而舍之",
+        "朽木不折"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0091",
+      "work": "劝学",
+      "author": "荀子",
+      "number": 37,
+      "prompt": "荀子认为人的知识、道德、才能是后天不断广泛学习改造获得的。“金”要锋利，需“就砺”；人要改造成为“＿＿＿＿”的君子，就要“＿＿＿＿”。",
+      "answers": [
+        "知明而行无过",
+        "博学而日参省乎己"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0092",
+      "work": "劝学",
+      "author": "荀子",
+      "number": 38,
+      "prompt": "《劝学》中，“＿＿＿＿，＿＿＿＿”两句强调了整天空想不如片刻学习收获大的道理。",
+      "answers": [
+        "吾尝终日而思矣",
+        "不如须臾之所学也"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0094",
+      "work": "赤壁赋",
+      "author": "苏轼",
+      "number": 1,
+      "prompt": "苏轼在《赤壁赋》中写了夜游赤壁的欢乐情景，“＿＿＿＿，＿＿＿＿”两句写出了月亮升起前江面波平浪静，清风拂面，让人感到无比惬意。",
+      "answers": [
+        "清风徐来",
+        "水波不兴"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0095",
+      "work": "赤壁赋",
+      "author": "苏轼",
+      "number": 2,
+      "prompt": "在《赤壁赋》的开头，苏轼写自己与朋友泛舟赤壁之下，朗诵《诗经·陈风》中《月出》篇，即文中所谓“＿＿＿＿，＿＿＿＿”。",
+      "answers": [
+        "诵明月之诗",
+        "歌窈窕之章"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0096",
+      "work": "赤壁赋",
+      "author": "苏轼",
+      "number": 3,
+      "prompt": "苏轼在《赤壁赋》中用“＿＿＿＿，＿＿＿＿”两句形容小船像一片叶子任意漂荡在宽阔浩渺的江面上。",
+      "answers": [
+        "纵一苇之所如",
+        "凌万顷之茫然"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0097",
+      "work": "赤壁赋",
+      "author": "苏轼",
+      "number": 4,
+      "prompt": "苏轼在《赤壁赋》中以“＿＿＿＿，＿＿＿＿”两句，写箫声能使深谷里的蛟龙为之起舞，孤舟中的寡妇听了落泪，从侧面写出了箫声的魅力。",
+      "answers": [
+        "舞幽壑之潜蛟",
+        "泣孤舟之嫠妇"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0098",
+      "work": "赤壁赋",
+      "author": "苏轼",
+      "number": 5,
+      "prompt": "在《赤壁赋》中，苏轼用“＿＿＿＿，＿＿＿＿”两句概括了曹操的军队在攻破荆州后顺流东下时的军容之盛。",
+      "answers": [
+        "舳舻千里",
+        "旌旗蔽空"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0099",
+      "work": "赤壁赋",
+      "author": "苏轼",
+      "number": 6,
+      "prompt": "苏轼在《赤壁赋》中用“＿＿＿＿，＿＿＿＿”两句写曹操斟酒祭江、执矛吟诗的骄态，极力渲染其不可战胜的赫赫声势。",
+      "answers": [
+        "酾酒临江",
+        "横槊赋诗"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0100",
+      "work": "赤壁赋",
+      "author": "苏轼",
+      "number": 7,
+      "prompt": "在《赤壁赋》中，苏轼以辩证的眼光看待短暂和永恒的问题，他认为，从变化的角度看，“＿＿＿＿，＿＿＿＿”从不变的角度看，“＿＿＿＿”。",
+      "answers": [
+        "盖将自其变者而观之",
+        "则天地曾不能以一瞬",
+        "则物与我皆无尽也"
+      ],
+      "alternatives": [
+        [],
+        [],
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0101",
+      "work": "赤壁赋",
+      "author": "苏轼",
+      "number": 8,
+      "prompt": "苏轼在《赤壁赋》中先说万物各有其主，接着以“＿＿＿＿，＿＿＿＿”两句勉励人一定要修身自好，不慕身外之物。",
+      "answers": [
+        "苟非吾之所有",
+        "虽一毫而莫取"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0102",
+      "work": "赤壁赋",
+      "author": "苏轼",
+      "number": 9,
+      "prompt": "《赤壁赋》中，写物各有主，只有江上清风、山间明月，听到了成为音乐，看到了成为美景，而且“＿＿＿＿，＿＿＿＿”，是大自然无穷尽的宝藏，现在为自己与朋友所共同享受。",
+      "answers": [
+        "取之无禁",
+        "用之不竭"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0103",
+      "work": "赤壁赋",
+      "author": "苏轼",
+      "number": 10,
+      "prompt": "苏轼在《赤壁赋》中从不变的角度描述人与万物的关系的句子是＿＿＿＿，＿＿＿＿。",
+      "answers": [
+        "自其不变者而观之",
+        "则物与我皆无尽也"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0106",
+      "work": "子路、曾皙、冉有、公西华侍坐",
+      "author": "孔子及弟子",
+      "number": 1,
+      "prompt": "《子路曾皙冉有公西华侍坐》中，子路自信能治理内忧外患的大国，并能取得使军民勇毅知礼良好效果的二句是：＿＿＿＿，＿＿＿＿。",
+      "answers": [
+        "可使有勇",
+        "且知方也"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0107",
+      "work": "子路、曾皙、冉有、公西华侍坐",
+      "author": "孔子及弟子",
+      "number": 2,
+      "prompt": "《子路曾皙冉有公西华侍坐》中，能够体现冉有的谦逊品质的二句是：＿＿＿＿，＿＿＿＿。",
+      "answers": [
+        "如其礼乐",
+        "以俟君子"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0108",
+      "work": "子路、曾皙、冉有、公西华侍坐",
+      "author": "孔子及弟子",
+      "number": 10,
+      "prompt": "《子路曾皙冉有公西华侍坐》中，公西华自谦愿在祭祀或会盟中担任司仪，学习治国之道的二句是：＿＿＿＿，＿＿＿＿。",
+      "answers": [
+        "端章甫",
+        "愿为小相焉"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "注：此题编号“10”在原图中紧接第 2 题，现另起一行保留原编号。",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0110",
+      "work": "子路、曾皙、冉有、公西华侍坐",
+      "author": "孔子及弟子",
+      "number": 3,
+      "prompt": "《子路曾皙冉有公西华侍坐》中，曾皙描绘春日郊游、歌咏而归的画面的三句是：＿＿＿＿，＿＿＿＿，＿＿＿＿。",
+      "answers": [
+        "浴乎沂",
+        "风乎舞雩",
+        "咏而归"
+      ],
+      "alternatives": [
+        [],
+        [],
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0111",
+      "work": "子路、曾皙、冉有、公西华侍坐",
+      "author": "孔子及弟子",
+      "number": 4,
+      "prompt": "《子路曾皙冉有公西华侍坐》中，孔子对曾皙的赞许的一句是：＿＿＿＿！",
+      "answers": [
+        "吾与点也"
+      ],
+      "alternatives": [
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0112",
+      "work": "子路、曾皙、冉有、公西华侍坐",
+      "author": "孔子及弟子",
+      "number": 5,
+      "prompt": "《子路曾皙冉有公西华侍坐》中，孔子以反问肯定公西华的治国抱负，暗示其才能可堪大任的一句是：＿＿＿＿？",
+      "answers": [
+        "孰能为之大"
+      ],
+      "alternatives": [
+        []
+      ],
+      "note": "注：原题把人物写成“子路”有误；此处孔子肯定的是公西华。上下文为“赤也为之小，孰能为之大”。",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0115",
+      "work": "阿房宫赋",
+      "author": "杜牧",
+      "number": 1,
+      "prompt": "既写出了秦始皇一统天下的豪迈气概，也写出了阿房宫兴建营造的非同凡响的句子是：＿＿＿＿，＿＿＿＿，＿＿＿＿，＿＿＿＿。",
+      "answers": [
+        "六王毕",
+        "四海一",
+        "蜀山兀",
+        "阿房出"
+      ],
+      "alternatives": [
+        [],
+        [],
+        [],
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0116",
+      "work": "阿房宫赋",
+      "author": "杜牧",
+      "number": 2,
+      "prompt": "勾勒出阿房宫占地广阔、凌云蔽日的宏伟气势，给人一个总体的印象的诗句是：＿＿＿＿，＿＿＿＿。",
+      "answers": [
+        "覆压三百余里",
+        "隔离天日"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0117",
+      "work": "阿房宫赋",
+      "author": "杜牧",
+      "number": 3,
+      "prompt": "杜牧以“＿＿＿＿，＿＿＿＿”描写阿房宫宫人的美丽，她们伫立远眺，盼望着皇帝临幸。",
+      "answers": [
+        "一肌一容",
+        "尽态极妍"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0118",
+      "work": "阿房宫赋",
+      "author": "杜牧",
+      "number": 4,
+      "prompt": "作者感叹秦人掠夺财宝时候一分一毫都要计较，耗费起来如弃泥沙（总括秦的纷奢是建立在对人民的剥削和掠夺之上的，并且还挥霍无度的语句）的诗句是：＿＿＿＿，＿＿＿＿？",
+      "answers": [
+        "奈何取之尽锱铢",
+        "用之如泥沙"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0119",
+      "work": "阿房宫赋",
+      "author": "杜牧",
+      "number": 5,
+      "prompt": "作者从最普遍的民心人性的角度，说明人心没有区别，都追求幸福快乐，都挂念家小，对秦统治者的残民以自肥作了有力的抨击的语句是：＿＿＿＿，＿＿＿＿。＿＿＿＿，＿＿＿＿。",
+      "answers": [
+        "一人之心",
+        "千万人之心也",
+        "秦爱纷奢",
+        "人亦念其家"
+      ],
+      "alternatives": [
+        [],
+        [],
+        [],
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0120",
+      "work": "阿房宫赋",
+      "author": "杜牧",
+      "number": 6,
+      "prompt": "文末提出论点，阐明六国和秦国兴亡自取的道理，同时借秦灭亡的教训批评唐敬宗广建宫室的诗句是：＿＿＿＿，＿＿＿＿；＿＿＿＿，＿＿＿＿。",
+      "answers": [
+        "灭六国者六国也",
+        "非秦也",
+        "族秦者秦也",
+        "非天下也"
+      ],
+      "alternatives": [
+        [],
+        [],
+        [],
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0121",
+      "work": "阿房宫赋",
+      "author": "杜牧",
+      "number": 7,
+      "prompt": "用“后人”的委婉称谓，提醒唐统治者不要重蹈亡秦的覆辙，要吸取经验教训，意味深长的句子是：＿＿＿＿，＿＿＿＿。＿＿＿＿，＿＿＿＿。",
+      "answers": [
+        "秦人不暇自哀",
+        "而后人哀之",
+        "后人哀之而不鉴之",
+        "亦使后人而复哀后人也"
+      ],
+      "alternatives": [
+        [],
+        [],
+        [],
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0122",
+      "work": "阿房宫赋",
+      "author": "杜牧",
+      "number": 8,
+      "prompt": "杜牧在结尾处感叹道，如果六国爱护自己的百姓，就足以抵抗秦国，紧接着说：“＿＿＿＿，＿＿＿＿，＿＿＿＿？”",
+      "answers": [
+        "使秦复爱六国之人",
+        "则递三世可至万世而为君",
+        "谁得而族灭也"
+      ],
+      "alternatives": [
+        [],
+        [],
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0123",
+      "work": "阿房宫赋",
+      "author": "杜牧",
+      "number": 9,
+      "prompt": "“＿＿＿＿，＿＿＿＿”两句，写阿房宫占地极广且极为高大，以表现其雄壮之美。",
+      "answers": [
+        "覆压三百余里",
+        "隔离天日"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0124",
+      "work": "阿房宫赋",
+      "author": "杜牧",
+      "number": 10,
+      "prompt": "文中用疑问语气指出了秦朝在财富搜刮与挥霍上的反差行为的两句是：＿＿＿＿，＿＿＿＿？",
+      "answers": [
+        "奈何取之尽锱铢",
+        "用之如泥沙"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0126",
+      "work": "六国论",
+      "author": "苏洵",
+      "number": 1,
+      "prompt": "六国灭亡的根本原因。题目：苏洵在《六国论》中开门见山，指出六国破灭的根本原因并非“＿＿＿＿，＿＿＿＿”，而在于“＿＿＿＿”。",
+      "answers": [
+        "兵不利",
+        "战不善",
+        "赂秦"
+      ],
+      "alternatives": [
+        [],
+        [],
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0127",
+      "work": "六国论",
+      "author": "苏洵",
+      "number": 2,
+      "prompt": "贿赂秦国的恶性循环。题目：作者用“＿＿＿＿，＿＿＿＿”两句说明诸侯割地求和的恶性循环：割地越多，秦国侵略越急。",
+      "answers": [
+        "奉之弥繁",
+        "侵之愈急"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0128",
+      "work": "六国论",
+      "author": "苏洵",
+      "number": 3,
+      "prompt": "燕国灭亡的转折点。题目：苏洵认为燕国灭亡的直接原因是“＿＿＿＿，＿＿＿＿”，暗示其策略失误。",
+      "answers": [
+        "至丹以荆卿为计",
+        "始速祸焉"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0129",
+      "work": "六国论",
+      "author": "苏洵",
+      "number": 4,
+      "prompt": "齐国灭亡的外交失误。题目：齐国不曾贿赂秦国，却随五国灭亡，作者指出其原因是“＿＿＿＿”。",
+      "answers": [
+        "与嬴而不助五国也"
+      ],
+      "alternatives": [
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0130",
+      "work": "六国论",
+      "author": "苏洵",
+      "number": 5,
+      "prompt": "赵国抗秦的教训。题目：赵国起初能与秦抗衡，但“＿＿＿＿，＿＿＿＿”导致最终失败，作者对此表示惋惜。",
+      "answers": [
+        "洎牧以谗诛",
+        "邯郸为郡"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0131",
+      "work": "六国论",
+      "author": "苏洵",
+      "number": 6,
+      "prompt": "祖辈创业的艰辛。题目：作者用“＿＿＿＿，＿＿＿＿，＿＿＿＿”回忆六国先辈开辟疆土的艰难，反衬后代割地的轻率。",
+      "answers": [
+        "暴霜露",
+        "斩荆棘",
+        "以有尺寸之地"
+      ],
+      "alternatives": [
+        [],
+        [],
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0132",
+      "work": "六国论",
+      "author": "苏洵",
+      "number": 7,
+      "prompt": "借古讽今的警示。题目：文章结尾，苏洵警告北宋统治者若重蹈六国覆辙，“＿＿＿＿”，则连六国都不如。",
+      "answers": [
+        "从六国破亡之故事"
+      ],
+      "alternatives": [
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0133",
+      "work": "六国论",
+      "author": "苏洵",
+      "number": 8,
+      "prompt": "贿赂秦国的比喻。题目：作者引用古语比喻“＿＿＿＿，＿＿＿＿”形象地说明贿赂秦国的危害，强调其不可取。",
+      "answers": [
+        "以地事秦",
+        "犹抱薪救火"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0134",
+      "work": "六国论",
+      "author": "苏洵",
+      "number": 9,
+      "prompt": "燕赵的孤立无援。题目：燕赵在秦灭其他诸侯后孤立无援，虽奋力抵抗却“＿＿＿＿，＿＿＿＿”。",
+      "answers": [
+        "智力孤危",
+        "战败而亡"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0135",
+      "work": "六国论",
+      "author": "苏洵",
+      "number": 10,
+      "prompt": "抗秦的正确策略。题目：作者提出假设，若六国能用赂秦之地“＿＿＿＿”，以事秦之心“＿＿＿＿”，合力抗秦，则秦国将陷入被动。",
+      "answers": [
+        "封天下之谋臣",
+        "礼天下之奇才"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0138",
+      "work": "〈论语〉十二章",
+      "author": "孔子及弟子",
+      "number": 1,
+      "prompt": "《〈论语〉十二章》中，孔子描述真正君子的4句是：＿＿＿＿，＿＿＿＿，＿＿＿＿，＿＿＿＿。",
+      "answers": [
+        "质胜文则野",
+        "文胜质则史",
+        "文质彬彬",
+        "然后君子"
+      ],
+      "alternatives": [
+        [],
+        [],
+        [],
+        []
+      ],
+      "note": "注：题干“真正君子”指向较宽，此处按四空填写孔子关于文质兼备的论述。",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0140",
+      "work": "〈论语〉十二章",
+      "author": "孔子及弟子",
+      "number": 2,
+      "prompt": "《〈论语〉十二章》中，曾子以“仁”为最高标准，强调需以一生践行的两句是：＿＿＿＿，＿＿＿＿。",
+      "answers": [
+        "仁以为己任",
+        "死而后已"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "注：这两句出自曾子之言，并非孔子直接所说；两句在原文中并不紧邻。",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0142",
+      "work": "〈论语〉十二章",
+      "author": "孔子及弟子",
+      "number": 3,
+      "prompt": "《〈论语〉十二章》中，孔子回答颜渊何为“仁”，强调自我约束与礼制回归的二句是：＿＿＿＿，＿＿＿＿。",
+      "answers": [
+        "克己复礼为仁",
+        "一日克己复礼天下归仁焉"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0143",
+      "work": "〈论语〉十二章",
+      "author": "孔子及弟子",
+      "number": 4,
+      "prompt": "《〈论语〉十二章》中，君子不满足于物质享受，而专注于提升德行与学问的四句是：＿＿＿＿，＿＿＿＿，＿＿＿＿，＿＿＿＿。",
+      "answers": [
+        "君子食无求饱",
+        "居无求安",
+        "敏于事而慎于言",
+        "就有道而正焉"
+      ],
+      "alternatives": [
+        [],
+        [],
+        [],
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0145",
+      "work": "大学之道",
+      "author": "《礼记》",
+      "number": 1,
+      "prompt": "《大学之道》中提出的儒家最高道德目标（“三纲”）是：＿＿＿＿，＿＿＿＿，＿＿＿＿。",
+      "answers": [
+        "在明明德",
+        "在亲民",
+        "在止于至善"
+      ],
+      "alternatives": [
+        [],
+        [],
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0146",
+      "work": "大学之道",
+      "author": "《礼记》",
+      "number": 2,
+      "prompt": "文中阐明“八目”逻辑起点，强调探究事物原理以获得知识的句子是：＿＿＿＿，＿＿＿＿。",
+      "answers": [
+        "致知在格物",
+        "物格而后知至"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0147",
+      "work": "大学之道",
+      "author": "《礼记》",
+      "number": 3,
+      "prompt": "《大学之道》中，阐述“修身”是治国、平天下根本的核心观点是：＿＿＿＿，＿＿＿＿，＿＿＿＿。",
+      "answers": [
+        "身修而后家齐",
+        "家齐而后国治",
+        "国治而后天下平"
+      ],
+      "alternatives": [
+        [],
+        [],
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0148",
+      "work": "大学之道",
+      "author": "《礼记》",
+      "number": 4,
+      "prompt": "作者认为，若要端正心性，必先使意念真诚，即：＿＿＿＿，＿＿＿＿。",
+      "answers": [
+        "欲正其心者",
+        "先诚其意"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0149",
+      "work": "大学之道",
+      "author": "《礼记》",
+      "number": 5,
+      "prompt": "文中用“＿＿＿＿，＿＿＿＿”强调从天子到百姓，一切都应以修身作为根本。",
+      "answers": [
+        "自天子以至于庶人",
+        "壹是皆以修身为本"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0150",
+      "work": "大学之道",
+      "author": "《礼记》",
+      "number": 6,
+      "prompt": "《大学之道》中，解释“止于至善”内涵，强调道德修养要达到最高境界的句子是：＿＿＿＿，＿＿＿＿，＿＿＿＿，＿＿＿＿，＿＿＿＿。",
+      "answers": [
+        "知止而后有定",
+        "定而后能静",
+        "静而后能安",
+        "安而后能虑",
+        "虑而后能得"
+      ],
+      "alternatives": [
+        [],
+        [],
+        [],
+        [],
+        []
+      ],
+      "note": "注：题干“解释止于至善内涵”指向较宽，此处依原文顺序和五空填写。",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0152",
+      "work": "大学之道",
+      "author": "《礼记》",
+      "number": 7,
+      "prompt": "作者提出，若要治理好自己的国家，必先管理好家庭和家族，即：＿＿＿＿，＿＿＿＿。",
+      "answers": [
+        "欲治其国者",
+        "先齐其家"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0154",
+      "work": "〈老子〉四章",
+      "author": "老子",
+      "number": 1,
+      "prompt": "《老子》第三十三章中的“＿＿＿＿，＿＿＿＿”认为知己知彼才是聪明人。",
+      "answers": [
+        "知人者智",
+        "自知者明"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0155",
+      "work": "〈老子〉四章",
+      "author": "老子",
+      "number": 2,
+      "prompt": "《老子》第二十四章中“＿＿＿＿，＿＿＿＿”两句，阐释了违背常规的行为不会带来长久有效的结果的道理，和“欲速则不达”“拔苗助长”的意思相似。",
+      "answers": [
+        "企者不立",
+        "跨者不行"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0156",
+      "work": "〈老子〉四章",
+      "author": "老子",
+      "number": 3,
+      "prompt": "《老子》第二十四章中，老子认为“自我夸耀，建立不起功勋；自高自大，不能长久下去”的句子是：＿＿＿＿，＿＿＿＿。",
+      "answers": [
+        "自伐者无功",
+        "自矜者不长"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0157",
+      "work": "〈老子〉四章",
+      "author": "老子",
+      "number": 4,
+      "prompt": "《老子》第二十四章中指出固执己见、自以为是的危害的句子是“＿＿＿＿，＿＿＿＿”。",
+      "answers": [
+        "自见者不明",
+        "自是者不彰"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0158",
+      "work": "〈老子〉四章",
+      "author": "老子",
+      "number": 5,
+      "prompt": "《老子》第十一章中，用“＿＿＿＿，＿＿＿＿”两句指出“有”（车子、器皿、屋室）供人方便利用，正是“无”起了作用。",
+      "answers": [
+        "故有之以为利",
+        "无之以为用"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0159",
+      "work": "〈老子〉四章",
+      "author": "老子",
+      "number": 6,
+      "prompt": "《老子》第二十四章中，写急躁冒进、自以为是、自我炫耀的行为，用道的观点来看，就叫做剩饭、赘瘤的句子是“＿＿＿＿，＿＿＿＿”。",
+      "answers": [
+        "其在道也",
+        "曰余食赘行"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0160",
+      "work": "〈老子〉四章",
+      "author": "老子",
+      "number": 7,
+      "prompt": "《老子》第二十四章中，写人们常常厌恶“余食赘行”，所以有道的人不会这样做的句子是“＿＿＿＿，＿＿＿＿”。",
+      "answers": [
+        "物或恶之",
+        "故有道者不处"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0161",
+      "work": "〈老子〉四章",
+      "author": "老子",
+      "number": 8,
+      "prompt": "《老子》第三十三章中，用“＿＿＿＿，＿＿＿＿”两句写知道满足的人富有，勤勉而行的人有意志。",
+      "answers": [
+        "知足者富",
+        "强行者有志"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0162",
+      "work": "〈老子〉四章",
+      "author": "老子",
+      "number": 9,
+      "prompt": "《老子》第三十三章中，写能战胜别人的人有力量，能战胜自己的人强大的句子是“＿＿＿＿，＿＿＿＿”。",
+      "answers": [
+        "胜人者有力",
+        "自胜者强"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0163",
+      "work": "〈老子〉四章",
+      "author": "老子",
+      "number": 10,
+      "prompt": "《老子》第三十三章中，写不丧失立身之基的人能够长久，死而不朽的人就是长寿的句子是“＿＿＿＿，＿＿＿＿”。",
+      "answers": [
+        "不失其所者久",
+        "死而不亡者寿"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0164",
+      "work": "〈老子〉四章",
+      "author": "老子",
+      "number": 11,
+      "prompt": "《老子》第六十四章中，写事物安然未生变时容易持守，问题没有显露迹象时容易解决的句子是“＿＿＿＿，＿＿＿＿”。",
+      "answers": [
+        "其安易持",
+        "其未兆易谋"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0165",
+      "work": "〈老子〉四章",
+      "author": "老子",
+      "number": 12,
+      "prompt": "《老子》第六十四章中，写在事情未发生时就做，在混乱没有产生时就治理的句子是“＿＿＿＿，＿＿＿＿”。",
+      "answers": [
+        "为之于未有",
+        "治之于未乱"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0166",
+      "work": "〈老子〉四章",
+      "author": "老子",
+      "number": 13,
+      "prompt": "《老子》第六十四章中，写事物脆弱时容易分离，事物细微时容易散失的句子是“＿＿＿＿，＿＿＿＿”。",
+      "answers": [
+        "其脆易泮",
+        "其微易散"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0167",
+      "work": "〈老子〉四章",
+      "author": "老子",
+      "number": 14,
+      "prompt": "《老子》第六十四章中的“＿＿＿＿，＿＿＿＿”，与荀子《劝学》中的“积土成山，风雨兴焉”有异曲同工之妙。",
+      "answers": [
+        "九层之台",
+        "起于累土"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0168",
+      "work": "〈老子〉四章",
+      "author": "老子",
+      "number": 15,
+      "prompt": "《老子》第六十四章中以大树为喻，论述强大的事物都是从微小发展壮大起来的句子是“＿＿＿＿，＿＿＿＿”。",
+      "answers": [
+        "合抱之木",
+        "生于毫末"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0169",
+      "work": "〈老子〉四章",
+      "author": "老子",
+      "number": 16,
+      "prompt": "“＿＿＿＿，＿＿＿＿”这个成语，最早出自春秋末期《老子》第六十四章。原指走千里远的路程，是从脚下迈第一步开始的；后多比喻做事的成功在于由小到大、由少到多的逐步积累。",
+      "answers": [
+        "千里之行",
+        "始于足下"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0170",
+      "work": "〈老子〉四章",
+      "author": "老子",
+      "number": 17,
+      "prompt": "《老子》第六十四章中的“＿＿＿＿，＿＿＿＿”两句指出不顺应自然规律强为，肯定会失败；紧紧把持东西不放，反而会失去。",
+      "answers": [
+        "为者败之",
+        "执者失之"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0171",
+      "work": "〈老子〉四章",
+      "author": "老子",
+      "number": 18,
+      "prompt": "《老子》第六十四章中，写有道之士遵循规律自然无为，所以不会失败句子是“＿＿＿＿，＿＿＿＿”。",
+      "answers": [
+        "是以圣人无为",
+        "故无败"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0172",
+      "work": "〈老子〉四章",
+      "author": "老子",
+      "number": 19,
+      "prompt": "《老子》第六十四章中，指出像对待开始那样慎重对待结束，就不会有失败的事的句子是“＿＿＿＿，＿＿＿＿”。",
+      "answers": [
+        "慎终如始",
+        "则无败事"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0173",
+      "work": "〈老子〉四章",
+      "author": "老子",
+      "number": 20,
+      "prompt": "《老子》第六十四章中，指出人们做事，常常在接近成功时失败句子是“＿＿＿＿，＿＿＿＿”。",
+      "answers": [
+        "民之从事",
+        "常于几成而败之"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0174",
+      "work": "〈老子〉四章",
+      "author": "老子",
+      "number": 21,
+      "prompt": "《老子》第十一章中，老子认为车的功用产生于车毂的中空处的句子是“＿＿＿＿，＿＿＿＿”。",
+      "answers": [
+        "当其无",
+        "有车之用"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0175",
+      "work": "〈老子〉四章",
+      "author": "老子",
+      "number": 22,
+      "prompt": "《老子》第十一章中，老子认为器皿的功用产生于器皿的中空处的句子是“＿＿＿＿，＿＿＿＿”。",
+      "answers": [
+        "当其无",
+        "有器之用"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0176",
+      "work": "〈老子〉四章",
+      "author": "老子",
+      "number": 23,
+      "prompt": "圣人以不言之教来教化民众，学习众人所不具备的知识，默默地补救众人所犯下的过错。《老子》第六十四章中，《老子》四章中老子用“＿＿＿＿，＿＿＿＿”阐明这个道理。",
+      "answers": [
+        "学不学",
+        "复众人之所过"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "注：题干标作“第二十四章”有误，此句出自《老子》第六十四章。",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0180",
+      "work": "屈原列传",
+      "author": "司马迁",
+      "number": 1,
+      "prompt": "司马迁在《屈原列传》中，直接点明屈原创作《离骚》的根本原因是痛心于楚怀王被谗言蒙蔽、正直之士不容于朝的句子是：＿＿＿＿，＿＿＿＿，＿＿＿＿，＿＿＿＿，＿＿＿＿。",
+      "answers": [
+        "屈平疾王听之不聪也",
+        "谗谄之蔽明也",
+        "邪曲之害公也",
+        "方正之不容也",
+        "故忧愁幽思而作《离骚》"
+      ],
+      "alternatives": [
+        [],
+        [],
+        [],
+        [],
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0181",
+      "work": "屈原列传",
+      "author": "司马迁",
+      "number": 2,
+      "prompt": "文中解释“离骚”含义的核心句子是：＿＿＿＿，＿＿＿＿。",
+      "answers": [
+        "“离骚”者",
+        "犹离忧也"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0182",
+      "work": "屈原列传",
+      "author": "司马迁",
+      "number": 3,
+      "prompt": "屈原虽竭尽忠诚却遭谗言陷害，文中直接描述其困境的句子是：＿＿＿＿，＿＿＿＿，＿＿＿＿，＿＿＿＿。",
+      "answers": [
+        "屈平正道直行",
+        "竭忠尽智以事其君",
+        "谗人间之",
+        "可谓穷矣"
+      ],
+      "alternatives": [
+        [],
+        [],
+        [],
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0183",
+      "work": "屈原列传",
+      "author": "司马迁",
+      "number": 4,
+      "prompt": "司马迁认为《离骚》兼具《诗经》“怨刺”与“节制”双重特点的句子是：＿＿＿＿，＿＿＿＿。＿＿＿＿，＿＿＿＿。",
+      "answers": [
+        "《国风》好色而不淫",
+        "《小雅》怨诽而不乱",
+        "若《离骚》者",
+        "可谓兼之矣"
+      ],
+      "alternatives": [
+        [],
+        [],
+        [],
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0184",
+      "work": "屈原列传",
+      "author": "司马迁",
+      "number": 5,
+      "prompt": "《离骚》通过列举古代圣王事迹讽刺当世政治的句子是：＿＿＿＿，＿＿＿＿，＿＿＿＿，＿＿＿＿。",
+      "answers": [
+        "上称帝喾",
+        "下道齐桓",
+        "中述汤武",
+        "以刺世事"
+      ],
+      "alternatives": [
+        [],
+        [],
+        [],
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0185",
+      "work": "屈原列传",
+      "author": "司马迁",
+      "number": 6,
+      "prompt": "文中强调《离骚》深刻揭示道德崇高与国家治乱规律的句子是：＿＿＿＿，＿＿＿＿，＿＿＿＿。",
+      "answers": [
+        "明道德之广崇",
+        "治乱之条贯",
+        "靡不毕见"
+      ],
+      "alternatives": [
+        [],
+        [],
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0186",
+      "work": "屈原列传",
+      "author": "司马迁",
+      "number": 7,
+      "prompt": "屈原作品多用香草象征高洁志趣，司马迁对此的解释是：＿＿＿＿，＿＿＿＿。",
+      "answers": [
+        "其志洁",
+        "故其称物芳"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0187",
+      "work": "屈原列传",
+      "author": "司马迁",
+      "number": 8,
+      "prompt": "以蝉蜕比喻屈原超脱世俗、保持高洁的句子是：＿＿＿＿，＿＿＿＿，＿＿＿＿，＿＿＿＿，＿＿＿＿。",
+      "answers": [
+        "自疏濯淖污泥之中",
+        "蝉蜕于浊秽",
+        "以浮游尘埃之外",
+        "不获世之滋垢",
+        "皭然泥而不滓者也"
+      ],
+      "alternatives": [
+        [],
+        [],
+        [],
+        [],
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0189",
+      "work": "过秦论",
+      "author": "贾谊",
+      "number": 1,
+      "prompt": "秦孝公时期崛起的基础。题目：贾谊在《过秦论》中论述秦国毫不费力取得了西河之地，得益于“＿＿＿＿，＿＿＿＿，＿＿＿＿，＿＿＿＿”对内实行变法图强的主张、对外实施正确的战争策略，为以后秦王扫六合、吞八荒奠定了基础。",
+      "answers": [
+        "内立法度",
+        "务耕织",
+        "修守战之具",
+        "外连衡而斗诸侯"
+      ],
+      "alternatives": [
+        [],
+        [],
+        [],
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0190",
+      "work": "过秦论",
+      "author": "贾谊",
+      "number": 2,
+      "prompt": "秦始皇北击匈奴的威慑。题目：秦始皇派遣大将蒙恬到北方修筑长城并固守边境，使匈奴长时间不敢南下进击中原。贾谊用“＿＿＿＿，＿＿＿＿”两句概括此事件的效果。",
+      "answers": [
+        "胡人不敢南下而牧马",
+        "士不敢弯弓而报怨"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "注：题干“长时间”在这两句中没有明确时间长度。",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0192",
+      "work": "过秦论",
+      "author": "贾谊",
+      "number": 3,
+      "prompt": "秦灭亡的根本原因。题目：贾谊在《过秦论》中指出秦的过失即灭亡的根本原因在于“＿＿＿＿”。",
+      "answers": [
+        "仁义不施而攻守之势异也"
+      ],
+      "alternatives": [
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0193",
+      "work": "过秦论",
+      "author": "贾谊",
+      "number": 4,
+      "prompt": "陈涉起义的响应。题目：贾谊用“＿＿＿＿，＿＿＿＿，＿＿＿＿，＿＿＿＿”短短四个句子就写出了陈涉高举义旗并得到天下热烈响应的情况。",
+      "answers": [
+        "斩木为兵",
+        "揭竿为旗",
+        "天下云集响应",
+        "赢粮而景从"
+      ],
+      "alternatives": [
+        [],
+        [],
+        [],
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0194",
+      "work": "过秦论",
+      "author": "贾谊",
+      "number": 5,
+      "prompt": "陈涉的出身与地位。题目：陈涉揭竿而起，一呼百应，并非因地位超然。贾谊交代陈涉身份的句子是“＿＿＿＿，＿＿＿＿，＿＿＿＿”。",
+      "answers": [
+        "瓮牖绳枢之子",
+        "氓隶之人",
+        "而迁徙之徒也"
+      ],
+      "alternatives": [
+        [],
+        [],
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0195",
+      "work": "过秦论",
+      "author": "贾谊",
+      "number": 6,
+      "prompt": "秦始皇守天下的措施。题目：《过秦论》中“＿＿＿＿，＿＿＿＿”形象地描写了秦始皇派遣得力将领、士兵守卫要塞，盘问过往行人的情景。",
+      "answers": [
+        "良将劲弩守要害之处",
+        "信臣精卒陈利兵而谁何"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0196",
+      "work": "过秦论",
+      "author": "贾谊",
+      "number": 7,
+      "prompt": "秦始皇的愚民政策。题目：秦始皇为削弱百姓反抗，采取的销毁兵器的措施是“＿＿＿＿，＿＿＿＿，＿＿＿＿，＿＿＿＿”。",
+      "answers": [
+        "收天下之兵",
+        "聚之咸阳",
+        "销锋镝",
+        "铸以为金人十二"
+      ],
+      "alternatives": [
+        [],
+        [],
+        [],
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0197",
+      "work": "过秦论",
+      "author": "贾谊",
+      "number": 8,
+      "prompt": "秦孝公的战略地势。题目：《过秦论》写秦孝公时期占有有利地势的两句是“＿＿＿＿，＿＿＿＿”。",
+      "answers": [
+        "据崤函之固",
+        "拥雍州之地"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0198",
+      "work": "过秦论",
+      "author": "贾谊",
+      "number": 9,
+      "prompt": "九国之师与秦的对比。题目：面对九国联军，秦开关迎敌，而九国“＿＿＿＿”，最终“从散约败”。",
+      "answers": [
+        "逡巡而不敢进"
+      ],
+      "alternatives": [
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0199",
+      "work": "过秦论",
+      "author": "贾谊",
+      "number": 10,
+      "prompt": "秦始皇的武力统治。题目：贾谊用排比句“＿＿＿＿，＿＿＿＿，＿＿＿＿，＿＿＿＿”概括秦始皇仰仗武力征服天下、奴役百姓的过程。",
+      "answers": [
+        "振长策而御宇内",
+        "吞二周而亡诸侯",
+        "履至尊而制六合",
+        "执敲扑而鞭笞天下"
+      ],
+      "alternatives": [
+        [],
+        [],
+        [],
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0202",
+      "work": "离骚",
+      "author": "屈原",
+      "number": 1,
+      "prompt": "屈原在《离骚》中表达自己虽爱好修洁，严于律己，但早晨进谏晚上就被免职的句子是：“＿＿＿＿，＿＿＿＿。”",
+      "answers": [
+        "余虽好修姱以鞿羁兮",
+        "謇朝谇而夕替"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "书架现有《离骚》对应句有缺字，本题按所给文件保留“鞿羁”。",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0203",
+      "work": "离骚",
+      "author": "屈原",
+      "number": 2,
+      "prompt": "《离骚》中揭露当时社会中的人们背弃忠直，苟合于世，以求容媚的句子是“＿＿＿＿，＿＿＿＿”。",
+      "answers": [
+        "背绳墨以追曲兮",
+        "竞周容以为度"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0204",
+      "work": "离骚",
+      "author": "屈原",
+      "number": 3,
+      "prompt": "屈原《离骚》中“＿＿＿＿，＿＿＿＿”两句，表达诗人对君王不明白自己心迹的怨恨。",
+      "answers": [
+        "怨灵修之浩荡兮",
+        "终不察夫民心"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0205",
+      "work": "离骚",
+      "author": "屈原",
+      "number": 4,
+      "prompt": "古典诗歌讲究含蓄美，如爱国主义诗人屈原常用芳草喻指高洁的德行，《离骚》中“＿＿＿＿，＿＿＿＿”写出了诗人德行美好却遭贬黜的现实。",
+      "answers": [
+        "既替余以蕙纕兮",
+        "又申之以揽茝"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "书架现有《离骚》对应句有缺字，本题按所给文件保留“蕙纕”。",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0206",
+      "work": "离骚",
+      "author": "屈原",
+      "number": 5,
+      "prompt": "《离骚》中，屈原用方枘圆凿比喻“道不同不足为谋”的道理的两句是：“＿＿＿＿，＿＿＿＿。”",
+      "answers": [
+        "何方圜之能周兮",
+        "夫孰异道而相安"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0207",
+      "work": "离骚",
+      "author": "屈原",
+      "number": 6,
+      "prompt": "屈原《离骚》中“＿＿＿＿，＿＿＿＿”两句，阐述了孟子舍生取义的观点，表达了作者对保持清白、为正义而死的光辉忠贞人格的崇尚。",
+      "answers": [
+        "伏清白以死直兮",
+        "固前圣之所厚"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0208",
+      "work": "离骚",
+      "author": "屈原",
+      "number": 7,
+      "prompt": "在《离骚》（节选）中，屈原以美人自比，表达自己遭人嫉妒、被造谣中伤的句子是：“＿＿＿＿，＿＿＿＿。”",
+      "answers": [
+        "众女嫉余之蛾眉兮",
+        "谣诼谓余以善淫"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0209",
+      "work": "离骚",
+      "author": "屈原",
+      "number": 8,
+      "prompt": "屈原在《离骚》中用“＿＿＿＿，＿＿＿＿”两句写自己在黑暗混乱的社会中烦闷失意，走投无路。",
+      "answers": [
+        "忳郁邑余侘傺兮",
+        "吾独穷困乎此时也"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0210",
+      "work": "离骚",
+      "author": "屈原",
+      "number": 9,
+      "prompt": "屈原在《离骚》中表明自己所处的社会本来就是善于投机取巧，违背规矩的现状的两句：“＿＿＿＿，＿＿＿＿。”",
+      "answers": [
+        "固时俗之工巧兮",
+        "偭规矩而改错"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0211",
+      "work": "离骚",
+      "author": "屈原",
+      "number": 10,
+      "prompt": "屈原在《离骚》中表达自己虽然遭到不公的待遇，但是为了追求自己心中的目标，纵然九死不悔的语句是：“＿＿＿＿，＿＿＿＿。”",
+      "answers": [
+        "亦余心之所善兮",
+        "虽九死其犹未悔"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0212",
+      "work": "离骚",
+      "author": "屈原",
+      "number": 11,
+      "prompt": "《离骚》一文中以博大的胸怀，对广大劳动人民寄予深深同情的语句是“＿＿＿＿，＿＿＿＿”。",
+      "answers": [
+        "长太息以掩涕兮",
+        "哀民生之多艰"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "注：“民生”在不同教材注释中有不同解释，也可理解为人的生计或人生；本题按原题提示填写。",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0214",
+      "work": "离骚",
+      "author": "屈原",
+      "number": 12,
+      "prompt": "屈原在《离骚》中表达自己宁愿死去也不肯媚俗的诗句：“＿＿＿＿，＿＿＿＿”。",
+      "answers": [
+        "宁溘死以流亡兮",
+        "余不忍为此态也"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0215",
+      "work": "离骚",
+      "author": "屈原",
+      "number": 13,
+      "prompt": "屈原在《离骚》中用大鸟的不合群来比喻说明自己绝不随波逐流的诗句：“＿＿＿＿，＿＿＿＿”。",
+      "answers": [
+        "鸷鸟之不群兮",
+        "自前世而固然"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0216",
+      "work": "离骚",
+      "author": "屈原",
+      "number": 14,
+      "prompt": "屈原在《离骚》中表现自己忍受委屈压抑意志，忍受责骂和侮辱的诗句：“＿＿＿＿，＿＿＿＿”。",
+      "answers": [
+        "屈心而抑志兮",
+        "忍尤而攘诟"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0218",
+      "work": "蜀道难",
+      "author": "李白",
+      "number": 1,
+      "prompt": "成都博物馆唐代文物特展中，巨型LED屏展现着唐代蜀道的险峻风光，讲解员引用李白《蜀道难》中多次出现的“＿＿＿＿，＿＿＿＿”两句来形容蜀道。",
+      "answers": [
+        "蜀道之难",
+        "难于上青天"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0219",
+      "work": "蜀道难",
+      "author": "李白",
+      "number": 2,
+      "prompt": "《蜀道难》中“＿＿＿＿，＿＿＿＿”两句提及古蜀国开国君主的茫然艰辛。",
+      "answers": [
+        "蚕丛及鱼凫",
+        "开国何茫然"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0220",
+      "work": "蜀道难",
+      "author": "李白",
+      "number": 3,
+      "prompt": "李白在《蜀道难》中用“＿＿＿＿，＿＿＿＿”两句，写出了古蜀国的神秘和悠远。",
+      "answers": [
+        "尔来四万八千岁",
+        "不与秦塞通人烟"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "注：题干指向较宽，“蚕丛及鱼凫，开国何茫然”也能表现古蜀国开国历史的渺茫。",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null,
+      "alternativeSets": [
+        [
+          "蚕丛及鱼凫",
+          "开国何茫然"
+        ]
+      ]
+    },
+    {
+      "id": "recitation:summary:0222",
+      "work": "蜀道难",
+      "author": "李白",
+      "number": 4,
+      "prompt": "《蜀道难》中运用夸张极言山峰之高、绝壁之险，渲染惊险的气氛的句子是“＿＿＿＿，＿＿＿＿”。",
+      "answers": [
+        "连峰去天不盈尺",
+        "枯松倒挂倚绝壁"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0223",
+      "work": "蜀道难",
+      "author": "李白",
+      "number": 5,
+      "prompt": "李白《蜀道难》中，“＿＿＿＿，＿＿＿＿”两句借对鸟、兽困窘状态的描写来衬托蜀道之难，相比直接描写更显其“难”。",
+      "answers": [
+        "黄鹤之飞尚不得过",
+        "猿猱欲度愁攀援"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0224",
+      "work": "蜀道难",
+      "author": "李白",
+      "number": 6,
+      "prompt": "李白的《蜀道难》中，“＿＿＿＿，＿＿＿＿”两句用夸张的手法描写了蜀道山岭之高，与李白《夜宿山寺》中的“危楼高百尺，手可摘星辰。不敢高声语，恐惊天上人”有异曲同工之妙。",
+      "answers": [
+        "扪参历井仰胁息",
+        "以手抚膺坐长叹"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "注：题干较宽，也有其他描写山高的诗句；这一组通过触及星宿极言高险。",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0226",
+      "work": "蜀道难",
+      "author": "李白",
+      "number": 7,
+      "prompt": "“挡住太阳神的山巅，排空曲折迂回的川”，这两句歌词化用了李白《蜀道难》中的“＿＿＿＿，＿＿＿＿”。",
+      "answers": [
+        "上有六龙回日之高标",
+        "下有冲波逆折之回川"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0227",
+      "work": "蜀道难",
+      "author": "李白",
+      "number": 8,
+      "prompt": "游客们参观黄河壶口瀑布时，被眼前壮观的景象、耳中滚滚的轰鸣震撼，不由得想到《蜀道难》中“＿＿＿＿，＿＿＿＿”的描写。",
+      "answers": [
+        "飞湍瀑流争喧豗",
+        "砯崖转石万壑雷"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0228",
+      "work": "蜀道难",
+      "author": "李白",
+      "number": 9,
+      "prompt": "快过年了，于老师牵挂在成都旅行的女儿，给她发短信息时用了李白《蜀道难》中的诗句“＿＿＿＿，＿＿＿＿”，希望她不要贪玩，早点儿回家。",
+      "answers": [
+        "锦城虽云乐",
+        "不如早还家"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0229",
+      "work": "蜀道难",
+      "author": "李白",
+      "number": 10,
+      "prompt": "假日里，小阳同学一家游览秦岭青泥岭古道，面对眼前蜿蜒曲折的山路，小阳不禁脱口而出《蜀道难》中的句子：“＿＿＿＿，＿＿＿＿。”",
+      "answers": [
+        "青泥何盘盘",
+        "百步九折萦岩峦"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0230",
+      "work": "蜀道难",
+      "author": "李白",
+      "number": 11,
+      "prompt": "李白在《蜀道难》中既描写蜀道的真实险峻，又融入虚构的想象，如“＿＿＿＿，＿＿＿＿”两句以“上”与“下”的空间对比，强化蜀道的垂直高度与深渊之险。",
+      "answers": [
+        "上有六龙回日之高标",
+        "下有冲波逆折之回川"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0231",
+      "work": "蜀道难",
+      "author": "李白",
+      "number": 12,
+      "prompt": "李白《蜀道难》中用“＿＿＿＿，＿＿＿＿”两句，回顾了“五丁开山”的传说。",
+      "answers": [
+        "地崩山摧壮士死",
+        "然后天梯石栈相钩连"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0232",
+      "work": "蜀道难",
+      "author": "李白",
+      "number": 13,
+      "prompt": "李白《蜀道难》一诗中“＿＿＿＿，＿＿＿＿”两句化用西晋张载《剑阁铭》中的“形胜之地，匪亲勿居”，表达了对国事的忧虑和关切。",
+      "answers": [
+        "所守或匪亲",
+        "化为狼与豺"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0233",
+      "work": "蜀道难",
+      "author": "李白",
+      "number": 14,
+      "prompt": "李白在《蜀道难》中，联系当时的社会背景，揭露了蜀中豺狼的“＿＿＿＿，＿＿＿＿”，这既是描写蜀道猛兽，又是影射政治黑暗的双关语句。",
+      "answers": [
+        "磨牙吮血",
+        "杀人如麻"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0234",
+      "work": "蜀道难",
+      "author": "李白",
+      "number": 15,
+      "prompt": "李白在《蜀道难》中用“＿＿＿＿，＿＿＿＿”两句借景抒情，把读者带进一个古木荒凉、鸟声悲凄的境界。",
+      "answers": [
+        "但见悲鸟号古木",
+        "雄飞雌从绕林间"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0235",
+      "work": "蜀道难",
+      "author": "李白",
+      "number": 16,
+      "prompt": "李白《蜀道难》中“＿＿＿＿，＿＿＿＿”两句，借蜀地之人口吻劝“西行”之人不要来蜀地，也收束对蜀道凶险的描写，转入后文对人事的关注。",
+      "answers": [
+        "嗟尔远道之人",
+        "胡为乎来哉"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "注：原诗此处未明确说话者是“蜀地之人”；题干属于一种理解。",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0237",
+      "work": "蜀道难",
+      "author": "李白",
+      "number": 17,
+      "prompt": "李白《蜀道难》中运用夸张修辞方法，写出秦蜀之间崇山叠岭、人不可逾越的句子是：“＿＿＿＿，＿＿＿＿。”",
+      "answers": [
+        "西当太白有鸟道",
+        "可以横绝峨眉巅"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0238",
+      "work": "蜀道难",
+      "author": "李白",
+      "number": 18,
+      "prompt": "“杜鹃”又叫“子规”，是古诗文中常见的意象。比如《蜀道难》中“＿＿＿＿，＿＿＿＿”两句就用杜鹃这一意象渲染夜晚山中苍凉的环境气氛。",
+      "answers": [
+        "又闻子规啼夜月",
+        "愁空山"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0239",
+      "work": "蜀道难",
+      "author": "李白",
+      "number": 19,
+      "prompt": "李白《蜀道难》中，描述剑阁易守难攻的地势特点的两句是：“＿＿＿＿，＿＿＿＿。”",
+      "answers": [
+        "一夫当关",
+        "万夫莫开"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0241",
+      "work": "蜀相",
+      "author": "杜甫",
+      "number": 1,
+      "prompt": "小明游览武侯祠时，想用诗句来表达对诸葛亮事业未竟的叹惋之情，不禁吟诵起杜甫《蜀相》中的名句“＿＿＿＿，＿＿＿＿”。",
+      "answers": [
+        "出师未捷身先死",
+        "长使英雄泪满襟"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0242",
+      "work": "蜀相",
+      "author": "杜甫",
+      "number": 2,
+      "prompt": "“诗言志，歌咏言”。杜甫《蜀相》“＿＿＿＿，＿＿＿＿”，以饱满深情高度概括诸葛亮一生的丰功伟绩。",
+      "answers": [
+        "三顾频烦天下计",
+        "两朝开济老臣心"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0243",
+      "work": "蜀相",
+      "author": "杜甫",
+      "number": 3,
+      "prompt": "杜甫《蜀相》中“＿＿＿＿，＿＿＿＿”两句，以阴森的景色衬托出武侯祠庄严肃穆的气氛，抒发凭吊情怀。",
+      "answers": [
+        "丞相祠堂何处寻",
+        "锦官城外柏森森"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0244",
+      "work": "蜀相",
+      "author": "杜甫",
+      "number": 4,
+      "prompt": "古诗词中很多以“自”“空”营造意境氛围的，如杜甫《蜀相》“＿＿＿＿，＿＿＿＿”，诗人将自己的主观情意渗进了客观景物之中，使景中生意。",
+      "answers": [
+        "映阶碧草自春色",
+        "隔叶黄鹂空好音"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0245",
+      "work": "蜀相",
+      "author": "杜甫",
+      "number": 5,
+      "prompt": "杜甫《蜀相》中以乐景写哀情，感叹碧草、娇莺无人赏玩，英雄长逝，遗迹荒落的两句是：“＿＿＿＿，＿＿＿＿。”",
+      "answers": [
+        "映阶碧草自春色",
+        "隔叶黄鹂空好音"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0246",
+      "work": "蜀相",
+      "author": "杜甫",
+      "number": 6,
+      "prompt": "《蜀相》中以乐景写哀情的两句是：“＿＿＿＿，＿＿＿＿。”",
+      "answers": [
+        "映阶碧草自春色",
+        "隔叶黄鹂空好音"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:summary:0247",
+      "work": "蜀相",
+      "author": "杜甫",
+      "number": 7,
+      "prompt": "《蜀相》中“＿＿＿＿，＿＿＿＿”两句，表达对诸葛亮无限的哀思，对于他未能实现复兴汉室，统一中原的天下大计，深表痛惜。",
+      "answers": [
+        "出师未捷身先死",
+        "长使英雄泪满襟"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "",
+      "source": "理解性默写汇总_答案填写版.docx",
+      "articleId": null
+    }
+  ]
+}

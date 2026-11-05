@@ -10,6 +10,7 @@ import { mergeTextbookGlosses } from '../server/textbook-glosses';
 import { mergeBiography2026 } from '../server/biography-2026';
 import { mergeExamArticles } from '../server/exam-articles';
 import { mergeRecitationContent } from '../server/recitation-content';
+import { mergeRecitationSummary } from '../server/recitation-summary';
 
 const db = async (page: Page) => (await (await page.request.get('/api/state')).json()).data;
 
@@ -276,6 +277,54 @@ test('understanding recitation plans persist and only a scored recall updates th
   await expect(page.getByRole('button', { name: '开始默写复习', exact: true })).toBeDisabled();
   await page.reload();
   expect((await db(page)).recitation.cards[id]).toEqual(after.recitation.cards[id]);
+});
+
+test('the supplied recitation collection supports exact recall and a practice session containing all questions', async ({ page, request }) => {
+  const snapshot = await (await request.get('/api/state')).json();
+  const data = mergeRecitationSummary(mergeRecitationContent(mergeTextbookArticles(snapshot.data)));
+  expect((await request.put('/api/state', { data: { revision: snapshot.revision, data }, headers: { 'X-InkLex-Client': '1' } })).ok()).toBe(true);
+  await page.goto('/#/recitation');
+  await expect(page.locator('.recitation-card')).toHaveCount(286);
+  await page.locator('.recitation-works').getByRole('button', { name: /^沁园春·长沙/ }).click();
+  await expect(page.locator('.recitation-card')).toHaveCount(10);
+  const first = page.locator('.recitation-card').first();
+  await expect(first.locator('.recitation-source')).toContainText('理解性默写汇总_答案填写版');
+  await first.locator('summary').click();
+  await expect(first.locator('.recitation-reference')).toContainText('独立寒秋');
+  await first.getByRole('button', { name: '背这道题', exact: true }).click();
+  await expect(page.locator('.recitation-source')).toContainText('理解性默写汇总_答案填写版');
+  await page.getByLabel('第 1 空', { exact: true }).fill('独立寒秋');
+  await page.getByLabel('第 2 空', { exact: true }).fill('湘江东去');
+  await page.getByLabel('第 3 空', { exact: true }).fill('橘子洲头');
+  await page.getByRole('button', { name: '查看答案并核对', exact: true }).click();
+  await expect(page.locator('.check-row.incorrect del')).toHaveText('东');
+  await expect(page.locator('.check-row.incorrect ins')).toHaveText('北');
+  await expect(page.locator('.check-row.correct')).toHaveCount(2);
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1)).toBe(true);
+  await page.locator('.rating-button.good').click();
+  await expect(page.locator('.session-finish')).toContainText('已完成 1 道');
+  const saved = await db(page);
+  expect(saved.recitation.reviews).toHaveLength(1);
+  expect(saved.recitation.reviews[0]).toMatchObject({ mode: 'practice', questionId: 'recitation:summary:0004' });
+  expect(saved.cards).toEqual(data.cards); expect(saved.reviews).toEqual(data.reviews);
+  await page.getByRole('button', { name: '回到理解性默写', exact: true }).click();
+  await page.locator('.recitation-works').getByRole('button', { name: /^蜀道难/ }).click();
+  await page.getByLabel('搜索默写题').fill('神秘和悠远');
+  await expect(page.locator('.recitation-card')).toHaveCount(1);
+  await page.getByRole('button', { name: '背这道题', exact: true }).click();
+  await page.getByLabel('第 1 空', { exact: true }).fill('蚕丛及鱼凫');
+  await page.getByLabel('第 2 空', { exact: true }).fill('开国何茫然');
+  await page.getByRole('button', { name: '查看答案并核对', exact: true }).click();
+  await expect(page.locator('.check-row.correct')).toHaveCount(2);
+  await expect(page.locator('.recitation-reference')).toContainText('另一组可接受答案');
+  await page.getByRole('button', { name: '返回默写题库', exact: true }).click();
+  await page.getByLabel('搜索默写题').fill('');
+  await page.locator('.recitation-works').getByRole('button', { name: /^全部篇目/ }).click();
+  await page.getByRole('button', { name: '自由抽背', exact: true }).click();
+  await page.getByLabel('默写题量').selectOption('0');
+  await page.getByLabel('默写出题顺序').selectOption('ordered');
+  await page.getByRole('button', { name: '开始默写抽背', exact: true }).click();
+  await expect(page.locator('.session-header')).toContainText('1 / 286');
 });
 
 test('full original text, independent inline explanations, no false reviews, responsive layout', async ({ page }, info) => {

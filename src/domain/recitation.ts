@@ -86,10 +86,17 @@ function difference(actual: string, expected: string) {
   }
   return { distance: dp[a.length][b.length], parts: parts.reverse() };
 }
-export function checkRecitationAnswer(actual: string, question: RecitationQuestion, index: number) {
+export function checkRecitationAnswer(actual: string, question: RecitationQuestion, index: number, responses: string[] = []) {
   const normalized = normalizeRecitationAnswer(actual);
   if (!normalized) return { status: 'empty' as const, parts: [] as AnswerPart[] };
-  const choices = [question.answers[index], ...(question.alternatives?.[index] ?? [])];
+  let bestSet = question.answers;
+  if (question.alternativeSets?.length) {
+    const entries = question.answers.map((_, i) => normalizeRecitationAnswer(i === index ? actual : responses[i] ?? ''));
+    bestSet = [question.answers, ...question.alternativeSets].map((set, order) => ({ set, order, score: entries.reduce((score, entry, i) =>
+      score + (entry ? difference(entry, normalizeRecitationAnswer(set[i])).distance : 0), 0) }))
+      .sort((a, b) => a.score - b.score || a.order - b.order)[0].set;
+  }
+  const choices = [bestSet[index], ...(question.alternatives?.[index] ?? [])];
   const closest = choices.map(expected => difference(normalized, normalizeRecitationAnswer(expected))).sort((a, b) => a.distance - b.distance)[0];
   return { status: closest.distance === 0 ? 'correct' as const : 'incorrect' as const, parts: closest.parts };
 }

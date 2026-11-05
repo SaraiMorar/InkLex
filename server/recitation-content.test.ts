@@ -10,7 +10,7 @@ import { enrollRecitations, gradeRecitation } from '../src/domain/recitation';
 const paths: string[] = [], handles: FileDatabase[] = [];
 const directory = () => { const path = mkdtempSync(join(tmpdir(), 'inklex-recitation-')); paths.push(path); return path; };
 const open = (path: string, importRecitation = true) => {
-  const db = new FileDatabase(path, { importSupplement: false, importTextbookArticles: false, importBiography2026: false, importRecitation });
+  const db = new FileDatabase(path, { importSupplement: false, importTextbookArticles: false, importBiography2026: false, importRecitation, importRecitationSummary: false });
   handles.push(db); return db;
 };
 afterEach(() => {

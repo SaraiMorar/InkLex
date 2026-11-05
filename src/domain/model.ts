@@ -40,6 +40,7 @@ export const recitationQuestionSchema = z.object({
   id, work: z.string().min(1).max(120), author: z.string().max(80), number: z.number().int().positive(),
   prompt: z.string().min(1).max(5000), answers: z.array(z.string().min(1).max(2000)).min(1).max(16),
   alternatives: z.array(z.array(z.string().min(1).max(2000))).max(16).optional(),
+  alternativeSets: z.array(z.array(z.string().min(1).max(2000)).min(1).max(16)).max(16).optional(),
   note: z.string().max(3000), source: z.string().max(160), articleId: id.nullable(),
 });
 const recitationReviewSchema = reviewSchema.omit({ senseId: true, contextId: true }).extend({
@@ -146,6 +147,7 @@ export function validateDatabase(input: unknown): Database {
     if (questionIds.size !== state.questions.length || new Set(state.reviews.map(row => row.id)).size !== state.reviews.length) throw new Error('默写资料含有重复编号。');
     for (const question of state.questions) {
       if (question.alternatives && question.alternatives.length !== question.answers.length) throw new Error('默写题的备选答案数量不匹配。');
+      if (question.alternativeSets?.some(set => set.length !== question.answers.length)) throw new Error('默写题的备选答案组数量不匹配。');
     }
     for (const [questionId, card] of Object.entries(state.cards)) {
       if (!questionIds.has(questionId)) throw new Error('默写卡片的题目缺失。');
