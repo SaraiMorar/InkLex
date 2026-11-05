@@ -15,6 +15,7 @@ import { EXAM_ARTICLES_ID, mergeExamArticles } from './exam-articles.ts';
 import { RECITATION_CONTENT_ID, mergeRecitationContent } from './recitation-content.ts';
 import { RECITATION_SUMMARY_ID, mergeRecitationSummary } from './recitation-summary.ts';
 import { RECITATION_CHENLAN_ID, mergeRecitationChenlan } from './recitation-chenlan.ts';
+import { RECITATION_TOPIC01_ID, mergeRecitationTopic01 } from './recitation-topic01.ts';
 
 export interface Snapshot { data: Database; revision: number; serverId: string; pristine?: boolean; warning?: string }
 export class RevisionConflict extends Error {
@@ -25,7 +26,7 @@ type Row = { payload: string; revision: number; server_id: string };
 export class FileDatabase {
   readonly path: string;
   private db: DatabaseSync;
-  constructor(directory: string, options: { importBundledContent?: boolean; importSupplement?: boolean; importTextbookArticles?: boolean; importTextbookGlosses?: boolean; importBiography2026?: boolean; importSenseCleanup?: boolean; importReadingLayout?: boolean; importExamArticles?: boolean; importRecitation?: boolean; importRecitationSummary?: boolean; importRecitationChenlan?: boolean } = {}) {
+  constructor(directory: string, options: { importBundledContent?: boolean; importSupplement?: boolean; importTextbookArticles?: boolean; importTextbookGlosses?: boolean; importBiography2026?: boolean; importSenseCleanup?: boolean; importReadingLayout?: boolean; importExamArticles?: boolean; importRecitation?: boolean; importRecitationSummary?: boolean; importRecitationChenlan?: boolean; importRecitationTopic01?: boolean } = {}) {
     mkdirSync(directory, { recursive: true });
     this.path = resolve(directory, 'inklex.sqlite');
     this.db = new DatabaseSync(this.path);
@@ -50,6 +51,7 @@ export class FileDatabase {
         if ((options.importRecitation ?? options.importExamArticles ?? options.importBiography2026 ?? true) !== false) this.installContent(RECITATION_CONTENT_ID, mergeRecitationContent);
         if ((options.importRecitationSummary ?? options.importRecitation ?? options.importExamArticles ?? options.importBiography2026 ?? true) !== false) this.installContent(RECITATION_SUMMARY_ID, mergeRecitationSummary);
         if ((options.importRecitationChenlan ?? options.importRecitationSummary ?? options.importRecitation ?? options.importExamArticles ?? options.importBiography2026 ?? true) !== false) this.installContent(RECITATION_CHENLAN_ID, mergeRecitationChenlan);
+        if ((options.importRecitationTopic01 ?? options.importRecitationChenlan ?? options.importRecitationSummary ?? options.importRecitation ?? options.importExamArticles ?? options.importBiography2026 ?? true) !== false) this.installContent(RECITATION_TOPIC01_ID, mergeRecitationTopic01);
       }
     } catch (error) { this.db.close(); throw error; }
   }

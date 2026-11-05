@@ -12,6 +12,7 @@ import { mergeExamArticles } from '../server/exam-articles';
 import { mergeRecitationContent } from '../server/recitation-content';
 import { mergeRecitationSummary } from '../server/recitation-summary';
 import { mergeRecitationChenlan } from '../server/recitation-chenlan';
+import { mergeRecitationTopic01 } from '../server/recitation-topic01';
 
 const db = async (page: Page) => (await (await page.request.get('/api/state')).json()).data;
 
@@ -362,6 +363,36 @@ test('Chenqingbiao and Lanting supplement supports both stated variants and thre
   const saved = await db(page);
   expect(saved.recitation.reviews).toHaveLength(1);
   expect(saved.recitation.reviews[0]).toMatchObject({ mode: 'practice', questionId: 'recitation:chenlan:chenqingbiao:014' });
+  expect(saved.cards).toEqual(data.cards); expect(saved.reviews).toEqual(data.reviews);
+});
+
+test('Topic 01 imports only understanding questions and supports precise character recall', async ({ page, request }) => {
+  const snapshot = await (await request.get('/api/state')).json();
+  const data = mergeRecitationTopic01(mergeRecitationChenlan(mergeRecitationSummary(mergeRecitationContent(mergeTextbookArticles(snapshot.data)))));
+  expect((await request.put('/api/state', { data: { revision: snapshot.revision, data }, headers: { 'X-InkLex-Client': '1' } })).ok()).toBe(true);
+  await page.goto('/#/recitation');
+  await expect(page.locator('.recitation-card')).toHaveCount(338);
+  const selected = page.locator('.recitation-card').filter({ hasText: '专题01 积累运用（解析版）' });
+  await expect(selected).toHaveCount(16);
+  await expect(selected.filter({ hasText: '盖将自其变者而观之' })).toHaveCount(0);
+  await expect(selected.filter({ hasText: '忠而被谤' })).toHaveCount(0);
+  await page.getByLabel('搜索默写题').fill('五丁开山');
+  await expect(selected).toHaveCount(1);
+  await selected.getByRole('button', { name: '背这道题', exact: true }).click();
+  await page.getByLabel('第 1 空', { exact: true }).fill('地崩山催壮士死');
+  await page.getByLabel('第 2 空', { exact: true }).fill('然后天梯石栈相钩连');
+  await page.getByRole('button', { name: '查看答案并核对', exact: true }).click();
+  await expect(page.locator('.check-row.correct')).toHaveCount(1);
+  await expect(page.locator('.check-row.incorrect del')).toHaveText('催');
+  await expect(page.locator('.check-row.incorrect ins')).toHaveText('摧');
+  await expect(page.locator('.recitation-reference')).toContainText('2025·上海黄浦·二模');
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1)).toBe(true);
+  await page.locator('.rating-button.again').click();
+  await expect(page.locator('.session-finish')).toContainText('已完成 1 道');
+  await page.reload();
+  const saved = await db(page);
+  expect(saved.recitation.reviews).toHaveLength(1);
+  expect(saved.recitation.reviews[0]).toMatchObject({ mode: 'practice', questionId: 'recitation:topic01:001' });
   expect(saved.cards).toEqual(data.cards); expect(saved.reviews).toEqual(data.reviews);
 });
 

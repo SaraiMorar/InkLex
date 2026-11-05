@@ -1,0 +1,469 @@
+{
+  "id": "understanding-recitations-topic01-20261106-v1",
+  "source": {
+    "file": "专题01 积累运用（解析版）.docx",
+    "sha256": "c5a8200dd2a11fce60dc05038eda382fc69b155e56c8873c28369060cebec8b0"
+  },
+  "selection": {
+    "rule": "根据含义、典故、情境或表达作用回忆原句；不录入上下句填空和文学常识。",
+    "selected": [
+      {
+        "id": "recitation:topic01:001",
+        "paragraph": 12,
+        "answerParagraph": 13,
+        "group": "一",
+        "exam": "2025·上海黄浦·二模",
+        "subquestion": 3
+      },
+      {
+        "id": "recitation:topic01:002",
+        "paragraph": 19,
+        "answerParagraph": 20,
+        "group": "二",
+        "exam": "2025·上海静安·二模",
+        "subquestion": 3
+      },
+      {
+        "id": "recitation:topic01:003",
+        "paragraph": 26,
+        "answerParagraph": 27,
+        "group": "三",
+        "exam": "2025·上海普陀·二模",
+        "subquestion": 3
+      },
+      {
+        "id": "recitation:topic01:004",
+        "paragraph": 33,
+        "answerParagraph": 34,
+        "group": "四",
+        "exam": "2025·上海宝山·二模",
+        "subquestion": 3
+      },
+      {
+        "id": "recitation:topic01:005",
+        "paragraph": 40,
+        "answerParagraph": 41,
+        "group": "五",
+        "exam": "2025·上海金山·二模",
+        "subquestion": 3
+      },
+      {
+        "id": "recitation:topic01:006",
+        "paragraph": 47,
+        "answerParagraph": 48,
+        "group": "六",
+        "exam": "2025·上海奉贤·二模",
+        "subquestion": 3
+      },
+      {
+        "id": "recitation:topic01:007",
+        "paragraph": 54,
+        "answerParagraph": 55,
+        "group": "七",
+        "exam": "2025·上海长宁·二模",
+        "subquestion": 3
+      },
+      {
+        "id": "recitation:topic01:008",
+        "paragraph": 61,
+        "answerParagraph": 62,
+        "group": "八",
+        "exam": "2025·上海徐汇·二模",
+        "subquestion": 3
+      },
+      {
+        "id": "recitation:topic01:009",
+        "paragraph": 68,
+        "answerParagraph": 69,
+        "group": "九",
+        "exam": "2025·上海青浦·二模",
+        "subquestion": 3
+      },
+      {
+        "id": "recitation:topic01:010",
+        "paragraph": 75,
+        "answerParagraph": 76,
+        "group": "十",
+        "exam": "2025·上海闵行·二模",
+        "subquestion": 3
+      },
+      {
+        "id": "recitation:topic01:011",
+        "paragraph": 82,
+        "answerParagraph": 83,
+        "group": "十一",
+        "exam": "2025·上海浦东新·二模",
+        "subquestion": 3
+      },
+      {
+        "id": "recitation:topic01:012",
+        "paragraph": 89,
+        "answerParagraph": 90,
+        "group": "十二",
+        "exam": "2025·上海嘉定·二模",
+        "subquestion": 3
+      },
+      {
+        "id": "recitation:topic01:013",
+        "paragraph": 96,
+        "answerParagraph": 97,
+        "group": "十三",
+        "exam": "2025·上海崇明·二模",
+        "subquestion": 3
+      },
+      {
+        "id": "recitation:topic01:014",
+        "paragraph": 103,
+        "answerParagraph": 104,
+        "group": "十四",
+        "exam": "2025·上海杨浦·二模",
+        "subquestion": 3
+      },
+      {
+        "id": "recitation:topic01:015",
+        "paragraph": 110,
+        "answerParagraph": 111,
+        "group": "十五",
+        "exam": "2025·上海松江·二模",
+        "subquestion": 3
+      },
+      {
+        "id": "recitation:topic01:016",
+        "paragraph": 117,
+        "answerParagraph": 118,
+        "group": "十六",
+        "exam": "2025·上海虹口·二模",
+        "subquestion": 3
+      }
+    ],
+    "excludedContinuationParagraphs": [
+      10,
+      11,
+      17,
+      18,
+      24,
+      25,
+      31,
+      32,
+      38,
+      39,
+      45,
+      46,
+      52,
+      53,
+      59,
+      60,
+      66,
+      67,
+      73,
+      74,
+      80,
+      81,
+      87,
+      88,
+      94,
+      95,
+      101,
+      102,
+      108,
+      109,
+      115,
+      116
+    ]
+  },
+  "stats": {
+    "questions": 16,
+    "answers": 32,
+    "works": 10
+  },
+  "questions": [
+    {
+      "id": "recitation:topic01:001",
+      "work": "蜀道难",
+      "author": "李白",
+      "number": 1,
+      "prompt": "李白《蜀道难》中引用“五丁开山”的典故，以浪漫主义手法展现蜀道开辟历程的诗句是“＿＿＿＿，＿＿＿＿”。",
+      "answers": [
+        "地崩山摧壮士死",
+        "然后天梯石栈相钩连"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "出处：2025·上海黄浦·二模，第（一）组第（3）题。",
+      "source": "专题01 积累运用（解析版）.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:topic01:002",
+      "work": "陈情表",
+      "author": "李密",
+      "number": 2,
+      "prompt": "李密《陈情表》中化用《左传·宣公十五年》晋大夫魏武子、魏颗父子典故，表达感恩的两句是“＿＿＿＿，＿＿＿＿”。",
+      "answers": [
+        "臣生当陨首",
+        "死当结草"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "出处：2025·上海静安·二模，第（二）组第（3）题。",
+      "source": "专题01 积累运用（解析版）.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:topic01:003",
+      "work": "蜀相",
+      "author": "杜甫",
+      "number": 3,
+      "prompt": "《蜀相》中，点明诗人寻访地点，描写郊外树木丰茂，营造庄严肃穆氛围的两句诗是“＿＿＿＿，＿＿＿＿”。",
+      "answers": [
+        "丞相祠堂何处寻",
+        "锦官城外柏森森"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "出处：2025·上海普陀·二模，第（三）组第（3）题。",
+      "source": "专题01 积累运用（解析版）.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:topic01:004",
+      "work": "登高",
+      "author": "杜甫",
+      "number": 4,
+      "prompt": "杜甫“＿＿＿＿，＿＿＿＿”两句抒发了远离家乡、疾病缠身的孤独凄苦之情。",
+      "answers": [
+        "万里悲秋常作客",
+        "百年多病独登台"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "出处：2025·上海宝山·二模，第（四）组第（3）题。",
+      "source": "专题01 积累运用（解析版）.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:topic01:005",
+      "work": "劝学",
+      "author": "荀子",
+      "number": 5,
+      "prompt": "在学习与成长的道路上，我们若能保有坚定的信念与不懈的努力，即使再难的事情也能够做到，正如荀子在《劝学》中所说的“＿＿＿＿，＿＿＿＿”两句。",
+      "answers": [
+        "锲而不舍",
+        "金石可镂"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "出处：2025·上海金山·二模，第（五）组第（3）题。",
+      "source": "专题01 积累运用（解析版）.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:topic01:006",
+      "work": "〈老子〉四章",
+      "author": "老子",
+      "number": 6,
+      "prompt": "《老子·六十四章》中“＿＿＿＿，＿＿＿＿”两句告诫人们行事应未雨绸缪，从源头上解决祸患。",
+      "answers": [
+        "为之于未有",
+        "治之于未乱"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "出处：2025·上海奉贤·二模，第（六）组第（3）题。",
+      "source": "专题01 积累运用（解析版）.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:topic01:007",
+      "work": "屈原列传",
+      "author": "司马迁",
+      "number": 7,
+      "prompt": "小宁同学要求人工智能DS评价《离骚》的艺术特色，DS认为其“兼有《国风》《小雅》之长”，并引述了《史记·屈原贾生列传》中司马迁对此的直接评价“＿＿＿＿，＿＿＿＿”。",
+      "answers": [
+        "《国风》好色而不淫",
+        "《小雅》怨诽而不乱"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "出处：2025·上海长宁·二模，第（七）组第（3）题。",
+      "source": "专题01 积累运用（解析版）.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:topic01:008",
+      "work": "〈论语〉十二章",
+      "author": "孔子及弟子",
+      "number": 8,
+      "prompt": "《<论语>十二章》中“＿＿＿＿，＿＿＿＿”两句阐释了“文”与“质”的关系。",
+      "answers": [
+        "质胜文则野",
+        "文胜质则史"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "出处：2025·上海徐汇·二模，第（八）组第（3）题。",
+      "source": "专题01 积累运用（解析版）.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:topic01:009",
+      "work": "〈老子〉四章",
+      "author": "老子",
+      "number": 9,
+      "prompt": "《<老子>四章》中的“＿＿＿＿，＿＿＿＿”两句，指出了车子、器皿、屋室能供人方便利用的原因。",
+      "answers": [
+        "故有之以为利",
+        "无之以为用"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "出处：2025·上海青浦·二模，第（九）组第（3）题。",
+      "source": "专题01 积累运用（解析版）.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:topic01:010",
+      "work": "兰亭集序",
+      "author": "王羲之",
+      "number": 10,
+      "prompt": "王羲之在《兰亭集序》中表明可借助饮酒作诗抒发感慨的句子是“＿＿＿＿，＿＿＿＿”。",
+      "answers": [
+        "一觞一咏",
+        "亦足以畅叙幽情"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "出处：2025·上海闵行·二模，第（十）组第（3）题。",
+      "source": "专题01 积累运用（解析版）.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:topic01:011",
+      "work": "〈论语〉十二章",
+      "author": "孔子及弟子",
+      "number": 11,
+      "prompt": "《〈论语〉十二章》中，既强调向榜样学习，又强调要自我反思的句子是“＿＿＿＿，＿＿＿＿”。",
+      "answers": [
+        "见贤思齐焉",
+        "见不贤而内自省也"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "出处：2025·上海浦东新·二模，第（十一）组第（3）题。",
+      "source": "专题01 积累运用（解析版）.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:topic01:012",
+      "work": "登高",
+      "author": "杜甫",
+      "number": 12,
+      "prompt": "杜甫《登高》中，“＿＿＿＿，＿＿＿＿”两句通过空间的广袤和时间的长度写出作者晚年漂泊、疾病缠身的凄苦生活。",
+      "answers": [
+        "万里悲秋常作客",
+        "百年多病独登台"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "出处：2025·上海嘉定·二模，第（十二）组第（3）题。",
+      "source": "专题01 积累运用（解析版）.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:topic01:013",
+      "work": "〈论语〉十二章",
+      "author": "孔子及弟子",
+      "number": 13,
+      "prompt": "《论语·卫灵公》中“＿＿＿＿，＿＿＿＿”两句，体现了孔子推己及人的处世原则。",
+      "answers": [
+        "己所不欲",
+        "勿施于人"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "出处：2025·上海崇明·二模，第（十三）组第（3）题。",
+      "source": "专题01 积累运用（解析版）.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:topic01:014",
+      "work": "蜀道难",
+      "author": "李白",
+      "number": 14,
+      "prompt": "李白在《蜀道难》中用林鸟哀鸣盘旋渲染蜀道荒寂凄清的两句是“＿＿＿＿，＿＿＿＿”。",
+      "answers": [
+        "但见悲鸟号古木",
+        "雄飞雌从绕林间"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "出处：2025·上海杨浦·二模，第（十四）组第（3）题。",
+      "source": "专题01 积累运用（解析版）.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:topic01:015",
+      "work": "短歌行",
+      "author": "曹操",
+      "number": 15,
+      "prompt": "《短歌行》中曹操引用《诗经》中的“＿＿＿＿，＿＿＿＿”两句来表达对贤才的思慕。",
+      "answers": [
+        "青青子衿",
+        "悠悠我心"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "出处：2025·上海松江·二模，第（十五）组第（3）题。",
+      "source": "专题01 积累运用（解析版）.docx",
+      "articleId": null
+    },
+    {
+      "id": "recitation:topic01:016",
+      "work": "〈老子〉四章",
+      "author": "老子",
+      "number": 16,
+      "prompt": "《老子·第十一章》中通过对车子、器皿、屋室的分析总结出“有”与“无”之间的关系的句子是：“＿＿＿＿，＿＿＿＿。”",
+      "answers": [
+        "故有之以为利",
+        "无之以为用"
+      ],
+      "alternatives": [
+        [],
+        []
+      ],
+      "note": "出处：2025·上海虹口·二模，第（十六）组第（3）题。",
+      "source": "专题01 积累运用（解析版）.docx",
+      "articleId": null
+    }
+  ]
+}
