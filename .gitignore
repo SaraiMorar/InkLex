@@ -1,5 +1,6 @@
 node_modules/
 resources/local-sources/
+__pycache__/
 dist/
 dist-server/
 data/

@@ -6,7 +6,8 @@ export const GAOSAN_CONTEXT_PREFIX = 'gaosan300:context:';
 // A first-time legacy migration must retain these examples and the user's edited articles.
 export function bundledContentFrom(data: Database): Database {
   const contexts = data.contexts.filter(context => context.id.startsWith(GAOSAN_CONTEXT_PREFIX)
-    || context.id.startsWith('supplement:context:') || context.id.startsWith('exam2026:context:'));
+    || context.id.startsWith('supplement:context:') || context.id.startsWith('exam2026:context:')
+    || context.id.startsWith('biography2025:context:'));
   const senseIds = new Set(contexts.map(context => context.senseId));
   const senses = data.senses.filter(sense => senseIds.has(sense.id));
   const entryIds = new Set(senses.map(sense => sense.entryId));

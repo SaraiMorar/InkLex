@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { ArrowLeft, ArrowRight, BookOpen, Check, ChevronDown, Edit3, EyeOff, Languages, ListPlus, Minus, Plus, Save, Search } from 'lucide-react';
 import { ArticleCard, Empty, go, Heading, Modal } from '../components';
 import { useStore } from '../store';
-import { articleCollection, articleSentences, getWord, saveArticle, uid, type Article, type ArticleCollection, type Context } from '../domain/model';
+import { articleCollection, articleTranslationUnits, getWord, saveArticle, uid, type Article, type ArticleCollection, type Context } from '../domain/model';
 import { enroll } from '../domain/scheduler';
 import { ArticleEditor, ContextEditor } from './Manage';
 
@@ -112,13 +112,13 @@ export function Reader({ articleId, params }: { articleId: string; params: URLSe
 
 function TranslationEditor({ article, onClose }: { article: Article; onClose: () => void }) {
   const { update, notify } = useStore();
-  const sentences = articleSentences(article.body);
+  const sentences = articleTranslationUnits(article);
   const [values, setValues] = useState(() => sentences.map(sentence => article.translations?.find(row => row.articleStart === sentence.articleStart && row.source === sentence.source)?.translation ?? ''));
   const [busy, setBusy] = useState(false);
   return <Modal title={`《${article.title}》逐句译文`} onClose={onClose} wide><form onSubmit={async event => {
     event.preventDefault(); setBusy(true);
-    const translations = sentences.flatMap((sentence, index) => values[index].trim() ? [{ id: `translation:${sentence.articleStart}`, ...sentence, translation: values[index].trim() }] : []);
+    const translations = sentences.flatMap((sentence, index) => values[index].trim() ? [{ id: article.translations?.find(row => row.articleStart === sentence.articleStart && row.source === sentence.source)?.id ?? `translation:${sentence.articleStart}`, ...sentence, translation: values[index].trim() }] : []);
     const ok = await update(current => saveArticle(current, { ...article, translations }));
     setBusy(false); if (ok) { notify('逐句译文已保存。'); onClose(); }
-  }}><p className="small muted">按原文句号逐句对应。可以先填写一部分，空白句会保留为待补。</p><div className="translation-fields">{sentences.map((sentence, index) => <label key={sentence.articleStart}><span>{sentence.source}</span><textarea rows={2} value={values[index]} onChange={event => setValues(old => old.map((value, i) => i === index ? event.target.value : value))} placeholder="在这句话下方显示的译文…" /></label>)}</div><div className="form-footer"><span className="muted small">已填写 {values.filter(value => value.trim()).length} / {sentences.length} 句</span><button className="button primary" disabled={busy}><Save size={16} /> 保存逐句译文</button></div></form></Modal>;
+  }}><p className="small muted">已有译文按对应的原句或段落保留，待补内容按句号分段。可以先填写一部分。</p><div className="translation-fields">{sentences.map((sentence, index) => <label key={sentence.articleStart}><span>{sentence.source}</span><textarea rows={sentence.source.length > 100 ? 4 : 2} value={values[index]} onChange={event => setValues(old => old.map((value, i) => i === index ? event.target.value : value))} placeholder="在这段原文下方显示的译文…" /></label>)}</div><div className="form-footer"><span className="muted small">已填写 {values.filter(value => value.trim()).length} / {sentences.length} 处</span><button className="button primary" disabled={busy}><Save size={16} /> 保存逐句译文</button></div></form></Modal>;
 }

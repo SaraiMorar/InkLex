@@ -198,6 +198,25 @@ export function articleSentences(body: string) {
   return result;
 }
 
+// Keep supplied multi-sentence translations intact when opening the editor.
+// Only uncovered ranges are split into individual sentences for new entries.
+export function articleTranslationUnits(article: Article) {
+  const result: { articleStart: number; source: string }[] = [];
+  let cursor = 0;
+  const gap = (end: number) => {
+    for (const row of articleSentences(article.body.slice(cursor, end))) {
+      result.push({ ...row, articleStart: cursor + row.articleStart });
+    }
+  };
+  for (const row of [...(article.translations ?? [])].sort((a, b) => a.articleStart - b.articleStart)) {
+    gap(row.articleStart);
+    result.push({ articleStart: row.articleStart, source: row.source });
+    cursor = row.articleStart + row.source.length;
+  }
+  gap(article.body.length);
+  return result;
+}
+
 export interface ContextInput {
   id?: string; word: string; meaning: string; note: string; existingSenseId?: string;
   text: string; start: number; source: string; articleId: string | null; articleStart: number | null; verified: boolean;

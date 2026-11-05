@@ -1,13 +1,14 @@
 import { expect, test, type Page } from '@playwright/test';
 import { readFile } from 'node:fs/promises';
 import { createSeed } from '../src/domain/seed';
-import { saveContext } from '../src/domain/model';
+import { saveContext, type Article } from '../src/domain/model';
 import { enroll } from '../src/domain/scheduler';
 import { mergeBundledContent } from '../server/content';
 import { mergeSupplement } from '../server/supplement';
 import { mergeTextbookArticles } from '../server/textbook-articles';
 import { mergeTextbookGlosses } from '../server/textbook-glosses';
 import { mergeBiography2026 } from '../server/biography-2026';
+import { mergeBiography2025 } from '../server/biography-2025';
 import { mergeExamArticles } from '../server/exam-articles';
 import { mergeRecitationContent } from '../server/recitation-content';
 import { mergeRecitationSummary } from '../server/recitation-summary';
@@ -167,10 +168,46 @@ test('mock-exam texts show linked glosses and sentence translations while textbo
   await page.locator('.article-card').click();
   await expect(page.getByText('逐句译文待补', { exact: true })).toBeVisible();
   await page.getByRole('button', { name: '录入译文', exact: true }).click();
-  await expect(page.getByRole('dialog')).toContainText('按原文句号逐句对应');
+  await expect(page.getByRole('dialog')).toContainText('待补内容按句号分段');
   await page.getByRole('dialog').locator('textarea').first().fill('独立寒秋，湘江向北流去。');
   await page.getByRole('button', { name: '保存逐句译文', exact: true }).click();
   await expect(page.locator('.sentence-translation')).toHaveText(['独立寒秋，湘江向北流去。']);
+});
+
+test('2025 second-mock biographies retain paragraph translations and marked glosses after editing', async ({ page, request }) => {
+  const snapshot = await (await request.get('/api/state')).json(), data = mergeBiography2025(snapshot.data);
+  expect((await request.put('/api/state', { data: { revision: snapshot.revision, data }, headers: { 'X-InkLex-Client': '1' } })).ok()).toBe(true);
+  await page.goto('/#/articles?collection=extracurricular');
+  await expect(page.locator('.article-card')).toHaveCount(19);
+  await page.getByLabel('搜索课文').fill('2025 上海高三二模');
+  await expect(page.locator('.article-card')).toHaveCount(16);
+  for (const title of ['李陵降匈奴（材料一、二）', '李昉传（节选）']) {
+    await page.getByLabel('搜索课文').fill(title);
+    await page.locator('.article-card').click();
+    const article = data.articles.find(a => a.title === title)!;
+    await expect(page.locator('.sentence-translation')).toHaveText(article.translations!.map(t => t.translation));
+    if (title.startsWith('李陵')) {
+      await page.getByRole('button', { name: '查看「盛言」的释义', exact: true }).click();
+      await expect(page.locator('.inline-gloss')).toHaveText('（极力申述）');
+      await expect(page.locator('.reader-prose')).toContainText('贰师，指汉代贰师将军李广利');
+    } else {
+      await page.getByRole('button', { name: '查看「生聚」的释义', exact: true }).click();
+      await expect(page.locator('.inline-gloss')).toHaveText('（人民；生命财产）');
+    }
+    await page.getByRole('button', { name: '编辑逐句译文', exact: true }).click();
+    const fields = page.getByRole('dialog').locator('textarea');
+    await expect(fields.first()).toHaveValue(article.translations![0].translation);
+    await page.getByRole('button', { name: '保存逐句译文', exact: true }).click();
+    await expect(page.getByRole('dialog')).toHaveCount(0);
+    await expect(page.locator('.sentence-translation')).toHaveText(article.translations!.map(t => t.translation));
+    expect((await db(page)).articles.find((a: Article) => a.id === article.id).translations).toEqual(article.translations);
+    expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1)).toBe(true);
+    await page.getByRole('button', { name: '返回课文书架', exact: true }).click();
+  }
+  const after = await db(page);
+  expect(after.cards).toEqual(data.cards); expect(after.reviews).toEqual(data.reviews);
+  const backup = await (await request.get('/api/backup')).json();
+  expect(backup.articles).toEqual(after.articles);
 });
 
 test('answer-document texts appear once with all translations and retain translations after editing', async ({ page, request }) => {
