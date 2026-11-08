@@ -13,7 +13,7 @@ import { enroll, gradeContext } from '../src/domain/scheduler';
 
 const paths: string[] = [], handles: FileDatabase[] = [];
 const open = (path: string, importBiography2025 = true) => {
-  const db = new FileDatabase(path, { importSupplement: false, importTextbookArticles: false, importBiography2026: false, importBiography2025 });
+  const db = new FileDatabase(path, { importSupplement: false, importTextbookArticles: false, importBiography2026: false, importBiography2025, importBeikao2027: false });
   handles.push(db); return db;
 };
 afterEach(() => {

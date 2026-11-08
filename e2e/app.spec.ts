@@ -9,6 +9,7 @@ import { mergeTextbookArticles } from '../server/textbook-articles';
 import { mergeTextbookGlosses } from '../server/textbook-glosses';
 import { mergeBiography2026 } from '../server/biography-2026';
 import { mergeBiography2025 } from '../server/biography-2025';
+import { mergeBeikao2027 } from '../server/beikao-2027';
 import { mergeExamArticles } from '../server/exam-articles';
 import { mergeRecitationContent } from '../server/recitation-content';
 import { mergeRecitationSummary } from '../server/recitation-summary';
@@ -204,6 +205,39 @@ test('2025 second-mock biographies retain paragraph translations and marked glos
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1)).toBe(true);
     await page.getByRole('button', { name: '返回课文书架', exact: true }).click();
   }
+  const after = await db(page);
+  expect(after.cards).toEqual(data.cards); expect(after.reviews).toEqual(data.reviews);
+  const backup = await (await request.get('/api/backup')).json();
+  expect(backup.articles).toEqual(after.articles);
+});
+
+test('2027 备考文言文 shows paragraph translations, marked glosses and lexicon examples', async ({ page, request }) => {
+  const snapshot = await (await request.get('/api/state')).json(), data = mergeBeikao2027(snapshot.data);
+  expect((await request.put('/api/state', { data: { revision: snapshot.revision, data }, headers: { 'X-InkLex-Client': '1' } })).ok()).toBe(true);
+  await page.goto('/#/articles?collection=extracurricular');
+  await expect(page.locator('.article-card')).toHaveCount(5);
+  await page.getByLabel('搜索课文').fill('乌有先生传');
+  await page.locator('.article-card').click();
+  const wuyou = data.articles.find((a: Article) => a.title === '乌有先生传')!;
+  await expect(page.locator('.sentence-translation')).toHaveText(wuyou.translations!.map(t => t.translation));
+  await page.getByRole('button', { name: '查看「齿」的释义', exact: true }).click();
+  await expect(page.locator('.inline-gloss')).toHaveText('（并列，同列）');
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1)).toBe(true);
+  await page.getByRole('button', { name: '返回课文书架', exact: true }).click();
+  await page.getByLabel('搜索课文').fill('吴樘传');
+  await page.locator('.article-card').click();
+  const wuchen = data.articles.find((a: Article) => a.title === '吴樘传')!;
+  await page.getByRole('button', { name: '查看「会」的释义', exact: true }).click();
+  await expect(page.locator('.inline-gloss')).toHaveText('（恰巧，正好，适逢）');
+  await expect(page.locator('.reader-prose')).toContainText('[注释]①文化常识：伯仲叔季');
+  expect((await db(page)).articles.find((a: Article) => a.id === wuchen.id)!.body).toBe(wuchen.body);
+  // 勾连教材例句进入字词库：同一义项挂着文章内与教材两处例句。
+  await nav(page, '我的字词库');
+  await page.getByLabel('搜索字词或释义').fill('并列，同列');
+  await page.locator('.word-card').filter({ has: page.getByText('齿', { exact: true }) }).click();
+  await expect(page.getByRole('dialog')).toContainText('君子不齿');
+  await expect(page.getByRole('dialog')).toContainText('《乌有先生传》 · 2027备考');
+  await expect(page.getByRole('dialog')).toContainText('《师说》 · 乌有-003');
   const after = await db(page);
   expect(after.cards).toEqual(data.cards); expect(after.reviews).toEqual(data.reviews);
   const backup = await (await request.get('/api/backup')).json();
